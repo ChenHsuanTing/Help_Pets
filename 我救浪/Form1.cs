@@ -15,7 +15,6 @@ namespace 我救浪
         public FrmMemLogIn()
         {
             InitializeComponent();
-            MessageBox.Show("Test");
         }
     }
 }
