@@ -15,6 +15,7 @@ namespace 我救浪
         public FrmAdminLogIn()
         {
             InitializeComponent();
+            //
         }
     }
 }
