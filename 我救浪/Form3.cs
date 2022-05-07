@@ -16,5 +16,15 @@ namespace 我救浪
         {
             InitializeComponent();
         }
+        我救浪Entities PetContext = new 我救浪Entities();
+
+        #region 浪浪管理
+
+        
+
+        #endregion
+
+
+
     }
 }
