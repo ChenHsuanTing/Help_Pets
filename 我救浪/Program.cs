@@ -16,7 +16,7 @@ namespace 我救浪
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMemLogIn());
+            Application.Run(new FrmAdmin());
         }
     }
 }
