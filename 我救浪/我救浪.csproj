@@ -85,6 +85,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_商品管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_商品管理.Designer.cs">
+      <DependentUpon>Form_商品管理.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gender.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
@@ -103,10 +109,7 @@
     <Compile Include="Member_Wish_Size.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MyFavorite.cs">
-      <DependentUpon>PetModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Order.cs">
+    <Compile Include="Orders.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Order_Detail.cs">
@@ -159,6 +162,9 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_商品管理.resx">
+      <DependentUpon>Form_商品管理.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -168,11 +174,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <EntityDeploy Include="PetModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PetModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="PetModel.edmx.diagram">
       <DependentUpon>PetModel.edmx</DependentUpon>
     </None>
@@ -190,19 +196,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PetModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PetModel.Context.cs</LastGenOutput>
       <DependentUpon>PetModel.edmx</DependentUpon>
+      <LastGenOutput>PetModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PetModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PetModel.edmx</DependentUpon>
       <LastGenOutput>PetModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

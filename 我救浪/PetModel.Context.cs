@@ -13,10 +13,10 @@ namespace 我救浪
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class 我救浪Entities : DbContext
+    public partial class 我救浪Entities1 : DbContext
     {
-        public 我救浪Entities()
-            : base("name=我救浪Entities")
+        public 我救浪Entities1()
+            : base("name=我救浪Entities1")
         {
         }
     
@@ -25,25 +25,24 @@ namespace 我救浪
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<Color> Colors { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Gender> Genders { get; set; }
-        public virtual DbSet<Member> Members { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<Color> Color { get; set; }
+        public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<Member_Comment> Member_Comment { get; set; }
         public virtual DbSet<Member_Wish> Member_Wish { get; set; }
         public virtual DbSet<Member_Wish_Color> Member_Wish_Color { get; set; }
         public virtual DbSet<Member_Wish_Size> Member_Wish_Size { get; set; }
-        public virtual DbSet<MyFavorite> MyFavorites { get; set; }
         public virtual DbSet<Order_Detail> Order_Detail { get; set; }
         public virtual DbSet<Order_Status> Order_Status { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Pet_Detail> Pet_Detail { get; set; }
-        public virtual DbSet<Photo> Photos { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Size> Sizes { get; set; }
-        public virtual DbSet<SubCategory> SubCategories { get; set; }
-        public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<Photo> Photo { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Size> Size { get; set; }
+        public virtual DbSet<SubCategory> SubCategory { get; set; }
+        public virtual DbSet<Supplier> Supplier { get; set; }
     }
 }

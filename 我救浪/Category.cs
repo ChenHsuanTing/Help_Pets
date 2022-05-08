@@ -17,13 +17,14 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
-            this.SubCategories = new HashSet<SubCategory>();
+            this.SubCategory = new HashSet<SubCategory>();
         }
     
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+        public Nullable<bool> IsPet { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubCategory> SubCategories { get; set; }
+        public virtual ICollection<SubCategory> SubCategory { get; set; }
     }
 }

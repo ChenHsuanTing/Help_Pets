@@ -12,10 +12,10 @@ namespace 我救浪
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Orders
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Orders()
         {
             this.Order_Detail = new HashSet<Order_Detail>();
         }

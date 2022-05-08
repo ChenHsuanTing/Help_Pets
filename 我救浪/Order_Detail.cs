@@ -14,13 +14,12 @@ namespace 我救浪
     
     public partial class Order_Detail
     {
-        public int Order_Detail_ID { get; set; }
-        public Nullable<int> OrderID { get; set; }
-        public Nullable<int> ProductID { get; set; }
+        public int OrderID { get; set; }
+        public int ProductID { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual Orders Orders { get; set; }
         public virtual Product Product { get; set; }
     }
 }

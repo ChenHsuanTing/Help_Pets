@@ -21,7 +21,7 @@ namespace 我救浪
         public Nullable<decimal> YearCost { get; set; }
         public Nullable<int> Space { get; set; }
         public Nullable<int> SizeID { get; set; }
-        public Nullable<int> Age { get; set; }
+        public Nullable<bool> Age { get; set; }
         public Nullable<int> AccompanyTimeWeek { get; set; }
         public Nullable<bool> IsLigation { get; set; }
         public string Description { get; set; }

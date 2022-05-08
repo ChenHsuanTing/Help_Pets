@@ -17,14 +17,15 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Gender()
         {
+            this.Member_Wish = new HashSet<Member_Wish>();
             this.Pet_Detail = new HashSet<Pet_Detail>();
         }
     
         public int GenderID { get; set; }
-        public Nullable<bool> GenderType { get; set; }
-        public Nullable<int> MemberID { get; set; }
+        public string GenderType { get; set; }
     
-        public virtual Member_Wish Member_Wish { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Member_Wish> Member_Wish { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pet_Detail> Pet_Detail { get; set; }
     }
