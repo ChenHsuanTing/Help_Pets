@@ -25,7 +25,6 @@ namespace 我救浪
             tabPage1.Parent = null;
             tabPage2.Parent = null;
             tabPage3.Parent = null;
-            tabPage4.Parent = null;
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -52,8 +51,27 @@ namespace 我救浪
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PageClear();
-            tabPage4.Parent= tabControl1;
+            try
+            {
+                var product = (from p in dbContext.Product.AsEnumerable()
+                               where p.ProductID == int.Parse(label21.Text)
+                               select p).FirstOrDefault();
+                if (product == null)
+                {
+                    MessageBox.Show("刪除失敗");
+                    return;
+                }
+                else
+                {
+                    dbContext.Product.Remove(product); 
+                    dbContext.SaveChanges();
+                    MessageBox.Show("刪除成功");
+                  }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -257,22 +275,31 @@ namespace 我救浪
 
         private void button12_Click(object sender, EventArgs e)
         {
-            var product=(from p in dbContext.Product.AsEnumerable()
-                        where p.ProductID==int.Parse(label21.Text) 
-                        select p).FirstOrDefault();
-            if (product == null)
+            try
             {
-                MessageBox.Show("修改失敗");
-                return;
+                var product=(from p in dbContext.Product.AsEnumerable()
+                            where p.ProductID==int.Parse(label21.Text) 
+                            select p).FirstOrDefault();
+                if (product == null)
+                {
+                    MessageBox.Show("修改失敗");
+                    return;
+                }
+                else
+                {
+                    product.SubCategoryID = (int)label20.Tag;
+                    product.SupplierID = (int)label19.Tag;
+                    product.Price = int.Parse(label18.Text);
+                    product.ProductName =label17.Text;
+                    dbContext.SaveChanges();
+                    MessageBox.Show("修改成功");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                product.SubCategoryID = (int)label20.Tag;
-                product.SupplierID = (int)label19.Tag;
-                product.Price = int.Parse(textBox4.Text);
-                product.ProductName = textBox5.Text;
+                MessageBox.Show(ex.Message);
             }
-            dbContext.SaveChanges();
+
         }
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
@@ -281,6 +308,37 @@ namespace 我救浪
             label12.Tag = comboBox11.SelectedValue;
 
             SelectCategoryInComboBox(comboBox11, comboBox9);
+        }
+
+        private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label20.Text = comboBox9.Text;
+            label20.Tag = comboBox9.SelectedValue;
+        }
+
+        private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label19.Text = comboBox10.Text;
+            label19.Tag = comboBox10.SelectedValue;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            label18.Text = textBox4.Text;
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            label17.Text= textBox5.Text;
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button11.PerformClick();
+            }
+            else return;
         }
     }
 }
