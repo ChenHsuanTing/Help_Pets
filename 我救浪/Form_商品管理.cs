@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -339,6 +340,57 @@ namespace 我救浪
                 button11.PerformClick();
             }
             else return;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                pictureBox2.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            byte[] bytes;
+            MemoryStream ms = new MemoryStream();
+            pictureBox2.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            bytes = ms.GetBuffer();
+
+            int productID = int.Parse(label21.Text);
+            Photo photo = new Photo()
+            {
+                ProductID = productID,
+                Picture = bytes
+            };
+            dbContext.Photo.Add(photo);
+            dbContext.SaveChanges();
+            MessageBox.Show("新增照片成功");
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int productID = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            var q = from ph in dbContext.Photo
+                    where ph.ProductID == productID
+                    select ph;
+            if (q.Count() == 0)
+            {
+                Graphics g = Graphics.FromImage(pictureBox1.Image);
+                g.Clear(System.Drawing.Color.White);
+                g.Dispose();
+                pictureBox1.Refresh();
+                return;
+            }
+            byte[] bytes = q.ToList()[0].Picture;
+            MemoryStream ms = new MemoryStream(bytes);
+            pictureBox1.Image = Image.FromStream(ms);
+            pictureBox1.Tag = q.ToList()[0].PictureID;
         }
     }
 }

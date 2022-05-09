@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="我救浪Model.Order_Detail" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Order_Status" Width="1.5" PointX="6" PointY="25.25" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Orders" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Pet_Detail" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Pet_Detail" Width="1.5" PointX="8.5" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Photo" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Product" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Size" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
