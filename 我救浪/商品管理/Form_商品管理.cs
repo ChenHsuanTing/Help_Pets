@@ -307,7 +307,6 @@ namespace 我救浪
         {
             label12.Text=comboBox11.Text;
             label12.Tag = comboBox11.SelectedValue;
-
             SelectCategoryInComboBox(comboBox11, comboBox9);
         }
 
@@ -375,12 +374,14 @@ namespace 我救浪
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             int productID = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
             var q = from ph in dbContext.Photo
                     where ph.ProductID == productID
                     select ph;
             if (q.Count() == 0)
             {
+                if (pictureBox1.Image == null) return;
                 Graphics g = Graphics.FromImage(pictureBox1.Image);
                 g.Clear(System.Drawing.Color.White);
                 g.Dispose();

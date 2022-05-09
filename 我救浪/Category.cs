@@ -23,6 +23,7 @@ namespace 我救浪
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public Nullable<bool> IsPet { get; set; }
+        public Nullable<int> PatentCategoryID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubCategory> SubCategory { get; set; }

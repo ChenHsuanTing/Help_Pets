@@ -10,8 +10,9 @@
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CategoryName" Type="nchar" MaxLength="50" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
           <Property Name="IsPet" Type="bit" />
+          <Property Name="PatentCategoryID" Type="int" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -137,7 +138,7 @@
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="GenderID" Type="int" />
           <Property Name="ColorID" Type="int" />
           <Property Name="CityID" Type="int" />
@@ -180,7 +181,7 @@
             <PropertyRef Name="SubCategoryID" />
           </Key>
           <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SubCategoryName" Type="nchar" MaxLength="50" />
+          <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" />
           <Property Name="CategoryID" Type="int" />
         </EntityType>
         <EntityType Name="Supplier">
@@ -673,8 +674,9 @@
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsPet" Type="Boolean" />
+          <Property Name="PatentCategoryID" Type="Int32" />
           <NavigationProperty Name="SubCategory" Relationship="Self.FK_SubCategory_Category" FromRole="Category" ToRole="SubCategory" />
         </EntityType>
         <EntityType Name="City">
@@ -826,7 +828,7 @@
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="GenderID" Type="Int32" />
           <Property Name="ColorID" Type="Int32" />
           <Property Name="CityID" Type="Int32" />
@@ -884,7 +886,7 @@
             <PropertyRef Name="SubCategoryID" />
           </Key>
           <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CategoryID" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK_SubCategory_Category" FromRole="SubCategory" ToRole="Category" />
           <NavigationProperty Name="Member_Wish" Relationship="Self.FK_Member_Wish_SubCategory" FromRole="SubCategory" ToRole="Member_Wish" />
@@ -1359,6 +1361,7 @@
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
                 <ScalarProperty Name="IsPet" ColumnName="IsPet" />
+                <ScalarProperty Name="PatentCategoryID" ColumnName="PatentCategoryID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

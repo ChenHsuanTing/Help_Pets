@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 我救浪.類別管理;
 
 namespace 我救浪
 {
@@ -16,7 +17,7 @@ namespace 我救浪
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_商品管理());
+            Application.Run(new Form_配對條件管理());
         }
     }
 }
