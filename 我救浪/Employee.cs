@@ -17,8 +17,8 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            this.Orders = new HashSet<Order>();
-            this.Suppliers = new HashSet<Supplier>();
+            this.Orders = new HashSet<Orders>();
+            this.Supplier = new HashSet<Supplier>();
         }
     
         public int EmpoyeeID { get; set; }
@@ -27,8 +27,8 @@ namespace 我救浪
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Supplier> Suppliers { get; set; }
+        public virtual ICollection<Supplier> Supplier { get; set; }
     }
 }
