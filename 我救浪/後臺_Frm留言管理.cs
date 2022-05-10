@@ -340,5 +340,13 @@ namespace 我救浪
                 this.comboBox2.Items.Add(n.CommentDate.Value.Month);
             }
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtProducts.Text = dataGridView1.CurrentRow.Cells["ProductID"].Value.ToString();
+            txtMember.Text = dataGridView1.CurrentRow.Cells["MemberID"].Value.ToString();
+            comboBox3.Text = dataGridView1.CurrentRow.Cells["Grade"].Value.ToString();
+            txtComment.Text = dataGridView1.CurrentRow.Cells["Description"].Value.ToString();
+        }
     }
 }
