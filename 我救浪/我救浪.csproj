@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Age.cs">
+      <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
@@ -67,11 +70,29 @@
     <Compile Include="Employee.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="後臺_Frm商品管理.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="後臺_Frm商品管理.designer.cs">
+      <DependentUpon>後臺_Frm商品管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="後臺_Frm配對條件管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="後臺_Frm配對條件管理.designer.cs">
+      <DependentUpon>後臺_Frm配對條件管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="後臺_Frm留言管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="後臺_Frm留言管理.designer.cs">
+      <DependentUpon>後臺_Frm留言管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="後臺_Frm會員管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="後臺_Frm會員管理.Designer.cs">
+      <DependentUpon>後臺_Frm會員管理.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -79,13 +100,58 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="後臺_Frm後臺首頁.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="後臺_Frm後臺首頁.Designer.cs">
+      <DependentUpon>後臺_Frm後臺首頁.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm0.designer.cs">
+      <DependentUpon>Frm0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm修改會員資料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm修改會員資料.designer.cs">
+      <DependentUpon>Frm修改會員資料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm員工登入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm員工登入.designer.cs">
+      <DependentUpon>Frm員工登入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm忘記密碼.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm忘記密碼.designer.cs">
+      <DependentUpon>Frm忘記密碼.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm會員登入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm會員登入.designer.cs">
+      <DependentUpon>Frm會員登入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm註冊.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm註冊.designer.cs">
+      <DependentUpon>Frm註冊.cs</DependentUpon>
+    </Compile>
+    <Compile Include="後臺_Frm類別管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="後臺_Frm類別管理.designer.cs">
+      <DependentUpon>後臺_Frm類別管理.cs</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
+      <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ligation.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
@@ -103,11 +169,14 @@
     <Compile Include="Member_Wish_Size.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MyFavorite.cs">
-      <DependentUpon>PetModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="後臺_Frm訂單管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="後臺_Frm訂單管理.Designer.cs">
+      <DependentUpon>後臺_Frm訂單管理.cs</DependentUpon>
     </Compile>
     <Compile Include="Order_Detail.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
@@ -130,6 +199,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PetModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pet_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pet_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Pet_Detail.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
@@ -150,14 +224,47 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="後臺_Frm商品管理.resx">
+      <DependentUpon>後臺_Frm商品管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="後臺_Frm配對條件管理.resx">
+      <DependentUpon>後臺_Frm配對條件管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="後臺_Frm留言管理.resx">
+      <DependentUpon>後臺_Frm留言管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="後臺_Frm會員管理.resx">
+      <DependentUpon>後臺_Frm會員管理.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="後臺_Frm後臺首頁.resx">
+      <DependentUpon>後臺_Frm後臺首頁.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm0.resx">
+      <DependentUpon>Frm0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm修改會員資料.resx">
+      <DependentUpon>Frm修改會員資料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm員工登入.resx">
+      <DependentUpon>Frm員工登入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm忘記密碼.resx">
+      <DependentUpon>Frm忘記密碼.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm會員登入.resx">
+      <DependentUpon>Frm會員登入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm註冊.resx">
+      <DependentUpon>Frm註冊.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="後臺_Frm類別管理.resx">
+      <DependentUpon>後臺_Frm類別管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="後臺_Frm訂單管理.resx">
+      <DependentUpon>後臺_Frm訂單管理.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,13 +275,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <EntityDeploy Include="PetModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PetModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="PetModel.edmx.diagram">
       <DependentUpon>PetModel.edmx</DependentUpon>
+    </None>
+    <None Include="Pet_DataSet.xsc">
+      <DependentUpon>Pet_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Pet_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Pet_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pet_DataSet.xss">
+      <DependentUpon>Pet_DataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -190,19 +308,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PetModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PetModel.Context.cs</LastGenOutput>
       <DependentUpon>PetModel.edmx</DependentUpon>
+      <LastGenOutput>PetModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PetModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PetModel.edmx</DependentUpon>
       <LastGenOutput>PetModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

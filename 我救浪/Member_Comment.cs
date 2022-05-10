@@ -19,6 +19,7 @@ namespace 我救浪
         public Nullable<int> MemberID { get; set; }
         public Nullable<int> Grade { get; set; }
         public string Description { get; set; }
+        public Nullable<System.DateTime> CommentDate { get; set; }
     
         public virtual Member Member { get; set; }
         public virtual Product Product { get; set; }

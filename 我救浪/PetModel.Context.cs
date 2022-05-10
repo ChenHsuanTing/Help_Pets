@@ -25,17 +25,18 @@ namespace 我救浪
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Age> Ages { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Ligation> Ligations { get; set; }
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<Member_Comment> Member_Comment { get; set; }
         public virtual DbSet<Member_Wish> Member_Wish { get; set; }
         public virtual DbSet<Member_Wish_Color> Member_Wish_Color { get; set; }
         public virtual DbSet<Member_Wish_Size> Member_Wish_Size { get; set; }
-        public virtual DbSet<MyFavorite> MyFavorites { get; set; }
         public virtual DbSet<Order_Detail> Order_Detail { get; set; }
         public virtual DbSet<Order_Status> Order_Status { get; set; }
         public virtual DbSet<Order> Orders { get; set; }

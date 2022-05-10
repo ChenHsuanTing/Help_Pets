@@ -17,7 +17,6 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Member_Wish()
         {
-            this.Genders = new HashSet<Gender>();
             this.Member_Wish_Color = new HashSet<Member_Wish_Color>();
             this.Member_Wish_Size = new HashSet<Member_Wish_Size>();
         }
@@ -27,14 +26,16 @@ namespace 我救浪
         public Nullable<decimal> YearCost { get; set; }
         public Nullable<int> Space { get; set; }
         public string Size { get; set; }
-        public Nullable<int> Age { get; set; }
+        public Nullable<int> AgeID { get; set; }
         public Nullable<int> AccompanyTimeWeek { get; set; }
-        public Nullable<bool> IsLigation { get; set; }
+        public Nullable<int> LigationID { get; set; }
         public Nullable<int> SubCategoryID { get; set; }
+        public Nullable<int> GenderID { get; set; }
     
+        public virtual Age Age { get; set; }
         public virtual City City { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Gender> Genders { get; set; }
+        public virtual Gender Gender { get; set; }
+        public virtual Ligation Ligation { get; set; }
         public virtual Member Member { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Wish_Color> Member_Wish_Color { get; set; }

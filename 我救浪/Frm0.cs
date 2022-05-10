@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace 我救浪
 {
-    public partial class FrmMemLogIn : Form
+    public partial class Frm0 : Form
     {
-        public FrmMemLogIn()
+        public Frm0()
         {
             InitializeComponent();
         }

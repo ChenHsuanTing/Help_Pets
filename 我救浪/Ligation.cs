@@ -12,17 +12,17 @@ namespace 我救浪
     using System;
     using System.Collections.Generic;
     
-    public partial class Gender
+    public partial class Ligation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gender()
+        public Ligation()
         {
             this.Member_Wish = new HashSet<Member_Wish>();
             this.Pet_Detail = new HashSet<Pet_Detail>();
         }
     
-        public int GenderID { get; set; }
-        public string GenderType { get; set; }
+        public int LigationID { get; set; }
+        public string LigationType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Wish> Member_Wish { get; set; }
