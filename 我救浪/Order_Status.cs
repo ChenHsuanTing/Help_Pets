@@ -17,13 +17,13 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order_Status()
         {
-            this.Orders = new HashSet<Orders>();
+            this.Orders = new HashSet<Order>();
         }
     
         public int Order_StatusID { get; set; }
         public string StausType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

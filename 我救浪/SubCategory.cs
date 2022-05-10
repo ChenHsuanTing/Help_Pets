@@ -18,7 +18,7 @@ namespace 我救浪
         public SubCategory()
         {
             this.Member_Wish = new HashSet<Member_Wish>();
-            this.Product = new HashSet<Product>();
+            this.Products = new HashSet<Product>();
         }
     
         public int SubCategoryID { get; set; }
@@ -29,6 +29,6 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Wish> Member_Wish { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

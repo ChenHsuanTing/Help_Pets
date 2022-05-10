@@ -18,7 +18,7 @@ namespace 我救浪
         public City()
         {
             this.Member_Wish = new HashSet<Member_Wish>();
-            this.Member = new HashSet<Member>();
+            this.Members = new HashSet<Member>();
             this.Pet_Detail = new HashSet<Pet_Detail>();
         }
     
@@ -28,7 +28,7 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Wish> Member_Wish { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member> Member { get; set; }
+        public virtual ICollection<Member> Members { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pet_Detail> Pet_Detail { get; set; }
     }
