@@ -112,6 +112,7 @@ namespace 我救浪
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnproductsearch = new System.Windows.Forms.Button();
             this.CombproductName = new System.Windows.Forms.ComboBox();
+            this.comSup = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.浪浪管理中心.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -155,6 +156,7 @@ namespace 我救浪
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.comSup);
             this.groupBox5.Controls.Add(this.CombproductName);
             this.groupBox5.Controls.Add(this.btnproductsearch);
             this.groupBox5.Controls.Add(this.dataGridView4);
@@ -1003,6 +1005,16 @@ namespace 我救浪
             this.CombproductName.Size = new System.Drawing.Size(132, 30);
             this.CombproductName.TabIndex = 31;
             // 
+            // comSup
+            // 
+            this.comSup.FormattingEnabled = true;
+            this.comSup.Location = new System.Drawing.Point(66, 312);
+            this.comSup.Margin = new System.Windows.Forms.Padding(4);
+            this.comSup.Name = "comSup";
+            this.comSup.Size = new System.Drawing.Size(132, 30);
+            this.comSup.TabIndex = 32;
+            this.comSup.Visible = false;
+            // 
             // Frm浪浪管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1118,5 +1130,6 @@ namespace 我救浪
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnproductsearch;
         private System.Windows.Forms.ComboBox CombproductName;
+        private System.Windows.Forms.ComboBox comSup;
     }
 }
