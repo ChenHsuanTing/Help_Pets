@@ -35,22 +35,6 @@ namespace 我救浪
     }
         void LoadCategoryToComboBox()
         {
-            var q_Category = from c in dbContext.Categories
-                             where c.IsPet==false
-                    select c;
-            //foreach (var c in q_Category)
-            //{
-            //    ComboboxItem comboboxItem = new ComboboxItem(c.CategoryName, c.CategoryID);
-            //    comboBox1.Items.Add(comboboxItem);
-            //}
-            comboBox1.DataSource = q_Category.ToList();
-            comboBox1.DisplayMember = "CategoryName";
-            comboBox1.ValueMember = "CategoryID";
-            comboBox6.DataSource = q_Category.ToList();
-            comboBox6.DisplayMember = "CategoryName";
-            comboBox6.ValueMember = "CategoryID";
-
-
             var q_Supplier = from s in dbContext.Suppliers
                              select s;
             comboBox3.DataSource = q_Supplier.ToList();
@@ -59,6 +43,16 @@ namespace 我救浪
             comboBox5.DataSource = q_Supplier.ToList();
             comboBox5.DisplayMember = "Name";
             comboBox5.ValueMember = "SupplierID";
+
+            var q_CategoryPet = from c in dbContext.Categories
+                                where c.IsPet == true
+                                select c;
+            comboBox8.DataSource = q_CategoryPet.ToList();
+            comboBox8.DisplayMember = "CategoryName";
+            comboBox8.ValueMember = "CategoryID";
+            comboBox7.DataSource = q_CategoryPet.ToList();
+            comboBox7.DisplayMember = "CategoryName";
+            comboBox7.ValueMember = "CategoryID";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,6 +70,7 @@ namespace 我救浪
             comboBox2.DataSource = q_SubCategory.ToList();
             comboBox2.DisplayMember = "SubCategoryName";
             comboBox2.ValueMember = "SubCategoryID";
+            comboBox2.Text = "";
         }
 
         private void Form_商品管理1_Load(object sender, EventArgs e)
@@ -86,6 +81,8 @@ namespace 我救浪
             comboBox6.Text = "";
             comboBox4.Text = "";
             comboBox5.Text = "";
+            comboBox8.Text = "";
+            comboBox7.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -120,24 +117,51 @@ namespace 我救浪
                      where p.ProductID == (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value
                      select new
                      {
-                         ProductID=p.ProductID,
-                         Category=p.SubCategory.Category.CategoryName,
-                         SubCategory=p.SubCategory.SubCategoryName,
-                         ProductName=p.ProductName,
-                         Price=p.Price,
+                         ProductID = p.ProductID,
+                         Category = p.SubCategory.Category.CategoryName,
+                         SubCategory = p.SubCategory.SubCategoryName,
+                         ProductName = p.ProductName,
+                         Price = p.Price,
                          p.UnitsInStock,
-                         Supplier=p.Supplier.Name,
-                         p.Description
+                         Supplier = p.Supplier.Name,
+                         p.Description,
+                         Parent = RetrunParentCategory((int)p.SubCategory.Category.ParentCategory),
+                         ParentID = p.SubCategory.Category.ParentCategory,
                      }
                      ).FirstOrDefault();
-            comboBox6.Text = q.Category;
-            comboBox4.Text = q.SubCategory;
+
+            comboBox7.SelectedIndex = comboBox7.FindStringExact(q.Parent);
+
+            var q2 = from c in dbContext.Categories
+                     where c.IsPet == false && c.ParentCategory == q.ParentID
+                     select c;
+            comboBox6.DataSource = q2.ToList();
+            comboBox6.DisplayMember = "CategoryName";
+            comboBox6.ValueMember = "CategoryID";
+
+            var q3 = from sc in dbContext.SubCategories
+                                where sc.Category.CategoryName == q.Category
+                                select sc;
+
+            comboBox4.DataSource = q3.ToList();
+            comboBox4.DisplayMember = "SubCategoryName";
+            comboBox4.ValueMember = "SubCategoryID";
+
+
             textBox4.Text = q.ProductName;
             textBox5.Text = q.Price.ToString();
             comboBox5.Text = q.Supplier;
             textBox7.Text = q.UnitsInStock.ToString();
             textBox9.Text = q.Description;
+
             LoadPicture(q.ProductID, pictureBox1);
+        }
+        string RetrunParentCategory(int parentID)
+        {
+            var q = (from c in dbContext.Categories
+                    where c.CategoryID == parentID
+                    select c).FirstOrDefault();
+            return q.CategoryName;
         }
         void LoadPicture(int productID,PictureBox pictureBox)
         {
@@ -153,18 +177,7 @@ namespace 我救浪
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox6.Text == "") return;
-            var q_SubCategory = from sc in dbContext.SubCategories
-                                    //where sc.CategoryID == (comboBox1.SelectedItem as ComboboxItem).Value
-                                where sc.Category.CategoryName == comboBox6.Text
-                                select sc;
-            //foreach (var sc in q_SubCategory)
-            //{
-            //    comboBox2.Items.Add(sc);
-            //}
-            comboBox4.DataSource = q_SubCategory.ToList();
-            comboBox4.DisplayMember = "SubCategoryName";
-            comboBox4.ValueMember = "SubCategoryID";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -178,7 +191,8 @@ namespace 我救浪
                     UnitsInStock= int.Parse(textBox7.Text),
                     SubCategoryID = (int)comboBox4.SelectedValue,
                     SupplierID = (int)(comboBox5.SelectedValue),
-                    IsPet = false
+                    IsPet = false,
+                    Description=textBox9.Text
                 };
                 dbContext.Products.Add(product);
                 dbContext.SaveChanges();
@@ -194,7 +208,17 @@ namespace 我救浪
         {
             var q = from p in dbContext.Products
                     where p.IsPet==false
-                    select p;
+                    select new
+                    {
+                        p.ProductID,
+                        p.ProductName,
+                        p.Price,
+                        p.UnitsInStock,
+                        p.SubCategory.Category.CategoryName,
+                        p.SubCategory.SubCategoryName,
+                        Supplier = p.Supplier.Name
+                    }
+                    ;
             dataGridView1.DataSource = q.ToList();
         }
         private void button4_Click(object sender, EventArgs e)
@@ -296,7 +320,7 @@ namespace 我救浪
 
         private void comboBox6_TextChanged(object sender, EventArgs e)
         {
-            if(comboBox6.Text=="")
+            if (comboBox6.Text == "")
             {
                 comboBox4.DataSource = null;
             }
@@ -307,6 +331,41 @@ namespace 我救浪
                      where c.CategoryID == ParentID
                      select c).FirstOrDefault();
             return q.CategoryName;
+        }
+
+        private void comboBox8_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var q = from c in dbContext.Categories.AsEnumerable()
+                                where c.ParentCategory ==(int) (comboBox8.SelectedValue) && c.IsPet==false
+                                select c;
+            comboBox1.DataSource = q.ToList();
+            comboBox1.DisplayMember = "CategoryName";
+            comboBox1.ValueMember = "CategoryID";
+            comboBox1.Text = "";
+        }
+
+        private void comboBox7_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (comboBox7.SelectedValue.GetType() != typeof(int)) return;
+            var q = from c in dbContext.Categories.AsEnumerable()
+                    where c.ParentCategory == (int)(comboBox7.SelectedValue) && c.IsPet == false
+                    select c;
+            comboBox6.DataSource = q.ToList();
+            comboBox6.DisplayMember = "CategoryName";
+            comboBox6.ValueMember = "CategoryID";
+            comboBox6.Text = "";
+        }
+
+        private void comboBox6_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //  if (comboBox6.SelectedValue.GetType() != typeof(int)) return;;
+            var q_SubCategory = from sc in dbContext.SubCategories
+                                where sc.CategoryID== (int)comboBox6.SelectedValue
+                                select sc;
+            comboBox4.DataSource = q_SubCategory.ToList();
+            comboBox4.DisplayMember = "SubCategoryName";
+            comboBox4.ValueMember = "SubCategoryID";
+            comboBox4.Text = "";
         }
     }
 }
