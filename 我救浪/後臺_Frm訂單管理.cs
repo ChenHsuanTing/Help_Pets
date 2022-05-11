@@ -13,8 +13,6 @@ namespace 我救浪
 {
     public partial class 後臺_Frm訂單管理 : Form
     {
-        //Product dicontinued , Order_Detail initial = Product Price
-
         public 後臺_Frm訂單管理()
         {
             InitializeComponent();
@@ -34,7 +32,7 @@ namespace 我救浪
                 int memberID = (int)dataGridView1.Rows[se.CurrentCell.RowIndex].Cells["MemberID"].Value;
                 int orderID = (int)dataGridView1.Rows[se.CurrentCell.RowIndex].Cells["OrderID"].Value;
                 var a = (dbContext.Order_Detail.Where(m => m.OrderID == orderID).Select(n => n).ToList()).Count();
-                DialogResult result = MessageBox.Show($"刪除訂單編號 {orderID} 及其底下共 {a} 筆資料?", "刪除", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show($"刪除訂單編號 {orderID} 及底下共 {a} 筆資料?", "刪除", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (result == DialogResult.OK)
                 {
                     while ((dbContext.Order_Detail.Where(m => m.OrderID == orderID).Select(n => n)).FirstOrDefault() != null)
