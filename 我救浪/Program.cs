@@ -18,7 +18,8 @@ namespace 我救浪
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmAdmin());
             //Application.Run(new OrdersManage());
-            Application.Run(new Frm員工登入());
+            //Application.Run(new Frm員工登入());
+            Application.Run(new 後臺_Frm類別管理());
         }
     }
 }
