@@ -16,7 +16,6 @@ namespace 我救浪
         {
             InitializeComponent();
             LoadAllCombobox();//浪浪管理
-            LoadProduct();
             Loadsearchcombox();
         }
 
@@ -51,12 +50,7 @@ namespace 我救浪
 
         
 
-        private void LoadProduct()
-        {
-            var q = PetContext.Products.Where(p => p.SubCategory.Category.IsPet == true).Select(p => p);
-            this.dataGridView4.DataSource = q.ToList();
-            //this.dataGridView4.DataSource = PetContext.Products.ToList();
-        }
+       
 
         #region product
         private void btnproductadd_Click(object sender, EventArgs e)
@@ -66,24 +60,41 @@ namespace 我救浪
             Product pro = new Product
             {
                 ProductName = txtproductName.Text,
-               
-                SubCategoryID = q.ToList()[0].SubCategoryID,
-                Price =Convert.ToDecimal(txtprice.Text) ,
-                SupplierID = suppierID.ToList()[0].SupplierID,
-                IsPet = true
 
+                SubCategoryID = q.ToList()[0].SubCategoryID,
+                Price = 0,//.Convert.ToDecimal(txtprice.Text) ,
+                UnitsInStock = 1,
+                SupplierID = 3,
+                IsPet = true,
+                Description="棄養"
             };
             this.PetContext.Products.Add(pro);
             this.PetContext.SaveChanges();
-            this.Read_RefreshDataGridView();
+            btnproductsearch.PerformClick();
+            //this.Read_RefreshDataGridView();
             LoadAllCombobox();
         }
         
         private void btnpudate_Click(object sender, EventArgs e)
         {//修改
+
+            var pro = (from s in this.PetContext.Products.AsEnumerable()
+                       where s.ProductID == (int)CombproductName.SelectedValue
+                       select s).FirstOrDefault();
+
+            if (pro == null) return;
+
+            pro.ProductName = txtproductName.Text;
             this.PetContext.SaveChanges();
-            this.Read_RefreshDataGridView();
-            LoadAllCombobox();
+            MessageBox.Show("更新成功");
+            btnproductsearch.PerformClick();
+
+
+
+
+            //this.PetContext.SaveChanges();
+            //this.Read_RefreshDataGridView();
+            //LoadAllCombobox();
         }
         private void btndelete_Click(object sender, EventArgs e)
         {//刪除
@@ -93,17 +104,18 @@ namespace 我救浪
 
             this.PetContext.Products.Remove(delete);
             this.PetContext.SaveChanges();
-            this.Read_RefreshDataGridView();
+            btnproductsearch.PerformClick();
+            //this.Read_RefreshDataGridView();
             LoadAllCombobox();
         }
         void Read_RefreshDataGridView()
         {
-            this.dataGridView4.DataSource = null;
+            //this.dataGridView4.DataSource = null;
             this.dataGridViewPet.DataSource = null;
-            var products = PetContext.Products.Where(p => p.SubCategory.Category.IsPet == true).Select(p => p);
-            this.dataGridView4.DataSource = products.ToList();
+            //var products = PetContext.Products.Where(p => p.SubCategory.Category.IsPet == true).Select(p => p);
+            //this.dataGridView4.DataSource = products.ToList();
             var q = from n in PetContext.Pet_Detail
-                    where n.Product.IsPet==true
+                    where n.Product.IsPet == true
                     select new
                     {
                         n.Product.ProductName,
@@ -194,6 +206,7 @@ namespace 我救浪
                 comName.Items.Add(i);
             }
 
+
             //性別Gender
             var g = PetContext.Genders.Select(n => n.GenderType);
             comGenderID.Text = "浪浪性別";
@@ -243,12 +256,18 @@ namespace 我救浪
                 comAge.Items.Add(i);
             }
             //次類別
-            var subc = PetContext.SubCategories.Where(n=>n.Category.IsPet.Value==true).Select(n => n.SubCategoryName);
-            combSubcate.Text = "分類";
-            foreach (var i in subc.ToList().Distinct())
-            {
-                combSubcate.Items.Add(i);
-            }
+            //var subc = PetContext.SubCategories.Where(n=>n.Category.IsPet.Value==true).Select(n => n.SubCategoryName);
+            //combSubcate.Text = "分類";
+            //foreach (var i in subc.ToList().Distinct())
+            //{
+            //    combSubcate.Items.Add(i);
+            //}
+            var SUB = from su in this.PetContext.SubCategories
+                      where su.Category.IsPet == true
+                      select su;
+            combSubcate.DataSource = SUB.ToList();
+            combSubcate.DisplayMember = "SubCategoryName";
+            combSubcate.ValueMember = "SubCategoryID";
             //供應商
             var Sup = PetContext.Suppliers.Select(n => n.Name);
            comSup.Text = "供應商";
@@ -257,7 +276,16 @@ namespace 我救浪
                 comSup.Items.Add(i);
             }
         }
-       
+        private void combSubcate_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var q = from s in this.PetContext.Products.AsEnumerable()
+                    where s.SubCategoryID == (int)combSubcate.SelectedValue
+                    select s;
+            CombproductName.DataSource = q.ToList();
+            CombproductName.DisplayMember = "ProductName";
+            CombproductName.ValueMember = "ProductID";
+        }
+
         #region pet_detail
         private void btnpetAdd_Click(object sender, EventArgs e)
         {
@@ -492,6 +520,19 @@ namespace 我救浪
             comboBox9.ValueMember = "SubCategoryID";
         }
 
-      
+        private void btnproductsearch_Click(object sender, EventArgs e)
+        {
+            var q = from p in this.PetContext.Products
+                    where p.IsPet == true
+                    select new
+                    {
+                        p.ProductID,
+                        p.ProductName,
+                        SubCategoryName = p.SubCategory.SubCategoryName,
+                    };
+            this.dataGridView4.DataSource = q.ToList();
+        }
+
+        
     }
 }

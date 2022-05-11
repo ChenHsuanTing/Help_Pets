@@ -34,15 +34,11 @@ namespace 我救浪
             this.浪浪管理中心 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.comSup = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.combSubcate = new System.Windows.Forms.ComboBox();
             this.txtproductName = new System.Windows.Forms.TextBox();
-            this.txtprice = new System.Windows.Forms.TextBox();
             this.btnpudate = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
             this.btndelete = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.btnproductadd = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -114,6 +110,8 @@ namespace 我救浪
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnproductsearch = new System.Windows.Forms.Button();
+            this.CombproductName = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.浪浪管理中心.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -148,7 +146,7 @@ namespace 我救浪
             // 
             this.浪浪管理中心.Controls.Add(this.groupBox5);
             this.浪浪管理中心.Location = new System.Drawing.Point(4, 31);
-            this.浪浪管理中心.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.浪浪管理中心.Margin = new System.Windows.Forms.Padding(4);
             this.浪浪管理中心.Name = "浪浪管理中心";
             this.浪浪管理中心.Size = new System.Drawing.Size(1415, 690);
             this.浪浪管理中心.TabIndex = 7;
@@ -157,22 +155,20 @@ namespace 我救浪
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.CombproductName);
+            this.groupBox5.Controls.Add(this.btnproductsearch);
             this.groupBox5.Controls.Add(this.dataGridView4);
-            this.groupBox5.Controls.Add(this.comSup);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.combSubcate);
             this.groupBox5.Controls.Add(this.txtproductName);
-            this.groupBox5.Controls.Add(this.txtprice);
             this.groupBox5.Controls.Add(this.btnpudate);
-            this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.btndelete);
-            this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.btnproductadd);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Location = new System.Drawing.Point(240, 114);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Location = new System.Drawing.Point(40, 43);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(1039, 425);
             this.groupBox5.TabIndex = 57;
             this.groupBox5.TabStop = false;
@@ -182,26 +178,17 @@ namespace 我救浪
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(391, 35);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 24;
             this.dataGridView4.Size = new System.Drawing.Size(485, 244);
             this.dataGridView4.TabIndex = 26;
             // 
-            // comSup
-            // 
-            this.comSup.FormattingEnabled = true;
-            this.comSup.Location = new System.Drawing.Point(196, 189);
-            this.comSup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comSup.Name = "comSup";
-            this.comSup.Size = new System.Drawing.Size(132, 30);
-            this.comSup.TabIndex = 56;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(93, 68);
+            this.label7.Location = new System.Drawing.Point(112, 134);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 22);
@@ -211,76 +198,49 @@ namespace 我救浪
             // combSubcate
             // 
             this.combSubcate.FormattingEnabled = true;
-            this.combSubcate.Location = new System.Drawing.Point(196, 103);
-            this.combSubcate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combSubcate.Location = new System.Drawing.Point(215, 81);
+            this.combSubcate.Margin = new System.Windows.Forms.Padding(4);
             this.combSubcate.Name = "combSubcate";
             this.combSubcate.Size = new System.Drawing.Size(132, 30);
-            this.combSubcate.TabIndex = 55;
+            this.combSubcate.TabIndex = 2;
+            this.combSubcate.SelectionChangeCommitted += new System.EventHandler(this.combSubcate_SelectionChangeCommitted);
             // 
             // txtproductName
             // 
-            this.txtproductName.Location = new System.Drawing.Point(196, 60);
-            this.txtproductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtproductName.Location = new System.Drawing.Point(215, 174);
+            this.txtproductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtproductName.Name = "txtproductName";
             this.txtproductName.Size = new System.Drawing.Size(132, 30);
             this.txtproductName.TabIndex = 1;
             // 
-            // txtprice
-            // 
-            this.txtprice.Location = new System.Drawing.Point(196, 146);
-            this.txtprice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(132, 30);
-            this.txtprice.TabIndex = 54;
-            // 
             // btnpudate
             // 
-            this.btnpudate.Location = new System.Drawing.Point(515, 299);
-            this.btnpudate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnpudate.Location = new System.Drawing.Point(632, 301);
+            this.btnpudate.Margin = new System.Windows.Forms.Padding(4);
             this.btnpudate.Name = "btnpudate";
-            this.btnpudate.Size = new System.Drawing.Size(115, 50);
+            this.btnpudate.Size = new System.Drawing.Size(85, 59);
             this.btnpudate.TabIndex = 23;
             this.btnpudate.Text = "修改";
             this.btnpudate.UseVisualStyleBackColor = true;
             this.btnpudate.Click += new System.EventHandler(this.btnpudate_Click);
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(114, 194);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(65, 22);
-            this.label21.TabIndex = 29;
-            this.label21.Text = "來源地:";
-            // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(637, 299);
-            this.btndelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btndelete.Location = new System.Drawing.Point(754, 301);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(4);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(115, 50);
+            this.btndelete.Size = new System.Drawing.Size(85, 59);
             this.btndelete.TabIndex = 24;
             this.btndelete.Text = "刪除";
             this.btndelete.UseVisualStyleBackColor = true;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(127, 152);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(52, 22);
-            this.label20.TabIndex = 28;
-            this.label20.Text = "價錢 :";
-            // 
             // btnproductadd
             // 
-            this.btnproductadd.Location = new System.Drawing.Point(392, 299);
-            this.btnproductadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnproductadd.Location = new System.Drawing.Point(509, 301);
+            this.btnproductadd.Margin = new System.Windows.Forms.Padding(4);
             this.btnproductadd.Name = "btnproductadd";
-            this.btnproductadd.Size = new System.Drawing.Size(115, 50);
+            this.btnproductadd.Size = new System.Drawing.Size(85, 59);
             this.btnproductadd.TabIndex = 25;
             this.btnproductadd.Text = "新增";
             this.btnproductadd.UseVisualStyleBackColor = true;
@@ -289,7 +249,7 @@ namespace 我救浪
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(110, 110);
+            this.label9.Location = new System.Drawing.Point(129, 88);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 22);
@@ -302,7 +262,7 @@ namespace 我救浪
             this.tabPage8.Controls.Add(this.groupBox1);
             this.tabPage8.Controls.Add(this.label10);
             this.tabPage8.Location = new System.Drawing.Point(4, 31);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Size = new System.Drawing.Size(1415, 690);
             this.tabPage8.TabIndex = 8;
@@ -319,9 +279,9 @@ namespace 我救浪
             this.groupBox2.Controls.Add(this.btnOpenFile);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(76, 326);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1197, 378);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
@@ -331,7 +291,7 @@ namespace 我救浪
             // 
             this.dataGridViewPet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPet.Location = new System.Drawing.Point(36, 66);
-            this.dataGridViewPet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewPet.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPet.Name = "dataGridViewPet";
             this.dataGridViewPet.RowHeadersWidth = 51;
             this.dataGridViewPet.RowTemplate.Height = 24;
@@ -344,7 +304,7 @@ namespace 我救浪
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(1059, 295);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(105, 30);
             this.button4.TabIndex = 70;
@@ -354,8 +314,8 @@ namespace 我救浪
             // 
             // btnpetDelete
             // 
-            this.btnpetDelete.Location = new System.Drawing.Point(268, 304);
-            this.btnpetDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnpetDelete.Location = new System.Drawing.Point(215, 304);
+            this.btnpetDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnpetDelete.Name = "btnpetDelete";
             this.btnpetDelete.Size = new System.Drawing.Size(100, 38);
             this.btnpetDelete.TabIndex = 62;
@@ -368,7 +328,7 @@ namespace 我救浪
             this.btnAddPicture.BackColor = System.Drawing.Color.White;
             this.btnAddPicture.ForeColor = System.Drawing.Color.Black;
             this.btnAddPicture.Location = new System.Drawing.Point(945, 295);
-            this.btnAddPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddPicture.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddPicture.Name = "btnAddPicture";
             this.btnAddPicture.Size = new System.Drawing.Size(105, 30);
             this.btnAddPicture.TabIndex = 68;
@@ -378,12 +338,12 @@ namespace 我救浪
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(73, 304);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(36, 304);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 38);
             this.button1.TabIndex = 69;
-            this.button1.Text = "收尋所有浪浪";
+            this.button1.Text = "搜尋所有浪浪";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -392,7 +352,7 @@ namespace 我救浪
             this.btnOpenFile.BackColor = System.Drawing.Color.White;
             this.btnOpenFile.ForeColor = System.Drawing.Color.Black;
             this.btnOpenFile.Location = new System.Drawing.Point(832, 295);
-            this.btnOpenFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(105, 30);
             this.btnOpenFile.TabIndex = 46;
@@ -404,7 +364,7 @@ namespace 我救浪
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(869, 66);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(235, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -438,9 +398,9 @@ namespace 我救浪
             this.groupBox1.Controls.Add(this.comcolorID);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(76, 30);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1197, 289);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
@@ -449,7 +409,7 @@ namespace 我救浪
             // rtxtdes
             // 
             this.rtxtdes.Location = new System.Drawing.Point(708, 54);
-            this.rtxtdes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtdes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtdes.Name = "rtxtdes";
             this.rtxtdes.Size = new System.Drawing.Size(228, 193);
             this.rtxtdes.TabIndex = 68;
@@ -458,7 +418,7 @@ namespace 我救浪
             // txtYearcost
             // 
             this.txtYearcost.Location = new System.Drawing.Point(168, 201);
-            this.txtYearcost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtYearcost.Margin = new System.Windows.Forms.Padding(4);
             this.txtYearcost.Name = "txtYearcost";
             this.txtYearcost.Size = new System.Drawing.Size(132, 30);
             this.txtYearcost.TabIndex = 38;
@@ -466,7 +426,7 @@ namespace 我救浪
             // btnpetUpdate
             // 
             this.btnpetUpdate.Location = new System.Drawing.Point(1005, 118);
-            this.btnpetUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnpetUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnpetUpdate.Name = "btnpetUpdate";
             this.btnpetUpdate.Size = new System.Drawing.Size(100, 38);
             this.btnpetUpdate.TabIndex = 61;
@@ -507,7 +467,7 @@ namespace 我救浪
             // txtspace
             // 
             this.txtspace.Location = new System.Drawing.Point(500, 156);
-            this.txtspace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtspace.Margin = new System.Windows.Forms.Padding(4);
             this.txtspace.Name = "txtspace";
             this.txtspace.Size = new System.Drawing.Size(132, 30);
             this.txtspace.TabIndex = 66;
@@ -525,7 +485,7 @@ namespace 我救浪
             // btnpetAdd
             // 
             this.btnpetAdd.Location = new System.Drawing.Point(1005, 50);
-            this.btnpetAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnpetAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnpetAdd.Name = "btnpetAdd";
             this.btnpetAdd.Size = new System.Drawing.Size(100, 38);
             this.btnpetAdd.TabIndex = 63;
@@ -558,7 +518,7 @@ namespace 我救浪
             // 
             this.comName.FormattingEnabled = true;
             this.comName.Location = new System.Drawing.Point(168, 32);
-            this.comName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comName.Margin = new System.Windows.Forms.Padding(4);
             this.comName.Name = "comName";
             this.comName.Size = new System.Drawing.Size(132, 30);
             this.comName.TabIndex = 65;
@@ -597,7 +557,7 @@ namespace 我救浪
             // txtweek
             // 
             this.txtweek.Location = new System.Drawing.Point(500, 201);
-            this.txtweek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtweek.Margin = new System.Windows.Forms.Padding(4);
             this.txtweek.Name = "txtweek";
             this.txtweek.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtweek.Size = new System.Drawing.Size(132, 30);
@@ -607,7 +567,7 @@ namespace 我救浪
             // 
             this.comSizeID.FormattingEnabled = true;
             this.comSizeID.Location = new System.Drawing.Point(500, 34);
-            this.comSizeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comSizeID.Margin = new System.Windows.Forms.Padding(4);
             this.comSizeID.Name = "comSizeID";
             this.comSizeID.Size = new System.Drawing.Size(132, 30);
             this.comSizeID.TabIndex = 47;
@@ -616,7 +576,7 @@ namespace 我救浪
             // 
             this.comcityID.FormattingEnabled = true;
             this.comcityID.Location = new System.Drawing.Point(168, 160);
-            this.comcityID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comcityID.Margin = new System.Windows.Forms.Padding(4);
             this.comcityID.Name = "comcityID";
             this.comcityID.Size = new System.Drawing.Size(132, 30);
             this.comcityID.TabIndex = 48;
@@ -625,7 +585,7 @@ namespace 我救浪
             // 
             this.comAge.FormattingEnabled = true;
             this.comAge.Location = new System.Drawing.Point(500, 75);
-            this.comAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comAge.Margin = new System.Windows.Forms.Padding(4);
             this.comAge.Name = "comAge";
             this.comAge.Size = new System.Drawing.Size(132, 30);
             this.comAge.TabIndex = 49;
@@ -634,7 +594,7 @@ namespace 我救浪
             // 
             this.comIsLigation.FormattingEnabled = true;
             this.comIsLigation.Location = new System.Drawing.Point(500, 116);
-            this.comIsLigation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comIsLigation.Margin = new System.Windows.Forms.Padding(4);
             this.comIsLigation.Name = "comIsLigation";
             this.comIsLigation.Size = new System.Drawing.Size(132, 30);
             this.comIsLigation.TabIndex = 50;
@@ -643,7 +603,7 @@ namespace 我救浪
             // 
             this.comGenderID.FormattingEnabled = true;
             this.comGenderID.Location = new System.Drawing.Point(168, 74);
-            this.comGenderID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comGenderID.Margin = new System.Windows.Forms.Padding(4);
             this.comGenderID.Name = "comGenderID";
             this.comGenderID.Size = new System.Drawing.Size(132, 30);
             this.comGenderID.TabIndex = 59;
@@ -662,7 +622,7 @@ namespace 我救浪
             // 
             this.comcolorID.FormattingEnabled = true;
             this.comcolorID.Location = new System.Drawing.Point(168, 116);
-            this.comcolorID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comcolorID.Margin = new System.Windows.Forms.Padding(4);
             this.comcolorID.Name = "comcolorID";
             this.comcolorID.Size = new System.Drawing.Size(132, 30);
             this.comcolorID.TabIndex = 52;
@@ -694,7 +654,7 @@ namespace 我救浪
             this.tabPage1.Controls.Add(this.comboBox8);
             this.tabPage1.Controls.Add(this.label27);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1415, 690);
             this.tabPage1.TabIndex = 9;
@@ -719,9 +679,9 @@ namespace 我救浪
             this.groupBox3.Controls.Add(this.comboBox6);
             this.groupBox3.Controls.Add(this.comboBox7);
             this.groupBox3.Location = new System.Drawing.Point(295, 36);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(951, 588);
             this.groupBox3.TabIndex = 102;
             this.groupBox3.TabStop = false;
@@ -731,7 +691,7 @@ namespace 我救浪
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(275, 151);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(132, 30);
             this.comboBox4.TabIndex = 82;
@@ -760,7 +720,7 @@ namespace 我救浪
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(275, 96);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(132, 30);
             this.comboBox3.TabIndex = 84;
@@ -778,7 +738,7 @@ namespace 我救浪
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(245, 488);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(153, 51);
             this.button3.TabIndex = 97;
@@ -789,7 +749,7 @@ namespace 我救浪
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(84, 488);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 51);
             this.button2.TabIndex = 96;
@@ -801,7 +761,7 @@ namespace 我救浪
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(275, 40);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(132, 30);
             this.comboBox2.TabIndex = 86;
@@ -820,7 +780,7 @@ namespace 我救浪
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(84, 229);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -841,7 +801,7 @@ namespace 我救浪
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(527, 151);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(132, 30);
             this.comboBox5.TabIndex = 94;
@@ -860,7 +820,7 @@ namespace 我救浪
             // 
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(527, 96);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(132, 30);
             this.comboBox6.TabIndex = 93;
@@ -869,7 +829,7 @@ namespace 我救浪
             // 
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(527, 40);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(132, 30);
             this.comboBox7.TabIndex = 92;
@@ -878,7 +838,7 @@ namespace 我救浪
             // 
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(120, 122);
-            this.comboBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox9.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(132, 30);
             this.comboBox9.TabIndex = 101;
@@ -897,7 +857,7 @@ namespace 我救浪
             // 
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(120, 82);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox8.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(132, 30);
             this.comboBox8.TabIndex = 99;
@@ -1024,6 +984,25 @@ namespace 我救浪
             this.comboBox1.Size = new System.Drawing.Size(92, 23);
             this.comboBox1.TabIndex = 4;
             // 
+            // btnproductsearch
+            // 
+            this.btnproductsearch.Location = new System.Drawing.Point(391, 297);
+            this.btnproductsearch.Name = "btnproductsearch";
+            this.btnproductsearch.Size = new System.Drawing.Size(85, 59);
+            this.btnproductsearch.TabIndex = 30;
+            this.btnproductsearch.Text = "查詢";
+            this.btnproductsearch.UseVisualStyleBackColor = true;
+            this.btnproductsearch.Click += new System.EventHandler(this.btnproductsearch_Click);
+            // 
+            // CombproductName
+            // 
+            this.CombproductName.FormattingEnabled = true;
+            this.CombproductName.Location = new System.Drawing.Point(215, 131);
+            this.CombproductName.Margin = new System.Windows.Forms.Padding(4);
+            this.CombproductName.Name = "CombproductName";
+            this.CombproductName.Size = new System.Drawing.Size(132, 30);
+            this.CombproductName.TabIndex = 31;
+            // 
             // Frm浪浪管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1083,11 +1062,7 @@ namespace 我救浪
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.ComboBox combSubcate;
-        private System.Windows.Forms.ComboBox comSup;
         private System.Windows.Forms.ComboBox comGenderID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comcolorID;
@@ -1141,5 +1116,7 @@ namespace 我救浪
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox rtxtdes;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnproductsearch;
+        private System.Windows.Forms.ComboBox CombproductName;
     }
 }
