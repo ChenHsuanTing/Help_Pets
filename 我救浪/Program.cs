@@ -20,8 +20,9 @@ namespace 我救浪
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Frm修改會員資料());
-            Application.Run(new Frm註冊());
+            //Application.Run(new Frm註冊());
             //Application.Run(new Frm_Shopping());
+            Application.Run(new 後臺_Frm訂單管理());
         }
     }
 }

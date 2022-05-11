@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static 我救浪.Frm員工登入;
 namespace 我救浪
 {
     public partial class 後臺_Frm訂單管理 : Form
@@ -239,7 +238,7 @@ namespace 我救浪
             var a = from i in dbContext.SubCategories
                     where i.Category.IsPet == false
                     select new { ItemName = i.SubCategoryName, ID = i.SubCategoryID };
-            combo1selected_SubCateID = (int)a.Select(n => n.ID).First();
+            
             foreach (var str in a)
             {
                 comboBox1.Items.Add(str.ItemName.Trim());
@@ -332,7 +331,9 @@ namespace 我救浪
         //comboBox1 種類
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            combo1selected_SubCateID = dbContext.SubCategories.Where(m => m.SubCategoryName == comboBox1.SelectedItem.ToString()).Select(n => n.SubCategoryID).ToList().First();
             comboBox2.Items.Clear();
+            comboBox2.Text = "";
             var a = from i in dbContext.Products
                     where i.SubCategoryID == combo1selected_SubCateID
                     select new { ProductName = i.ProductName, ProductID = i.ProductID };
@@ -340,6 +341,15 @@ namespace 我救浪
             {
                 comboBox2.Items.Add(i.ProductName);
             }
+            try
+            {
+                comboBox2.SelectedIndex = 0;
+            }
+            catch(Exception ex)
+            { 
+                MessageBox.Show("無商品");
+            }
+            
         }
         //comboBox2 品名
         string combo2selected_ProductName;
