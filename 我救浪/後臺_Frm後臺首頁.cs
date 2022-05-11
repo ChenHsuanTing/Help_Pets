@@ -72,5 +72,14 @@ namespace 我救浪
             splitContainer2.Panel2.Controls.Add(frm);
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            splitContainer2.Panel2.Controls.Clear();
+            Frm浪浪管理 frm = new Frm浪浪管理();
+            frm.TopLevel = false;
+            splitContainer2.Panel2.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }
