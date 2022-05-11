@@ -358,6 +358,7 @@ namespace 我救浪
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "後臺_Frm類別管理";
             this.Text = "FrmNewCategory";
             this.Load += new System.EventHandler(this.FrmNewCategory_Load);
