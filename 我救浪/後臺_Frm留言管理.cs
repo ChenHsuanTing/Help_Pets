@@ -19,7 +19,7 @@ namespace 我救浪
             InitializeComponent();
             LoadYearToCombobox();
             //LoadMonthToCombobox();
-            LoadGradeToCombobox();
+            //LoadGradeToCombobox();
             LoadProductIDToCombobox();
         }
 
@@ -35,17 +35,17 @@ namespace 我救浪
             }
         }
 
-        private void LoadGradeToCombobox()
-        {
-            var q = from m in this.dbcontext.Member_Comment
-                    orderby m.Grade
-                    select m.Grade;
-            var Mgrade = q.Distinct();
-            foreach (var grade in Mgrade)
-            {
-                this.comboBox3.Items.Add(grade);
-            }
-        }
+        //private void LoadGradeToCombobox()
+        //{
+        //    var q = from m in this.dbcontext.Member_Comment
+        //            orderby m.Grade
+        //            select m.Grade;
+        //    var Mgrade = q.Distinct();
+        //    foreach (var grade in Mgrade)
+        //    {
+        //        this.comboBox3.Items.Add(grade);
+        //    }
+        //}
 
         private void LoadYearToCombobox()
         {
@@ -328,16 +328,26 @@ namespace 我救浪
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtProducts.Text = dataGridView1.CurrentRow.Cells["ProductID"].Value.ToString();
+            txtMember.Text = dataGridView1.CurrentRow.Cells["MemberID"].Value.ToString();
+            comboBox3.Text = dataGridView1.CurrentRow.Cells["Grade"].Value.ToString();
+            txtComment.Text = dataGridView1.CurrentRow.Cells["Description"].Value.ToString();
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.comboBox2.Text = "";
             this.comboBox2.Items.Clear();
-            var q = from m in this.dbcontext.Member_Comment
-                    orderby m.CommentDate
-                    where m.CommentDate.Value.Year.ToString() == comboBox1.SelectedItem.ToString()
-                    select m;
+            var q = (from m in this.dbcontext.Member_Comment
+                     orderby m.CommentDate
+                     where m.CommentDate.Value.Year.ToString() == comboBox1.SelectedItem.ToString()
+                     select m.CommentDate.Value.Month).Distinct();
+
             foreach (var n in q)
             {
-                this.comboBox2.Items.Add(n.CommentDate.Value.Month);
+                this.comboBox2.Items.Add(n);
             }
         }
     }
