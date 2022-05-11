@@ -16,8 +16,10 @@ namespace 我救浪
         {
             InitializeComponent();
             Usernametxt.Focus();
+
         }
         我救浪Entities dbContext = new 我救浪Entities();
+        public static int empID = 1;
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -37,8 +39,8 @@ namespace 我救浪
             string Password = Passwordtxt.Text;
 
             var q = from m in dbContext.Employees
-                    where m.Phone == UserName&& m.Password == Password
-                    select m;
+                    where m.Phone == UserName && m.Password == Password
+                    select m.EmpoyeeID;
 
             if (UserName == "")
             {
@@ -49,12 +51,13 @@ namespace 我救浪
             {
                 MessageBox.Show("請輸入密碼", "登入失敗 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (q.ToList().Count !=0)
+            else if (q.ToList().Count != 0)
             {
                 MessageBox.Show("登入成功");
                 FrmAdmin f = new FrmAdmin();
                 f.Show();
-             
+                empID = q.ToList().First();
+                MessageBox.Show("Test   " + empID);
             }
             else
             {

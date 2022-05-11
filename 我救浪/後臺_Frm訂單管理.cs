@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static 我救浪.Frm員工登入;
 namespace 我救浪
 {
     public partial class 後臺_Frm訂單管理 : Form
@@ -161,7 +161,7 @@ namespace 我救浪
                             {
                                 //OrderID = 0,  /*可以隨便放?*/
                                 MemberID = memberID_forInsert,
-                                EmployeeID = 1,  /*TODO  抓登入empID*/
+                                EmployeeID = Frm員工登入.empID,  /*TODO  抓登入empID*/
                                 OrderDate = DateTime.Parse(DateTime_str),
                                 SendAddress = sendAdress,
                                 Order_StatusID = 2, /*預設未送達?*/
