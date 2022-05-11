@@ -48,9 +48,8 @@
         <AssociationConnector Association="我救浪Model.FK_Orders_Member" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Comment_Product" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Color_Member_Wish" ManuallyRouted="false" />
-        <AssociationConnector Association="我救浪Model.FK_Member_Wish_Size_Member_Wish" ManuallyRouted="false" />
+        <AssociationConnector Association="我救浪Model.FK_Member_Wish_Size" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_SubCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="我救浪Model.FK_Member_Wish_Size_Size" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_MyFavorite_Product1" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Order_Detail_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Order_Detail_Product" ManuallyRouted="false" />

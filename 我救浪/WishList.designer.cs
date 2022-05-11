@@ -42,21 +42,18 @@ namespace PetAdopt
             System.Windows.Forms.Label colorIDLabel;
             System.Windows.Forms.Label sizeIDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WishList));
-            this.button1 = new System.Windows.Forms.Button();
             this.memberIDTextBox = new System.Windows.Forms.TextBox();
-            this.cityIDTextBox = new System.Windows.Forms.TextBox();
-            this.yearCostTextBox = new System.Windows.Forms.TextBox();
-            this.spaceTextBox = new System.Windows.Forms.TextBox();
-            this.accompanyTimeWeekTextBox = new System.Windows.Forms.TextBox();
+            this.txtCityID = new System.Windows.Forms.TextBox();
+            this.txtYearCost = new System.Windows.Forms.TextBox();
+            this.txtSpace = new System.Windows.Forms.TextBox();
+            this.txtTimeWeek = new System.Windows.Forms.TextBox();
             this.subCategoryIDTextBox = new System.Windows.Forms.TextBox();
             this.genderIDTextBox = new System.Windows.Forms.TextBox();
-            this.colorIDTextBox = new System.Windows.Forms.TextBox();
+            this.txtColorID = new System.Windows.Forms.TextBox();
             this.member_Wish_SizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sizeIDTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAgeID = new System.Windows.Forms.TextBox();
+            this.txtLigationID = new System.Windows.Forms.TextBox();
             memberIDLabel = new System.Windows.Forms.Label();
             cityIDLabel = new System.Windows.Forms.Label();
             yearCostLabel = new System.Windows.Forms.Label();
@@ -157,7 +154,7 @@ namespace PetAdopt
             subCategoryIDLabel.Name = "subCategoryIDLabel";
             subCategoryIDLabel.Size = new System.Drawing.Size(46, 21);
             subCategoryIDLabel.TabIndex = 52;
-            subCategoryIDLabel.Text = "種類:";
+            subCategoryIDLabel.Text = "品種:";
             // 
             // genderIDLabel
             // 
@@ -192,21 +189,6 @@ namespace PetAdopt
             sizeIDLabel.TabIndex = 60;
             sizeIDLabel.Text = "體型:";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(22, 398);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 31);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "修改";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // memberIDTextBox
             // 
             this.memberIDTextBox.Location = new System.Drawing.Point(141, 12);
@@ -214,33 +196,33 @@ namespace PetAdopt
             this.memberIDTextBox.Size = new System.Drawing.Size(104, 22);
             this.memberIDTextBox.TabIndex = 37;
             // 
-            // cityIDTextBox
+            // txtCityID
             // 
-            this.cityIDTextBox.Location = new System.Drawing.Point(141, 288);
-            this.cityIDTextBox.Name = "cityIDTextBox";
-            this.cityIDTextBox.Size = new System.Drawing.Size(104, 22);
-            this.cityIDTextBox.TabIndex = 39;
+            this.txtCityID.Location = new System.Drawing.Point(141, 288);
+            this.txtCityID.Name = "txtCityID";
+            this.txtCityID.Size = new System.Drawing.Size(104, 22);
+            this.txtCityID.TabIndex = 39;
             // 
-            // yearCostTextBox
+            // txtYearCost
             // 
-            this.yearCostTextBox.Location = new System.Drawing.Point(141, 322);
-            this.yearCostTextBox.Name = "yearCostTextBox";
-            this.yearCostTextBox.Size = new System.Drawing.Size(104, 22);
-            this.yearCostTextBox.TabIndex = 41;
+            this.txtYearCost.Location = new System.Drawing.Point(141, 322);
+            this.txtYearCost.Name = "txtYearCost";
+            this.txtYearCost.Size = new System.Drawing.Size(104, 22);
+            this.txtYearCost.TabIndex = 41;
             // 
-            // spaceTextBox
+            // txtSpace
             // 
-            this.spaceTextBox.Location = new System.Drawing.Point(141, 356);
-            this.spaceTextBox.Name = "spaceTextBox";
-            this.spaceTextBox.Size = new System.Drawing.Size(104, 22);
-            this.spaceTextBox.TabIndex = 43;
+            this.txtSpace.Location = new System.Drawing.Point(141, 356);
+            this.txtSpace.Name = "txtSpace";
+            this.txtSpace.Size = new System.Drawing.Size(104, 22);
+            this.txtSpace.TabIndex = 43;
             // 
-            // accompanyTimeWeekTextBox
+            // txtTimeWeek
             // 
-            this.accompanyTimeWeekTextBox.Location = new System.Drawing.Point(141, 220);
-            this.accompanyTimeWeekTextBox.Name = "accompanyTimeWeekTextBox";
-            this.accompanyTimeWeekTextBox.Size = new System.Drawing.Size(104, 22);
-            this.accompanyTimeWeekTextBox.TabIndex = 49;
+            this.txtTimeWeek.Location = new System.Drawing.Point(141, 220);
+            this.txtTimeWeek.Name = "txtTimeWeek";
+            this.txtTimeWeek.Size = new System.Drawing.Size(104, 22);
+            this.txtTimeWeek.TabIndex = 49;
             // 
             // subCategoryIDTextBox
             // 
@@ -256,12 +238,12 @@ namespace PetAdopt
             this.genderIDTextBox.Size = new System.Drawing.Size(104, 22);
             this.genderIDTextBox.TabIndex = 55;
             // 
-            // colorIDTextBox
+            // txtColorID
             // 
-            this.colorIDTextBox.Location = new System.Drawing.Point(141, 254);
-            this.colorIDTextBox.Name = "colorIDTextBox";
-            this.colorIDTextBox.Size = new System.Drawing.Size(104, 22);
-            this.colorIDTextBox.TabIndex = 60;
+            this.txtColorID.Location = new System.Drawing.Point(141, 254);
+            this.txtColorID.Name = "txtColorID";
+            this.txtColorID.Size = new System.Drawing.Size(104, 22);
+            this.txtColorID.TabIndex = 60;
             // 
             // member_Wish_SizeBindingSource
             // 
@@ -269,93 +251,56 @@ namespace PetAdopt
             // 
             // sizeIDTextBox
             // 
-            this.sizeIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.member_Wish_SizeBindingSource, "SizeID", true));
             this.sizeIDTextBox.Location = new System.Drawing.Point(141, 114);
             this.sizeIDTextBox.Name = "sizeIDTextBox";
             this.sizeIDTextBox.Size = new System.Drawing.Size(104, 22);
             this.sizeIDTextBox.TabIndex = 61;
             // 
-            // button2
+            // txtAgeID
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(92, 398);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 31);
-            this.button2.TabIndex = 62;
-            this.button2.Text = "確認";
-            this.button2.UseVisualStyleBackColor = false;
+            this.txtAgeID.Location = new System.Drawing.Point(141, 152);
+            this.txtAgeID.Name = "txtAgeID";
+            this.txtAgeID.Size = new System.Drawing.Size(104, 22);
+            this.txtAgeID.TabIndex = 64;
             // 
-            // button3
+            // txtLigationID
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(162, 398);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 31);
-            this.button3.TabIndex = 63;
-            this.button3.Text = "匯入";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.member_Wish_SizeBindingSource, "SizeID", true));
-            this.textBox1.Location = new System.Drawing.Point(141, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(104, 22);
-            this.textBox1.TabIndex = 64;
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.member_Wish_SizeBindingSource, "SizeID", true));
-            this.textBox2.Location = new System.Drawing.Point(141, 188);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(104, 22);
-            this.textBox2.TabIndex = 65;
+            this.txtLigationID.Location = new System.Drawing.Point(141, 188);
+            this.txtLigationID.Name = "txtLigationID";
+            this.txtLigationID.Size = new System.Drawing.Size(104, 22);
+            this.txtLigationID.TabIndex = 65;
             // 
             // WishList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(257, 447);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(257, 387);
+            this.Controls.Add(this.txtLigationID);
+            this.Controls.Add(this.txtAgeID);
             this.Controls.Add(sizeIDLabel);
             this.Controls.Add(this.sizeIDTextBox);
             this.Controls.Add(colorIDLabel);
-            this.Controls.Add(this.colorIDTextBox);
+            this.Controls.Add(this.txtColorID);
             this.Controls.Add(memberIDLabel);
             this.Controls.Add(this.memberIDTextBox);
             this.Controls.Add(cityIDLabel);
-            this.Controls.Add(this.cityIDTextBox);
+            this.Controls.Add(this.txtCityID);
             this.Controls.Add(yearCostLabel);
-            this.Controls.Add(this.yearCostTextBox);
+            this.Controls.Add(this.txtYearCost);
             this.Controls.Add(spaceLabel);
-            this.Controls.Add(this.spaceTextBox);
+            this.Controls.Add(this.txtSpace);
             this.Controls.Add(ageLabel);
             this.Controls.Add(accompanyTimeWeekLabel);
-            this.Controls.Add(this.accompanyTimeWeekTextBox);
+            this.Controls.Add(this.txtTimeWeek);
             this.Controls.Add(isLigationLabel);
             this.Controls.Add(subCategoryIDLabel);
             this.Controls.Add(this.subCategoryIDTextBox);
             this.Controls.Add(genderIDLabel);
             this.Controls.Add(this.genderIDTextBox);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "WishList";
             this.Text = "願望清單";
-            this.Load += new System.EventHandler(this.WishList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.member_Wish_SizeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -363,24 +308,21 @@ namespace PetAdopt
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         //private 陳老師的動物之家DataSetTableAdapters.Member_WishTableAdapter member_WishTableAdapter;
         //private 陳老師的動物之家DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         //private 陳老師的動物之家DataSetTableAdapters.Member_Wish_ColorTableAdapter member_Wish_ColorTableAdapter;
         private System.Windows.Forms.TextBox memberIDTextBox;
-        private System.Windows.Forms.TextBox cityIDTextBox;
-        private System.Windows.Forms.TextBox yearCostTextBox;
-        private System.Windows.Forms.TextBox spaceTextBox;
-        private System.Windows.Forms.TextBox accompanyTimeWeekTextBox;
+        private System.Windows.Forms.TextBox txtCityID;
+        private System.Windows.Forms.TextBox txtYearCost;
+        private System.Windows.Forms.TextBox txtSpace;
+        private System.Windows.Forms.TextBox txtTimeWeek;
         private System.Windows.Forms.TextBox subCategoryIDTextBox;
         private System.Windows.Forms.TextBox genderIDTextBox;
         //private 陳老師的動物之家DataSetTableAdapters.Member_Wish_SizeTableAdapter member_Wish_SizeTableAdapter;
-        private System.Windows.Forms.TextBox colorIDTextBox;
+        private System.Windows.Forms.TextBox txtColorID;
         private System.Windows.Forms.BindingSource member_Wish_SizeBindingSource;
         private System.Windows.Forms.TextBox sizeIDTextBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAgeID;
+        private System.Windows.Forms.TextBox txtLigationID;
     }
 }

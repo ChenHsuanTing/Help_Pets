@@ -30,6 +30,7 @@ namespace 我救浪
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtComment = new System.Windows.Forms.RichTextBox();
             this.txtMember = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@ namespace 我救浪
             this.label3 = new System.Windows.Forms.Label();
             this.btnProductSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtComment = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -91,6 +91,14 @@ namespace 我救浪
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "評論異動";
+            // 
+            // txtComment
+            // 
+            this.txtComment.Location = new System.Drawing.Point(19, 117);
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(376, 158);
+            this.txtComment.TabIndex = 12;
+            this.txtComment.Text = "";
             // 
             // txtMember
             // 
@@ -396,20 +404,13 @@ namespace 我救浪
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // txtComment
-            // 
-            this.txtComment.Location = new System.Drawing.Point(19, 117);
-            this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(376, 158);
-            this.txtComment.TabIndex = 12;
-            this.txtComment.Text = "";
-            // 
             // 後臺_Frm留言管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 682);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "後臺_Frm留言管理";
             this.Text = "Frmmembercomment";
             this.groupBox2.ResumeLayout(false);
