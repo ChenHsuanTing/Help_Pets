@@ -29,7 +29,6 @@ namespace 我救浪
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> SupplierID { get; set; }
         public Nullable<bool> IsPet { get; set; }
-        public Nullable<bool> DisContinued { get; set; }
         public string Description { get; set; }
         public Nullable<int> UnitsInStock { get; set; }
     
