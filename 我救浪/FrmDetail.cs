@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 我救浪;
 using static PetAdopt.FormPetAdopt;
 
 namespace PetAdopt
@@ -23,7 +24,7 @@ namespace PetAdopt
                                   catename = n.Product.SubCategory.Category.CategoryName,
                                   gender = n.Gender.GenderType,
                                   size = n.Size.SizeType,
-                                  age = n.Age1.AgeType,
+                                  age = n.Age.AgeType,
                                   ligation = n.Ligation.LigationType,
                                   color = n.Color.ColorName,
                                   space = n.Space,
