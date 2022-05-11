@@ -47,5 +47,6 @@ namespace 我救浪
         public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<SubCategory> SubCategories { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

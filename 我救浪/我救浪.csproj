@@ -167,6 +167,9 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="WishList.cs">
       <SubType>Form</SubType>
     </Compile>
