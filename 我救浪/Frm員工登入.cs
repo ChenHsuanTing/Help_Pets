@@ -57,7 +57,6 @@ namespace 我救浪
                 FrmAdmin f = new FrmAdmin();
                 f.Show();
                 empID = q.ToList().First();
-                MessageBox.Show("Test   " + empID);
             }
             else
             {
