@@ -27,7 +27,6 @@
         <EntityTypeShape EntityType="我救浪Model.Size" Width="1.5" PointX="0.75" PointY="38.625" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.SubCategory" Width="1.5" PointX="1.5" PointY="26.75" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Supplier" Width="1.5" PointX="1.5" PointY="32.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Age" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Pet_Detail_Age" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_SubCategory_Category" ManuallyRouted="false" />

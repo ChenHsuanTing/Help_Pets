@@ -50,7 +50,7 @@ namespace 我救浪
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FrmAdmin frm = new FrmAdmin();
+            Frm浪浪管理 frm = new Frm浪浪管理();
             ShowForm(frm);
         }
 
