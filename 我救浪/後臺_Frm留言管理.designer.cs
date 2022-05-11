@@ -30,6 +30,8 @@ namespace 我救浪
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMember = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -52,14 +54,12 @@ namespace 我救浪
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnDateSearch = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtComment = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMember = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnProductSearch = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnProductSearch = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtComment = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,15 +67,15 @@ namespace 我救浪
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtComment);
             this.groupBox2.Controls.Add(this.txtMember);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtComment);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.btnCreate);
@@ -91,6 +91,22 @@ namespace 我救浪
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "評論異動";
+            // 
+            // txtMember
+            // 
+            this.txtMember.Location = new System.Drawing.Point(283, 23);
+            this.txtMember.Name = "txtMember";
+            this.txtMember.Size = new System.Drawing.Size(59, 29);
+            this.txtMember.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(191, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 22);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "會員編號 :";
             // 
             // btnDelete
             // 
@@ -125,10 +141,16 @@ namespace 我救浪
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.comboBox3.Location = new System.Drawing.Point(283, 76);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(59, 29);
-            this.comboBox3.TabIndex = 7;
+            this.comboBox3.TabIndex = 4;
             // 
             // label6
             // 
@@ -258,7 +280,7 @@ namespace 我救浪
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(211, 37);
+            this.label5.Location = new System.Drawing.Point(218, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 22);
             this.label5.TabIndex = 5;
@@ -267,7 +289,7 @@ namespace 我救浪
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 38);
+            this.label4.Location = new System.Drawing.Point(98, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 22);
             this.label4.TabIndex = 4;
@@ -276,26 +298,26 @@ namespace 我救浪
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(126, 33);
+            this.comboBox2.Location = new System.Drawing.Point(133, 33);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(72, 29);
+            this.comboBox2.Size = new System.Drawing.Size(79, 29);
             this.comboBox2.TabIndex = 3;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 33);
+            this.comboBox1.Location = new System.Drawing.Point(6, 33);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 29);
+            this.comboBox1.Size = new System.Drawing.Size(79, 29);
             this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // btnDateSearch
             // 
-            this.btnDateSearch.Location = new System.Drawing.Point(253, 33);
+            this.btnDateSearch.Location = new System.Drawing.Point(281, 22);
             this.btnDateSearch.Name = "btnDateSearch";
-            this.btnDateSearch.Size = new System.Drawing.Size(85, 28);
-            this.btnDateSearch.TabIndex = 1;
+            this.btnDateSearch.Size = new System.Drawing.Size(85, 39);
+            this.btnDateSearch.TabIndex = 4;
             this.btnDateSearch.Text = "查詢";
             this.btnDateSearch.UseVisualStyleBackColor = true;
             this.btnDateSearch.Click += new System.EventHandler(this.btnDateSearch_Click);
@@ -321,41 +343,6 @@ namespace 我救浪
             this.splitContainer1.SplitterDistance = 315;
             this.splitContainer1.TabIndex = 9;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 53;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1173, 363);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // txtComment
-            // 
-            this.txtComment.Location = new System.Drawing.Point(24, 111);
-            this.txtComment.Multiline = true;
-            this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(360, 156);
-            this.txtComment.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(191, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 22);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "會員編號 :";
-            // 
-            // txtMember
-            // 
-            this.txtMember.Location = new System.Drawing.Point(283, 23);
-            this.txtMember.Name = "txtMember";
-            this.txtMember.Size = new System.Drawing.Size(59, 29);
-            this.txtMember.TabIndex = 12;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.comboBox4);
@@ -369,15 +356,13 @@ namespace 我救浪
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "產品編號查詢";
             // 
-            // btnProductSearch
+            // comboBox4
             // 
-            this.btnProductSearch.Location = new System.Drawing.Point(40, 127);
-            this.btnProductSearch.Name = "btnProductSearch";
-            this.btnProductSearch.Size = new System.Drawing.Size(96, 32);
-            this.btnProductSearch.TabIndex = 5;
-            this.btnProductSearch.Text = "查詢";
-            this.btnProductSearch.UseVisualStyleBackColor = true;
-            this.btnProductSearch.Click += new System.EventHandler(this.btnProductSearch_Click);
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(40, 79);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(96, 29);
+            this.comboBox4.TabIndex = 4;
             // 
             // label3
             // 
@@ -389,21 +374,43 @@ namespace 我救浪
             this.label3.TabIndex = 7;
             this.label3.Text = "請選擇產品編號";
             // 
-            // comboBox4
+            // btnProductSearch
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(40, 79);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(96, 29);
-            this.comboBox4.TabIndex = 8;
+            this.btnProductSearch.Location = new System.Drawing.Point(40, 127);
+            this.btnProductSearch.Name = "btnProductSearch";
+            this.btnProductSearch.Size = new System.Drawing.Size(96, 32);
+            this.btnProductSearch.TabIndex = 5;
+            this.btnProductSearch.Text = "查詢";
+            this.btnProductSearch.UseVisualStyleBackColor = true;
+            this.btnProductSearch.Click += new System.EventHandler(this.btnProductSearch_Click);
             // 
-            // Frmmembercomment
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 53;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(1173, 363);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // txtComment
+            // 
+            this.txtComment.Location = new System.Drawing.Point(19, 117);
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(376, 158);
+            this.txtComment.TabIndex = 12;
+            this.txtComment.Text = "";
+            // 
+            // 後臺_Frm留言管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 682);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Frmmembercomment";
+            this.Name = "後臺_Frm留言管理";
             this.Text = "Frmmembercomment";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -414,9 +421,9 @@ namespace 我救浪
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,12 +454,12 @@ namespace 我救浪
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.TextBox txtMember;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnProductSearch;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox txtComment;
     }
 }

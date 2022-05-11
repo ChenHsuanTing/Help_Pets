@@ -84,7 +84,7 @@ namespace 我救浪
             else
             {
                 var sub = (from s in this.dbcontext.SubCategories.AsEnumerable()
-                           where s.CategoryID == (int)cbPetMainCategory.SelectedValue
+                           where s.SubCategoryID == (int)cbPetSubCategory.SelectedValue 
                            select s).FirstOrDefault();
 
                 if (sub == null) return;
