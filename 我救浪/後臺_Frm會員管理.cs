@@ -26,21 +26,26 @@ namespace WindowsFormsApp1
         {
             //comboCity.Items.Clear();
             var q = from c in dbContext.Cities
+                    orderby c.CityID
                     select new { CityName = c.CityName, CityID = c.CityID };
 
-            comboCity.DataSource = q.ToList();
+            comboCity.DataSource = q.Skip(1).ToList();
             comboCity.DisplayMember = "CityName";
             comboCity.ValueMember = "CityID";
         }
 
         private void LoadToComboboxNO()
         {
-            var q = from c in dbContext.Cities
-                    select new { CityName = c.CityName, CityID = c.CityID };
+            var q = from m in dbContext.Members.AsEnumerable()
+                    orderby m.MemberID ascending
+                    select m.MemberID;
 
-            comboCity.DataSource = q.ToList();
-            comboCity.DisplayMember = "CityName";
-            comboCity.ValueMember = "CityID";
+            foreach (var m in q)
+            {
+                comboBoxMemNO.Items.Add(m);
+            }
+
+            comboBoxMemNO.Items.Add("---All---");
 
         }
         private void LoadMember()

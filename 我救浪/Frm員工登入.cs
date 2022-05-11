@@ -54,15 +54,27 @@ namespace 我救浪
             else if (q.ToList().Count != 0)
             {
                 MessageBox.Show("登入成功");
-                FrmAdmin f = new FrmAdmin();
-                f.Show();
+                
                 empID = q.ToList().First();
             }
             else
             {
                 MessageBox.Show("ID或密碼輸入錯誤", "登入失敗 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            //this.Close();
+            Frm0 f = new Frm0();
+            f.Show();
+            //FrmAdmin f = new FrmAdmin();
+            //f.Show();
+        }
+
+        private void Frm員工登入_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Passwordtxt.UseSystemPasswordChar = !Passwordtxt.UseSystemPasswordChar;
         }
     }
 }

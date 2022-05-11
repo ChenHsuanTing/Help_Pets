@@ -29,7 +29,7 @@ namespace 我救浪
             var q = from m in dbContext.Cities.AsEnumerable()
                           orderby m.CityID ascending
                     select new { CityName=m.CityName,CityID=m.CityID };
-            comboBoxCity.DataSource = q.ToList();
+            comboBoxCity.DataSource = q.Skip(1).ToList();
             comboBoxCity.DisplayMember = "CityName";
             comboBoxCity.ValueMember = "CityID";
             
@@ -136,6 +136,19 @@ namespace 我救浪
 
                 MessageBox.Show("驗證成功");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        //todo 增加驗證碼
+        //todo增加信箱密碼字元辨識
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
+            txtPassword1.UseSystemPasswordChar = !txtPassword1.UseSystemPasswordChar;
+
         }
     }
 }
