@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -172,6 +173,12 @@
     <Compile Include="WishList.designer.cs">
       <DependentUpon>WishList.cs</DependentUpon>
     </Compile>
+    <Compile Include="後台_Frm浪浪管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="後台_Frm浪浪管理.designer.cs">
+      <DependentUpon>後台_Frm浪浪管理.cs</DependentUpon>
+    </Compile>
     <Compile Include="後臺_Frm商品管理.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WishList.resx">
       <DependentUpon>WishList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="後台_Frm浪浪管理.resx">
+      <DependentUpon>後台_Frm浪浪管理.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="後臺_Frm商品管理.resx">
       <DependentUpon>後臺_Frm商品管理.cs</DependentUpon>
