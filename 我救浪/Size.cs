@@ -19,6 +19,7 @@ namespace 我救浪
         {
             this.Member_Wish_Size = new HashSet<Member_Wish_Size>();
             this.Pet_Detail = new HashSet<Pet_Detail>();
+            this.Member_Wish = new HashSet<Member_Wish>();
         }
     
         public int SizeID { get; set; }
@@ -28,5 +29,7 @@ namespace 我救浪
         public virtual ICollection<Member_Wish_Size> Member_Wish_Size { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pet_Detail> Pet_Detail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Member_Wish> Member_Wish { get; set; }
     }
 }

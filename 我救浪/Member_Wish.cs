@@ -25,12 +25,12 @@ namespace 我救浪
         public Nullable<int> CityID { get; set; }
         public Nullable<decimal> YearCost { get; set; }
         public Nullable<int> Space { get; set; }
-        public string Size { get; set; }
         public Nullable<int> AgeID { get; set; }
         public Nullable<int> AccompanyTimeWeek { get; set; }
         public Nullable<int> LigationID { get; set; }
         public int SubCategoryID { get; set; }
         public Nullable<int> GenderID { get; set; }
+        public Nullable<int> SizeID { get; set; }
     
         public virtual Age Age { get; set; }
         public virtual City City { get; set; }
@@ -42,5 +42,6 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Wish_Size> Member_Wish_Size { get; set; }
         public virtual SubCategory SubCategory { get; set; }
+        public virtual Size Size1 { get; set; }
     }
 }

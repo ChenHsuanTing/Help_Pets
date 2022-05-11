@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Age">
           <Key>
             <PropertyRef Name="AgeID" />
@@ -90,7 +90,7 @@
           <Property Name="CityID" Type="int" />
           <Property Name="YearCost" Type="money" />
           <Property Name="Space" Type="int" />
-          <Property Name="Size" Type="nchar" MaxLength="1" />
+          <Property Name="SizeID" Type="int" />
           <Property Name="AgeID" Type="int" />
           <Property Name="AccompanyTimeWeek" Type="int" />
           <Property Name="LigationID" Type="int" />
@@ -343,26 +343,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Member_Wish_Size_Member_Wish">
-          <End Role="Member_Wish" Type="Self.Member_Wish" Multiplicity="0..1" />
-          <End Role="Member_Wish_Size" Type="Self.Member_Wish_Size" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Member_Wish">
-              <PropertyRef Name="MemberID" />
-            </Principal>
-            <Dependent Role="Member_Wish_Size">
-              <PropertyRef Name="MemberID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Member_Wish_Size_Size">
+        <Association Name="FK_Member_Wish_Size">
           <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
-          <End Role="Member_Wish_Size" Type="Self.Member_Wish_Size" Multiplicity="*" />
+          <End Role="Member_Wish" Type="Self.Member_Wish" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Size">
               <PropertyRef Name="SizeID" />
             </Principal>
-            <Dependent Role="Member_Wish_Size">
+            <Dependent Role="Member_Wish">
               <PropertyRef Name="SizeID" />
             </Dependent>
           </ReferentialConstraint>
@@ -662,13 +650,9 @@
             <End Role="Ligation" EntitySet="Ligation" />
             <End Role="Member_Wish" EntitySet="Member_Wish" />
           </AssociationSet>
-          <AssociationSet Name="FK_Member_Wish_Size_Member_Wish" Association="Self.FK_Member_Wish_Size_Member_Wish">
-            <End Role="Member_Wish" EntitySet="Member_Wish" />
-            <End Role="Member_Wish_Size" EntitySet="Member_Wish_Size" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Member_Wish_Size_Size" Association="Self.FK_Member_Wish_Size_Size">
+          <AssociationSet Name="FK_Member_Wish_Size" Association="Self.FK_Member_Wish_Size">
             <End Role="Size" EntitySet="Size" />
-            <End Role="Member_Wish_Size" EntitySet="Member_Wish_Size" />
+            <End Role="Member_Wish" EntitySet="Member_Wish" />
           </AssociationSet>
           <AssociationSet Name="FK_Member_Wish_SubCategory" Association="Self.FK_Member_Wish_SubCategory">
             <End Role="SubCategory" EntitySet="SubCategory" />
@@ -747,8 +731,7 @@
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="我救浪Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -858,7 +841,6 @@
           <Property Name="CityID" Type="Int32" />
           <Property Name="YearCost" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Space" Type="Int32" />
-          <Property Name="Size" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
           <Property Name="AgeID" Type="Int32" />
           <Property Name="AccompanyTimeWeek" Type="Int32" />
           <Property Name="LigationID" Type="Int32" />
@@ -872,6 +854,8 @@
           <NavigationProperty Name="Member_Wish_Color" Relationship="Self.FK_Member_Wish_Color_Member_Wish" FromRole="Member_Wish" ToRole="Member_Wish_Color" />
           <NavigationProperty Name="Member_Wish_Size" Relationship="Self.FK_Member_Wish_Size_Member_Wish" FromRole="Member_Wish" ToRole="Member_Wish_Size" />
           <NavigationProperty Name="SubCategory" Relationship="Self.FK_Member_Wish_SubCategory" FromRole="Member_Wish" ToRole="SubCategory" />
+          <Property Name="SizeID" Type="Int32" />
+          <NavigationProperty Name="Size1" Relationship="我救浪Model.FK_Member_Wish_Size" FromRole="Member_Wish" ToRole="Size" />
         </EntityType>
         <EntityType Name="Member_Wish_Color">
           <Key>
@@ -998,6 +982,7 @@
           <Property Name="SizeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Member_Wish_Size" Relationship="Self.FK_Member_Wish_Size_Size" FromRole="Size" ToRole="Member_Wish_Size" />
           <NavigationProperty Name="Pet_Detail" Relationship="Self.FK_Pet_Detail_Size" FromRole="Size" ToRole="Pet_Detail" />
+          <NavigationProperty Name="Member_Wish" Relationship="我救浪Model.FK_Member_Wish_Size" FromRole="Size" ToRole="Member_Wish" />
         </EntityType>
         <EntityType Name="SubCategory">
           <Key>
@@ -1557,7 +1542,23 @@
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
+          <AssociationSet Name="FK_Member_Wish_Size" Association="我救浪Model.FK_Member_Wish_Size">
+            <End Role="Size" EntitySet="Sizes" />
+            <End Role="Member_Wish" EntitySet="Member_Wish" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Member_Wish_Size">
+          <End Type="我救浪Model.Size" Role="Size" Multiplicity="0..1" />
+          <End Type="我救浪Model.Member_Wish" Role="Member_Wish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="Member_Wish">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1653,11 +1654,11 @@
           <EntitySetMapping Name="Member_Wish">
             <EntityTypeMapping TypeName="我救浪Model.Member_Wish">
               <MappingFragment StoreEntitySet="Member_Wish">
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="YearCost" ColumnName="YearCost" />
                 <ScalarProperty Name="Space" ColumnName="Space" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="AgeID" ColumnName="AgeID" />
                 <ScalarProperty Name="AccompanyTimeWeek" ColumnName="AccompanyTimeWeek" />
                 <ScalarProperty Name="LigationID" ColumnName="LigationID" />

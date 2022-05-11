@@ -59,6 +59,7 @@
         <AssociationConnector Association="我救浪Model.FK_Photo_Product" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Product_SubCategory" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Product_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="我救浪Model.FK_Member_Wish_Size" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
