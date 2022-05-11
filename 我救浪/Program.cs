@@ -21,6 +21,7 @@ namespace 我救浪
             //Application.Run(new 後臺_Frm訂單管理());
             //Application.Run(new Frm_Shopping());
             Application.Run(new Frm浪浪管理());
+            Application.Run(new 後臺_Frm留言管理());
         }
     }
 }

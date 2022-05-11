@@ -19,9 +19,9 @@ namespace 我救浪
             Loadsearchcombox();
         }
 
-       
 
-       
+
+
 
         我救浪Entities PetContext = new 我救浪Entities();
         void LoadPet_detail()
@@ -42,31 +42,29 @@ namespace 我救浪
                         n.Ligation.LigationType,
                         n.Description
                     };
-           
+
 
             this.dataGridViewPet.DataSource = q.ToList();
 
         }
 
-        
 
-       
+
+
 
         #region product
         private void btnproductadd_Click(object sender, EventArgs e)
         {//productAdd
-            var q = PetContext.SubCategories.Where(p => p.SubCategoryName == combSubcate.SelectedItem.ToString()).Select(p => p);
-            var suppierID = PetContext.Suppliers.Where(p => p.Name == comSup.SelectedItem.ToString()).Select(p => p);
-            Product pro = new Product
+
+            Product pro = new Product()
             {
                 ProductName = txtproductName.Text,
-
-                SubCategoryID = q.ToList()[0].SubCategoryID,
-                Price = 0,//.Convert.ToDecimal(txtprice.Text) ,
+                SubCategoryID = (int)combSubcate.SelectedValue,
+                Price = 0,
                 UnitsInStock = 1,
                 SupplierID = 3,
                 IsPet = true,
-                Description="棄養"
+                Description = "棄養"
             };
             this.PetContext.Products.Add(pro);
             this.PetContext.SaveChanges();
@@ -74,7 +72,7 @@ namespace 我救浪
             //this.Read_RefreshDataGridView();
             LoadAllCombobox();
         }
-        
+
         private void btnpudate_Click(object sender, EventArgs e)
         {//修改
 
@@ -90,23 +88,43 @@ namespace 我救浪
             btnproductsearch.PerformClick();
 
 
-
-
             //this.PetContext.SaveChanges();
             //this.Read_RefreshDataGridView();
             //LoadAllCombobox();
         }
         private void btndelete_Click(object sender, EventArgs e)
         {//刪除
-            var delete = (from n in PetContext.Products.AsEnumerable()
-                          where n.ProductID == (int)dataGridView4.CurrentRow.Cells[0].Value
-                         select n).FirstOrDefault();
+            try
+            {
+                var Products = (from p in this.PetContext.Products.AsEnumerable()
+                                where p.ProductID == int.Parse(this.dataGridView4.SelectedCells[0].Value.ToString())
+                                select p).FirstOrDefault();
 
-            this.PetContext.Products.Remove(delete);
-            this.PetContext.SaveChanges();
-            btnproductsearch.PerformClick();
-            //this.Read_RefreshDataGridView();
-            LoadAllCombobox();
+                if (Products == null) return;
+
+                this.PetContext.Products.Remove(Products);
+                this.PetContext.SaveChanges();
+                btnproductsearch.PerformClick();
+                MessageBox.Show("刪除成功");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("該產品尚有相關資訊未處理，請確認","警告");
+                this.PetContext = new 我救浪Entities();
+            }
+
+
+
+
+            //var delete = (from n in PetContext.Products.AsEnumerable()
+            //              where n.ProductID == (int)dataGridView4.CurrentRow.Cells[0].Value
+            //             select n).FirstOrDefault();
+
+            //this.PetContext.Products.Remove(delete);
+            //this.PetContext.SaveChanges();
+            //btnproductsearch.PerformClick();
+            ////this.Read_RefreshDataGridView();
+            //LoadAllCombobox();
         }
         void Read_RefreshDataGridView()
         {
@@ -144,7 +162,7 @@ namespace 我救浪
             this.comboBox8.DataSource = categoryname.ToList();
             this.comboBox8.DisplayMember = "CategoryName";
             this.comboBox8.ValueMember = "CategoryID";
-           // SubCategory
+            // SubCategory
             //var subcategory = from n in PetContext.Categories
             //                  where n.IsPet == true
             //                  select n;
@@ -196,9 +214,9 @@ namespace 我救浪
         void LoadAllCombobox()
         {
 
-          //Name
-          //var name = PetContext.Products.Select(n => n.ProductName);
-            var name = PetContext.Products.Where(p=>p.SubCategory.Category.IsPet==true).Select(n => n.ProductName);
+            //Name
+            //var name = PetContext.Products.Select(n => n.ProductName);
+            var name = PetContext.Products.Where(p => p.SubCategory.Category.IsPet == true).Select(n => n.ProductName);
             comName.Text = "浪浪名稱";
             this.comName.Items.Clear();
             foreach (var i in name.ToList())
@@ -270,7 +288,7 @@ namespace 我救浪
             combSubcate.ValueMember = "SubCategoryID";
             //供應商
             var Sup = PetContext.Suppliers.Select(n => n.Name);
-           comSup.Text = "供應商";
+            comSup.Text = "供應商";
             foreach (var i in Sup.ToList())
             {
                 comSup.Items.Add(i);
@@ -290,7 +308,7 @@ namespace 我救浪
         private void btnpetAdd_Click(object sender, EventArgs e)
         {
             //Pet Add
-            
+
             var petname = PetContext.Products.Where(p => p.ProductName == comName.SelectedItem.ToString()).Select(p => p);
             var gender = PetContext.Genders.Where(p => p.GenderType == comGenderID.SelectedItem.ToString()).Select(p => p);
             var color = PetContext.Colors.Where(p => p.ColorName == comcolorID.SelectedItem.ToString()).Select(p => p);
@@ -318,15 +336,15 @@ namespace 我救浪
             this.PetContext.Pet_Detail.Add(pet);
             this.PetContext.SaveChanges();
             this.Read_RefreshDataGridView();
-            
-            
+
+
 
         }
 
-         void saveimage()
+        void saveimage()
         {
             byte[] bytes;
-           
+
             pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -345,18 +363,18 @@ namespace 我救浪
 
 
             if (q == null) return;
-           
+
             q.LigationID = comIsLigation.SelectedIndex + 1;
             q.AgeID = comAge.SelectedIndex + 1;
-            q.GenderID = comGenderID.SelectedIndex+1;
-            q.ColorID = comcolorID.SelectedIndex+1;
-            q.CityID = comcityID.SelectedIndex+1;
-            q.YearCost =Convert.ToDecimal(txtYearcost.Text) ;
-            q.Space =Convert.ToInt32(txtspace.Text) ;
-            q.SizeID = comSizeID.SelectedIndex+1;
-            q.AccompanyTimeWeek =Convert.ToInt32(txtweek.Text) ;
+            q.GenderID = comGenderID.SelectedIndex + 1;
+            q.ColorID = comcolorID.SelectedIndex + 1;
+            q.CityID = comcityID.SelectedIndex + 1;
+            q.YearCost = Convert.ToDecimal(txtYearcost.Text);
+            q.Space = Convert.ToInt32(txtspace.Text);
+            q.SizeID = comSizeID.SelectedIndex + 1;
+            q.AccompanyTimeWeek = Convert.ToInt32(txtweek.Text);
             q.Description = rtxtdes.Text;
-            
+
 
             this.PetContext.SaveChanges();
             this.Read_RefreshDataGridView();
@@ -367,12 +385,12 @@ namespace 我救浪
             var ID = from n in PetContext.Pet_Detail
                      where n.Product.ProductName == comName.Text
                      select n;
-            foreach(var n in ID)
+            foreach (var n in ID)
             {
-                comGenderID.SelectedIndex = int.Parse(n.GenderID.ToString())-1;
-                comcolorID.SelectedIndex=int.Parse(n.ColorID.ToString()) - 1;
+                comGenderID.SelectedIndex = int.Parse(n.GenderID.ToString()) - 1;
+                comcolorID.SelectedIndex = int.Parse(n.ColorID.ToString()) - 1;
                 comcityID.SelectedIndex = int.Parse(n.CityID.ToString()) - 1;
-                txtYearcost.Text =n.YearCost.ToString() ;
+                txtYearcost.Text = n.YearCost.ToString();
                 txtspace.Text = n.Space.ToString();
                 comSizeID.SelectedIndex = int.Parse(n.SizeID.ToString()) - 1;
                 comAge.SelectedIndex = int.Parse(n.AgeID.ToString()) - 1;
@@ -381,7 +399,7 @@ namespace 我救浪
                 rtxtdes.Text = n.Description.ToString();
 
             }
-          
+
         }
         #endregion
 
@@ -394,23 +412,23 @@ namespace 我救浪
 
             this.PetContext.Pet_Detail.Remove(delete);
             this.PetContext.SaveChanges();
-           this.Read_RefreshDataGridView();
-            
+            this.Read_RefreshDataGridView();
+
         }
         object postion;
         private void dataGridViewPet_CellClick(object sender, DataGridViewCellEventArgs e)
         {//dataGridViewPet相對位置
             postion = dataGridViewPet.Rows[((DataGridView)sender).CurrentCell.RowIndex].Cells["ProductID"].Value;
-            LoadPicture((int)postion,pictureBox1);
+            LoadPicture((int)postion, pictureBox1);
         }
 
-        void LoadPicture(int poston,PictureBox pictureBox)
+        void LoadPicture(int poston, PictureBox pictureBox)
         {
             this.pictureBox1.Image = null;
             var pic = from n in PetContext.Photos.AsEnumerable()
                       where n.ProductID == (int)postion
                       select n;
-           this.pictureBox1.Image = null;
+            this.pictureBox1.Image = null;
             this.bindingSource1.DataSource = pic.ToList();
             pictureBox.DataBindings.Add("Image", bindingSource1, "Picture", true);
             pictureBox.DataBindings.Clear();
@@ -462,13 +480,13 @@ namespace 我救浪
         private void button2_Click(object sender, EventArgs e)
         {
             //MessageBox.Show((comboBox9.SelectedItem as SubCategory).SubCategoryName);
-            
-               
+
+
             var q = from n in PetContext.Pet_Detail
                     where //n.Product.SubCategoryID==(int)comboBox9.SelectedValue
 
-                    (!string.IsNullOrEmpty(comboBox8.Text) ? n.Product.SubCategory.Category.CategoryName == comboBox8.Text: true)
-                    &&(!string.IsNullOrEmpty(comboBox9.Text) ?n.Product.SubCategory.SubCategoryName == comboBox9.Text : true)
+                    (!string.IsNullOrEmpty(comboBox8.Text) ? n.Product.SubCategory.Category.CategoryName == comboBox8.Text : true)
+                    && (!string.IsNullOrEmpty(comboBox9.Text) ? n.Product.SubCategory.SubCategoryName == comboBox9.Text : true)
 
                     && (!(comboBox2.Text == "不限") ? comboBox2.Text == n.Gender.GenderType : true)
                      && (!(comboBox3.Text == "不限") ? comboBox3.Text == n.Color.ColorName : true)
@@ -508,7 +526,7 @@ namespace 我救浪
             this.dataGridView1.DataSource = null;
         }
 
-   
+
 
         private void comboBox8_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -533,6 +551,6 @@ namespace 我救浪
             this.dataGridView4.DataSource = q.ToList();
         }
 
-        
+
     }
 }

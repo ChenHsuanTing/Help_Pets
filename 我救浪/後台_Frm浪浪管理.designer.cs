@@ -190,7 +190,7 @@ namespace 我救浪
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(112, 134);
+            this.label7.Location = new System.Drawing.Point(112, 142);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 22);
@@ -209,7 +209,7 @@ namespace 我救浪
             // 
             // txtproductName
             // 
-            this.txtproductName.Location = new System.Drawing.Point(215, 174);
+            this.txtproductName.Location = new System.Drawing.Point(215, 182);
             this.txtproductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtproductName.Name = "txtproductName";
             this.txtproductName.Size = new System.Drawing.Size(132, 30);
@@ -999,7 +999,7 @@ namespace 我救浪
             // CombproductName
             // 
             this.CombproductName.FormattingEnabled = true;
-            this.CombproductName.Location = new System.Drawing.Point(215, 131);
+            this.CombproductName.Location = new System.Drawing.Point(215, 139);
             this.CombproductName.Margin = new System.Windows.Forms.Padding(4);
             this.CombproductName.Name = "CombproductName";
             this.CombproductName.Size = new System.Drawing.Size(132, 30);
@@ -1008,7 +1008,7 @@ namespace 我救浪
             // comSup
             // 
             this.comSup.FormattingEnabled = true;
-            this.comSup.Location = new System.Drawing.Point(66, 312);
+            this.comSup.Location = new System.Drawing.Point(8, 387);
             this.comSup.Margin = new System.Windows.Forms.Padding(4);
             this.comSup.Name = "comSup";
             this.comSup.Size = new System.Drawing.Size(132, 30);
