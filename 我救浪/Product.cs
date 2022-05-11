@@ -18,9 +18,9 @@ namespace 我救浪
         public Product()
         {
             this.Member_Comment = new HashSet<Member_Comment>();
+            this.MyFavorites = new HashSet<MyFavorite>();
             this.Order_Detail = new HashSet<Order_Detail>();
             this.Photos = new HashSet<Photo>();
-            this.Members = new HashSet<Member>();
         }
     
         public int ProductID { get; set; }
@@ -36,13 +36,13 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Comment> Member_Comment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MyFavorite> MyFavorites { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Detail> Order_Detail { get; set; }
         public virtual Pet_Detail Pet_Detail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual SubCategory SubCategory { get; set; }
         public virtual Supplier Supplier { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member> Members { get; set; }
     }
 }

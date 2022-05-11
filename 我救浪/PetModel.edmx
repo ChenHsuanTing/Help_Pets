@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Age">
           <Key>
             <PropertyRef Name="AgeID" />
@@ -94,7 +94,7 @@
           <Property Name="AgeID" Type="int" />
           <Property Name="AccompanyTimeWeek" Type="int" />
           <Property Name="LigationID" Type="int" />
-          <Property Name="SubCategoryID" Type="int" />
+          <Property Name="SubCategoryID" Type="int" Nullable="false" />
           <Property Name="GenderID" Type="int" />
         </EntityType>
         <EntityType Name="Member_Wish_Color">
@@ -115,9 +115,9 @@
         </EntityType>
         <EntityType Name="MyFavorite">
           <Key>
-            <PropertyRef Name="MemberID" />
-            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="MyFavorite" />
           </Key>
+          <Property Name="MyFavorite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
         </EntityType>
@@ -369,7 +369,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Member_Wish_SubCategory">
-          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="0..1" />
+          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="1" />
           <End Role="Member_Wish" Type="Self.Member_Wish" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SubCategory">
@@ -748,7 +748,8 @@
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="我救浪Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -834,8 +835,8 @@
           <NavigationProperty Name="City" Relationship="Self.FK_Member_City" FromRole="Member" ToRole="City" />
           <NavigationProperty Name="Member_Wish" Relationship="Self.FK_Member_Adopt_Member" FromRole="Member" ToRole="Member_Wish" />
           <NavigationProperty Name="Member_Comment" Relationship="Self.FK_Member_Comment_Member" FromRole="Member" ToRole="Member_Comment" />
+          <NavigationProperty Name="MyFavorites" Relationship="Self.FK_MyFavorite_Member1" FromRole="Member" ToRole="MyFavorite" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Member" FromRole="Member" ToRole="Orders" />
-          <NavigationProperty Name="Products" Relationship="Self.MyFavorite" FromRole="Member" ToRole="Product" />
         </EntityType>
         <EntityType Name="Member_Comment">
           <Key>
@@ -862,7 +863,7 @@
           <Property Name="AgeID" Type="Int32" />
           <Property Name="AccompanyTimeWeek" Type="Int32" />
           <Property Name="LigationID" Type="Int32" />
-          <Property Name="SubCategoryID" Type="Int32" />
+          <Property Name="SubCategoryID" Type="Int32" Nullable="false" />
           <Property Name="GenderID" Type="Int32" />
           <NavigationProperty Name="Age" Relationship="Self.FK_Member_Wish_Age" FromRole="Member_Wish" ToRole="Age" />
           <NavigationProperty Name="City" Relationship="Self.FK_Member_Adopt_City" FromRole="Member_Wish" ToRole="City" />
@@ -892,6 +893,16 @@
           <Property Name="SizeID" Type="Int32" />
           <NavigationProperty Name="Member_Wish" Relationship="Self.FK_Member_Wish_Size_Member_Wish" FromRole="Member_Wish_Size" ToRole="Member_Wish" />
           <NavigationProperty Name="Size" Relationship="Self.FK_Member_Wish_Size_Size" FromRole="Member_Wish_Size" ToRole="Size" />
+        </EntityType>
+        <EntityType Name="MyFavorite">
+          <Key>
+            <PropertyRef Name="MyFavorite1" />
+          </Key>
+          <Property Name="MyFavorite1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_MyFavorite_Member1" FromRole="MyFavorite" ToRole="Member" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_MyFavorite_Product1" FromRole="MyFavorite" ToRole="Product" />
         </EntityType>
         <EntityType Name="Order_Detail">
           <Key>
@@ -974,12 +985,12 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UnitsInStock" Type="Int32" />
           <NavigationProperty Name="Member_Comment" Relationship="Self.FK_Member_Comment_Product" FromRole="Product" ToRole="Member_Comment" />
+          <NavigationProperty Name="MyFavorites" Relationship="Self.FK_MyFavorite_Product1" FromRole="Product" ToRole="MyFavorite" />
           <NavigationProperty Name="Order_Detail" Relationship="Self.FK_Order_Detail_Product" FromRole="Product" ToRole="Order_Detail" />
           <NavigationProperty Name="Pet_Detail" Relationship="Self.FK_AdoptionID_Product" FromRole="Product" ToRole="Pet_Detail" />
           <NavigationProperty Name="Photos" Relationship="Self.FK_Photo_Product" FromRole="Product" ToRole="Photo" />
           <NavigationProperty Name="SubCategory" Relationship="Self.FK_Product_SubCategory" FromRole="Product" ToRole="SubCategory" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_Product_Supplier" FromRole="Product" ToRole="Supplier" />
-          <NavigationProperty Name="Members" Relationship="Self.MyFavorite" FromRole="Product" ToRole="Member" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
@@ -1205,6 +1216,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MyFavorite_Member1">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="MyFavorite" Type="Self.MyFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="MyFavorite">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Orders_Member">
           <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
@@ -1254,7 +1277,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Member_Wish_SubCategory">
-          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="0..1" />
+          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="1" />
           <End Role="Member_Wish" Type="Self.Member_Wish" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SubCategory">
@@ -1274,6 +1297,18 @@
             </Principal>
             <Dependent Role="Member_Wish_Size">
               <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MyFavorite_Product1">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="MyFavorite" Type="Self.MyFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="MyFavorite">
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1373,10 +1408,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MyFavorite">
-          <End Role="Member" Type="Self.Member" Multiplicity="*" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="我救浪Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Ages" EntityType="Self.Age" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
@@ -1390,6 +1421,7 @@
           <EntitySet Name="Member_Wish" EntityType="Self.Member_Wish" />
           <EntitySet Name="Member_Wish_Color" EntityType="Self.Member_Wish_Color" />
           <EntitySet Name="Member_Wish_Size" EntityType="Self.Member_Wish_Size" />
+          <EntitySet Name="MyFavorites" EntityType="Self.MyFavorite" />
           <EntitySet Name="Order_Detail" EntityType="Self.Order_Detail" />
           <EntitySet Name="Order_Status" EntityType="Self.Order_Status" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
@@ -1463,6 +1495,10 @@
             <End Role="Member" EntitySet="Members" />
             <End Role="Member_Comment" EntitySet="Member_Comment" />
           </AssociationSet>
+          <AssociationSet Name="FK_MyFavorite_Member1" Association="Self.FK_MyFavorite_Member1">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="MyFavorite" EntitySet="MyFavorites" />
+          </AssociationSet>
           <AssociationSet Name="FK_Orders_Member" Association="Self.FK_Orders_Member">
             <End Role="Member" EntitySet="Members" />
             <End Role="Orders" EntitySet="Orders" />
@@ -1486,6 +1522,10 @@
           <AssociationSet Name="FK_Member_Wish_Size_Size" Association="Self.FK_Member_Wish_Size_Size">
             <End Role="Size" EntitySet="Sizes" />
             <End Role="Member_Wish_Size" EntitySet="Member_Wish_Size" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MyFavorite_Product1" Association="Self.FK_MyFavorite_Product1">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="MyFavorite" EntitySet="MyFavorites" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Detail_Orders" Association="Self.FK_Order_Detail_Orders">
             <End Role="Orders" EntitySet="Orders" />
@@ -1517,10 +1557,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Product_Supplier" Association="Self.FK_Product_Supplier">
             <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="MyFavorite" Association="Self.MyFavorite">
-            <End Role="Member" EntitySet="Members" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
@@ -1650,6 +1686,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="MyFavorites">
+            <EntityTypeMapping TypeName="我救浪Model.MyFavorite">
+              <MappingFragment StoreEntitySet="MyFavorite">
+                <ScalarProperty Name="MyFavorite1" ColumnName="MyFavorite" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Order_Detail">
             <EntityTypeMapping TypeName="我救浪Model.Order_Detail">
               <MappingFragment StoreEntitySet="Order_Detail">
@@ -1749,14 +1794,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="MyFavorite" TypeName="我救浪Model.MyFavorite" StoreEntitySet="MyFavorite">
-            <EndProperty Name="Member">
-              <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-            </EndProperty>
-            <EndProperty Name="Product">
-              <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

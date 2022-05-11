@@ -114,9 +114,8 @@ namespace 我救浪
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(226, 31);
             this.button7.TabIndex = 7;
-            this.button7.Text = "浪浪管理";
+            this.button7.Text = "產地來源管理";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 

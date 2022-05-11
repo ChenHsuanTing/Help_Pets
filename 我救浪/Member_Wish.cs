@@ -29,7 +29,7 @@ namespace 我救浪
         public Nullable<int> AgeID { get; set; }
         public Nullable<int> AccompanyTimeWeek { get; set; }
         public Nullable<int> LigationID { get; set; }
-        public Nullable<int> SubCategoryID { get; set; }
+        public int SubCategoryID { get; set; }
         public Nullable<int> GenderID { get; set; }
     
         public virtual Age Age { get; set; }

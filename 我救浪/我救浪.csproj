@@ -70,11 +70,35 @@
     <Compile Include="Employee.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="FrmDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="FrmDetail.designer.cs">
+      <DependentUpon>FrmDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPetAdopt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPetAdopt.designer.cs">
+      <DependentUpon>FrmPetAdopt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ProductDetial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ProductDetial.designer.cs">
+      <DependentUpon>Frm_ProductDetial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Shopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Shopping.designer.cs">
+      <DependentUpon>Frm_Shopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShoppingCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShoppingCar.designer.cs">
+      <DependentUpon>Frm_ShoppingCar.cs</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
@@ -95,6 +119,9 @@
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Member_Wish_Size.cs">
+      <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyFavorite.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
@@ -138,6 +165,12 @@
     </Compile>
     <Compile Include="Supplier.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WishList.designer.cs">
+      <DependentUpon>WishList.cs</DependentUpon>
     </Compile>
     <Compile Include="後臺_Frm商品管理.cs">
       <SubType>Form</SubType>
@@ -230,8 +263,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDetail.resx">
+      <DependentUpon>FrmDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPetAdopt.resx">
+      <DependentUpon>FrmPetAdopt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ProductDetial.resx">
+      <DependentUpon>Frm_ProductDetial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Shopping.resx">
+      <DependentUpon>Frm_Shopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShoppingCar.resx">
+      <DependentUpon>Frm_ShoppingCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WishList.resx">
+      <DependentUpon>WishList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="後臺_Frm商品管理.resx">
       <DependentUpon>後臺_Frm商品管理.cs</DependentUpon>

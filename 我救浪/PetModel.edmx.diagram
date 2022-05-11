@@ -4,28 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9d903c774be44cbfbe3e27d95925b5a0" Name="Diagram1">
-        <EntityTypeShape EntityType="我救浪Model.Age" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Category" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.City" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Color" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Employee" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Gender" Width="1.5" PointX="5.25" PointY="21.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Ligation" Width="1.5" PointX="5.25" PointY="24.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Member" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Member_Comment" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Member_Wish" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Member_Wish_Color" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Member_Wish_Size" Width="1.5" PointX="10.5" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Order_Detail" Width="1.5" PointX="10.5" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Order_Status" Width="1.5" PointX="6" PointY="29.5" IsExpanded="true" />
+      <Diagram DiagramId="1886cd2957cd4975847a0c84fc74082f" Name="Diagram1">
+        <EntityTypeShape EntityType="我救浪Model.Age" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Category" Width="1.5" PointX="1.5" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.City" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Color" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Employee" Width="1.5" PointX="1.5" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Gender" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Ligation" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Member" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Member_Comment" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Member_Wish" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Member_Wish_Color" Width="1.5" PointX="7.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Member_Wish_Size" Width="1.5" PointX="7.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.MyFavorite" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Order_Detail" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Order_Status" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Order" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Pet_Detail" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Photo" Width="1.5" PointX="7.5" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Product" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Size" Width="1.5" PointX="5.25" PointY="26.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.SubCategory" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="我救浪Model.Supplier" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Pet_Detail" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Photo" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Product" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Size" Width="1.5" PointX="0.75" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.SubCategory" Width="1.5" PointX="1.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.Supplier" Width="1.5" PointX="1.5" PointY="32.625" IsExpanded="true" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Age" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Pet_Detail_Age" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_SubCategory_Category" ManuallyRouted="false" />
@@ -42,12 +43,14 @@
         <AssociationConnector Association="我救浪Model.FK_Pet_Detail_Ligation" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Adopt_Member" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Comment_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="我救浪Model.FK_MyFavorite_Member1" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Orders_Member" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Comment_Product" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Color_Member_Wish" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Size_Member_Wish" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_SubCategory" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Size_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="我救浪Model.FK_MyFavorite_Product1" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Order_Detail_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Order_Detail_Product" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Orders_Order_Status" ManuallyRouted="false" />
@@ -56,7 +59,6 @@
         <AssociationConnector Association="我救浪Model.FK_Photo_Product" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Product_SubCategory" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Product_Supplier" ManuallyRouted="false" />
-        <AssociationConnector Association="我救浪Model.MyFavorite" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
