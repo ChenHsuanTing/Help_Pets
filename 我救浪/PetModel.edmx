@@ -90,7 +90,7 @@
           <Property Name="CityID" Type="int" />
           <Property Name="YearCost" Type="money" />
           <Property Name="Space" Type="int" />
-          <Property Name="SizeID" Type="int" />
+          <Property Name="Size" Type="nchar" MaxLength="1" />
           <Property Name="AgeID" Type="int" />
           <Property Name="AccompanyTimeWeek" Type="int" />
           <Property Name="LigationID" Type="int" />
@@ -210,6 +210,16 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="EmployeeID" Type="int" />
           <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_AdoptionID_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
@@ -343,14 +353,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Member_Wish_Size">
+        <Association Name="FK_Member_Wish_Size_Member_Wish">
+          <End Role="Member_Wish" Type="Self.Member_Wish" Multiplicity="0..1" />
+          <End Role="Member_Wish_Size" Type="Self.Member_Wish_Size" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member_Wish">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Member_Wish_Size">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Member_Wish_Size_Size">
           <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
-          <End Role="Member_Wish" Type="Self.Member_Wish" Multiplicity="*" />
+          <End Role="Member_Wish_Size" Type="Self.Member_Wish_Size" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Size">
               <PropertyRef Name="SizeID" />
             </Principal>
-            <Dependent Role="Member_Wish">
+            <Dependent Role="Member_Wish_Size">
               <PropertyRef Name="SizeID" />
             </Dependent>
           </ReferentialConstraint>
@@ -606,6 +628,7 @@
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AdoptionID_Product" Association="Self.FK_AdoptionID_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="Pet_Detail" EntitySet="Pet_Detail" />
@@ -650,9 +673,13 @@
             <End Role="Ligation" EntitySet="Ligation" />
             <End Role="Member_Wish" EntitySet="Member_Wish" />
           </AssociationSet>
-          <AssociationSet Name="FK_Member_Wish_Size" Association="Self.FK_Member_Wish_Size">
-            <End Role="Size" EntitySet="Size" />
+          <AssociationSet Name="FK_Member_Wish_Size_Member_Wish" Association="Self.FK_Member_Wish_Size_Member_Wish">
             <End Role="Member_Wish" EntitySet="Member_Wish" />
+            <End Role="Member_Wish_Size" EntitySet="Member_Wish_Size" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Member_Wish_Size_Size" Association="Self.FK_Member_Wish_Size_Size">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Member_Wish_Size" EntitySet="Member_Wish_Size" />
           </AssociationSet>
           <AssociationSet Name="FK_Member_Wish_SubCategory" Association="Self.FK_Member_Wish_SubCategory">
             <End Role="SubCategory" EntitySet="SubCategory" />
@@ -841,6 +868,7 @@
           <Property Name="CityID" Type="Int32" />
           <Property Name="YearCost" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Space" Type="Int32" />
+          <Property Name="Size" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
           <Property Name="AgeID" Type="Int32" />
           <Property Name="AccompanyTimeWeek" Type="Int32" />
           <Property Name="LigationID" Type="Int32" />
@@ -854,8 +882,6 @@
           <NavigationProperty Name="Member_Wish_Color" Relationship="Self.FK_Member_Wish_Color_Member_Wish" FromRole="Member_Wish" ToRole="Member_Wish_Color" />
           <NavigationProperty Name="Member_Wish_Size" Relationship="Self.FK_Member_Wish_Size_Member_Wish" FromRole="Member_Wish" ToRole="Member_Wish_Size" />
           <NavigationProperty Name="SubCategory" Relationship="Self.FK_Member_Wish_SubCategory" FromRole="Member_Wish" ToRole="SubCategory" />
-          <Property Name="SizeID" Type="Int32" />
-          <NavigationProperty Name="Size1" Relationship="我救浪Model.FK_Member_Wish_Size" FromRole="Member_Wish" ToRole="Size" />
         </EntityType>
         <EntityType Name="Member_Wish_Color">
           <Key>
@@ -982,7 +1008,6 @@
           <Property Name="SizeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Member_Wish_Size" Relationship="Self.FK_Member_Wish_Size_Size" FromRole="Size" ToRole="Member_Wish_Size" />
           <NavigationProperty Name="Pet_Detail" Relationship="Self.FK_Pet_Detail_Size" FromRole="Size" ToRole="Pet_Detail" />
-          <NavigationProperty Name="Member_Wish" Relationship="我救浪Model.FK_Member_Wish_Size" FromRole="Size" ToRole="Member_Wish" />
         </EntityType>
         <EntityType Name="SubCategory">
           <Key>
@@ -1542,23 +1567,18 @@
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_Member_Wish_Size" Association="我救浪Model.FK_Member_Wish_Size">
-            <End Role="Size" EntitySet="Sizes" />
-            <End Role="Member_Wish" EntitySet="Member_Wish" />
-          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="我救浪Model.sysdiagram" />
         </EntityContainer>
-        <Association Name="FK_Member_Wish_Size">
-          <End Type="我救浪Model.Size" Role="Size" Multiplicity="0..1" />
-          <End Type="我救浪Model.Member_Wish" Role="Member_Wish" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Size">
-              <PropertyRef Name="SizeID" />
-            </Principal>
-            <Dependent Role="Member_Wish">
-              <PropertyRef Name="SizeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1654,11 +1674,11 @@
           <EntitySetMapping Name="Member_Wish">
             <EntityTypeMapping TypeName="我救浪Model.Member_Wish">
               <MappingFragment StoreEntitySet="Member_Wish">
-                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="YearCost" ColumnName="YearCost" />
                 <ScalarProperty Name="Space" ColumnName="Space" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="AgeID" ColumnName="AgeID" />
                 <ScalarProperty Name="AccompanyTimeWeek" ColumnName="AccompanyTimeWeek" />
                 <ScalarProperty Name="LigationID" ColumnName="LigationID" />
@@ -1789,6 +1809,17 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="我救浪Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
