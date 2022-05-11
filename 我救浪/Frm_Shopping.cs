@@ -36,20 +36,20 @@ namespace 我救浪
                 var q1 = (from ph in dbContext.Photos
                          where ph.ProductID == item.ProductID
                          select ph).FirstOrDefault();
-                System.IO.MemoryStream ms = new System.IO.MemoryStream(q1.Picture);
+                //System.IO.MemoryStream ms = new System.IO.MemoryStream(q1.Picture);
                 //if (q1.Picture != null)
                 //{
                 //     ms = ms.(q1.Picture);
                 //}
-                    p.Controls.Add(new PictureBox
-                    {
-                        Name="pPic",
-                        Image = Image.FromStream(ms),
-                        Width = 150,
-                        Height = 200,
-                        SizeMode = PictureBoxSizeMode.StretchImage,
-                        Dock = DockStyle.Bottom
-                    });
+                    //p.Controls.Add(new PictureBox
+                    //{
+                    //    Name="pPic",
+                    //    Image = Image.FromStream(ms),
+                    //    Width = 150,
+                    //    Height = 200,
+                    //    SizeMode = PictureBoxSizeMode.StretchImage,
+                    //    Dock = DockStyle.Bottom
+                    //});
                 
                 p.Controls.Add(new Label {Name="pName", Text = item.ProductName, AutoSize = true });
                 p.Controls.Add(new Label { Name = "pPrice",Text = $"價格:  { item.Price:c2}", AutoSize = true, Top = 30 });
