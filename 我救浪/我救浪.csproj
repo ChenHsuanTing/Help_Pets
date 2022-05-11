@@ -119,6 +119,9 @@
     <Compile Include="Member_Wish_Color.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Member_Wish_Size.cs">
+      <DependentUpon>PetModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyFavorite.cs">
       <DependentUpon>PetModel.tt</DependentUpon>
     </Compile>

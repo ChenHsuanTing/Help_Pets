@@ -228,7 +228,7 @@ namespace 我救浪
             combo1selected_SubCateID = (int)a.Select(n => n.ID).First();
             foreach (var str in a)
             {
-                comboBox1.Items.Add(str.ItemName.Trim());
+                comboBox1.Items.Add(str.ItemName);
             }
         }
         //radioBtn2 商城
@@ -238,10 +238,9 @@ namespace 我救浪
             var a = from i in dbContext.SubCategories
                     where i.Category.IsPet == false
                     select new { ItemName = i.SubCategoryName, ID = i.SubCategoryID };
-            
             foreach (var str in a)
             {
-                comboBox1.Items.Add(str.ItemName.Trim());
+                comboBox1.Items.Add(str.ItemName);
             }
         }
         //radioBtn3 新增指定orderid的details

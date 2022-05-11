@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Age">
           <Key>
             <PropertyRef Name="AgeID" />
@@ -90,12 +90,12 @@
           <Property Name="CityID" Type="int" />
           <Property Name="YearCost" Type="money" />
           <Property Name="Space" Type="int" />
+          <Property Name="SizeID" Type="int" />
           <Property Name="AgeID" Type="int" />
           <Property Name="AccompanyTimeWeek" Type="int" />
           <Property Name="LigationID" Type="int" />
           <Property Name="SubCategoryID" Type="int" Nullable="false" />
           <Property Name="GenderID" Type="int" />
-          <Property Name="SizeID" Type="int" />
         </EntityType>
         <EntityType Name="Member_Wish_Color">
           <Key>
@@ -104,6 +104,16 @@
           <Property Name="Member_Wish_ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" />
           <Property Name="ColorID" Type="int" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 '我救浪.dbo.Member_Wish_Size' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Member_Wish_Size">
+          <Key>
+            <PropertyRef Name="Member_Wish_SizeID" />
+          </Key>
+          <Property Name="Member_Wish_SizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="SizeID" Type="int" />
         </EntityType>
         <EntityType Name="MyFavorite">
           <Key>
@@ -191,7 +201,7 @@
           </Key>
           <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" />
-          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
@@ -552,7 +562,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SubCategory_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -597,6 +607,13 @@
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member_Wish_Size" EntityType="Self.Member_Wish_Size" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Member_Wish_Size].[Member_Wish_SizeID] AS [Member_Wish_SizeID], 
+    [Member_Wish_Size].[MemberID] AS [MemberID], 
+    [Member_Wish_Size].[SizeID] AS [SizeID]
+    FROM [dbo].[Member_Wish_Size] AS [Member_Wish_Size]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_AdoptionID_Product" Association="Self.FK_AdoptionID_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="Pet_Detail" EntitySet="Pet_Detail" />
@@ -722,7 +739,8 @@
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="我救浪Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -832,12 +850,12 @@
           <Property Name="CityID" Type="Int32" />
           <Property Name="YearCost" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Space" Type="Int32" />
+          <Property Name="SizeID" Type="Int32" />
           <Property Name="AgeID" Type="Int32" />
           <Property Name="AccompanyTimeWeek" Type="Int32" />
           <Property Name="LigationID" Type="Int32" />
           <Property Name="SubCategoryID" Type="Int32" Nullable="false" />
           <Property Name="GenderID" Type="Int32" />
-          <Property Name="SizeID" Type="Int32" />
           <NavigationProperty Name="Age" Relationship="Self.FK_Member_Wish_Age" FromRole="Member_Wish" ToRole="Age" />
           <NavigationProperty Name="City" Relationship="Self.FK_Member_Adopt_City" FromRole="Member_Wish" ToRole="City" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Member_Wish_Gender" FromRole="Member_Wish" ToRole="Gender" />
@@ -969,7 +987,7 @@
           </Key>
           <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK_SubCategory_Category" FromRole="SubCategory" ToRole="Category" />
           <NavigationProperty Name="Member_Wish" Relationship="Self.FK_Member_Wish_SubCategory" FromRole="SubCategory" ToRole="Member_Wish" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Product_SubCategory" FromRole="SubCategory" ToRole="Product" />
@@ -985,6 +1003,14 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Supplier_Employee" FromRole="Supplier" ToRole="Employee" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Product_Supplier" FromRole="Supplier" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Member_Wish_Size">
+          <Key>
+            <PropertyRef Name="Member_Wish_SizeID" />
+          </Key>
+          <Property Name="Member_Wish_SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="SizeID" Type="Int32" />
         </EntityType>
         <Association Name="FK_Member_Wish_Age">
           <End Role="Age" Type="Self.Age" Multiplicity="0..1" />
@@ -1011,7 +1037,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SubCategory_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -1380,6 +1406,7 @@
           <EntitySet Name="Sizes" EntityType="Self.Size" />
           <EntitySet Name="SubCategories" EntityType="Self.SubCategory" />
           <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Member_Wish_Size" EntityType="Self.Member_Wish_Size" />
           <AssociationSet Name="FK_Member_Wish_Age" Association="Self.FK_Member_Wish_Age">
             <End Role="Age" EntitySet="Ages" />
             <End Role="Member_Wish" EntitySet="Member_Wish" />
@@ -1604,12 +1631,12 @@
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="YearCost" ColumnName="YearCost" />
                 <ScalarProperty Name="Space" ColumnName="Space" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
                 <ScalarProperty Name="AgeID" ColumnName="AgeID" />
                 <ScalarProperty Name="AccompanyTimeWeek" ColumnName="AccompanyTimeWeek" />
                 <ScalarProperty Name="LigationID" ColumnName="LigationID" />
                 <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
                 <ScalarProperty Name="GenderID" ColumnName="GenderID" />
-                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1726,6 +1753,15 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member_Wish_Size">
+            <EntityTypeMapping TypeName="我救浪Model.Member_Wish_Size">
+              <MappingFragment StoreEntitySet="Member_Wish_Size">
+                <ScalarProperty Name="Member_Wish_SizeID" ColumnName="Member_Wish_SizeID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
