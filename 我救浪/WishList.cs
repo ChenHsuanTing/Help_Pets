@@ -17,9 +17,9 @@ namespace PetAdopt
         public WishList(int memberID)
         {
             InitializeComponent();
-            Load(memberID);
+            Load_Pet_Detail(memberID);
         }
-        void Load(int memberID)
+        void Load_Pet_Detail(int memberID)
         {
             var q = (from mw in dbContext.Member_Wish
                     where mw.MemberID == memberID
@@ -29,7 +29,7 @@ namespace PetAdopt
                         CityName=mw.City.CityName,
                         YearCost=mw.YearCost,
                         Space=mw.Space,
-                        Size=mw.Size1.SizeType,
+                        Size=mw.Size.SizeType,
                         Age=mw.Age.AgeType,
                         AccompanyWeek=mw.AccompanyTimeWeek,
                         Li=mw.Ligation.LigationType,

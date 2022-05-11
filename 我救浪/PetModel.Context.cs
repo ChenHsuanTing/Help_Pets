@@ -36,7 +36,6 @@ namespace 我救浪
         public virtual DbSet<Member_Comment> Member_Comment { get; set; }
         public virtual DbSet<Member_Wish> Member_Wish { get; set; }
         public virtual DbSet<Member_Wish_Color> Member_Wish_Color { get; set; }
-        public virtual DbSet<Member_Wish_Size> Member_Wish_Size { get; set; }
         public virtual DbSet<MyFavorite> MyFavorites { get; set; }
         public virtual DbSet<Order_Detail> Order_Detail { get; set; }
         public virtual DbSet<Order_Status> Order_Status { get; set; }
@@ -47,6 +46,5 @@ namespace 我救浪
         public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<SubCategory> SubCategories { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

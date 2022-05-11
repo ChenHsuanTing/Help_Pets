@@ -18,7 +18,6 @@ namespace 我救浪
         public Member_Wish()
         {
             this.Member_Wish_Color = new HashSet<Member_Wish_Color>();
-            this.Member_Wish_Size = new HashSet<Member_Wish_Size>();
         }
     
         public int MemberID { get; set; }
@@ -39,9 +38,7 @@ namespace 我救浪
         public virtual Member Member { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Member_Wish_Color> Member_Wish_Color { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Member_Wish_Size> Member_Wish_Size { get; set; }
+        public virtual Size Size { get; set; }
         public virtual SubCategory SubCategory { get; set; }
-        public virtual Size Size1 { get; set; }
     }
 }
