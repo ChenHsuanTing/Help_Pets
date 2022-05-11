@@ -47,7 +47,7 @@ namespace 我救浪
             var q = from m in dbContext.Cities.AsEnumerable()
                     orderby m.CityID ascending
                     select new { CityName = m.CityName, CityID = m.CityID };
-            comboBoxCity.DataSource = q.ToList();
+            comboBoxCity.DataSource = q.Skip(1).ToList();
             comboBoxCity.DisplayMember = "CityName";
             comboBoxCity.ValueMember = "CityID";
 
@@ -124,6 +124,12 @@ namespace 我救浪
         private void Frm修改會員資料_Load(object sender, EventArgs e)
         {
          
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
+            txtPassword1.UseSystemPasswordChar = !txtPassword1.UseSystemPasswordChar;
         }
     }
 }

@@ -367,5 +367,11 @@ namespace 我救浪
             comboBox4.ValueMember = "SubCategoryID";
             comboBox4.Text = "";
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            後臺_Frm留言管理 f = new 後臺_Frm留言管理();
+            f.Show();
+        }
     }
 }

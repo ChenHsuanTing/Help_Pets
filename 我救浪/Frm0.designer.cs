@@ -39,7 +39,6 @@ namespace 我救浪
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -124,12 +123,11 @@ namespace 我救浪
             // 
             this.splitContainer4.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer4.Panel1.BackgroundImage")));
             this.splitContainer4.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.splitContainer4.Panel1.Controls.Add(this.button1);
             this.splitContainer4.Panel1.Controls.Add(this.button6);
             this.splitContainer4.Panel1.Controls.Add(this.button5);
             this.splitContainer4.Panel1.Controls.Add(this.button4);
             this.splitContainer4.Panel1.Controls.Add(this.button3);
-            this.splitContainer4.Panel1.Controls.Add(this.button2);
-            this.splitContainer4.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer4.Panel2
             // 
@@ -144,12 +142,13 @@ namespace 我救浪
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button6.ForeColor = System.Drawing.Color.Olive;
-            this.button6.Location = new System.Drawing.Point(50, 464);
+            this.button6.Location = new System.Drawing.Point(46, 331);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(121, 41);
             this.button6.TabIndex = 5;
             this.button6.Text = "浪浪管理";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -157,12 +156,13 @@ namespace 我救浪
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button5.ForeColor = System.Drawing.Color.Olive;
-            this.button5.Location = new System.Drawing.Point(50, 221);
+            this.button5.Location = new System.Drawing.Point(46, 75);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(121, 41);
             this.button5.TabIndex = 4;
             this.button5.Text = "會員管理";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -170,12 +170,13 @@ namespace 我救浪
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button4.ForeColor = System.Drawing.Color.Olive;
-            this.button4.Location = new System.Drawing.Point(50, 301);
+            this.button4.Location = new System.Drawing.Point(46, 161);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 41);
             this.button4.TabIndex = 3;
             this.button4.Text = "訂單管理";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -183,39 +184,27 @@ namespace 我救浪
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button3.ForeColor = System.Drawing.Color.Olive;
-            this.button3.Location = new System.Drawing.Point(50, 380);
+            this.button3.Location = new System.Drawing.Point(46, 248);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 41);
             this.button3.TabIndex = 2;
             this.button3.Text = "產品管理";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.ForeColor = System.Drawing.Color.Olive;
-            this.button2.Location = new System.Drawing.Point(50, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "購物頁面";
-            this.button2.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.Color.Olive;
-            this.button1.Location = new System.Drawing.Point(50, 73);
+            this.button1.Location = new System.Drawing.Point(46, 424);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "領養專區";
+            this.button1.TabIndex = 6;
+            this.button1.Text = "類別管理";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Frm0
             // 
@@ -255,7 +244,6 @@ namespace 我救浪
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
 }

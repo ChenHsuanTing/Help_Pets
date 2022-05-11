@@ -47,6 +47,7 @@ namespace 我救浪
             this.label1 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -73,6 +74,7 @@ namespace 我救浪
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 27);
             this.txtPassword.TabIndex = 33;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtPassword1
             // 
@@ -81,6 +83,7 @@ namespace 我救浪
             this.txtPassword1.Name = "txtPassword1";
             this.txtPassword1.Size = new System.Drawing.Size(100, 27);
             this.txtPassword1.TabIndex = 32;
+            this.txtPassword1.UseSystemPasswordChar = true;
             // 
             // txtName
             // 
@@ -224,12 +227,28 @@ namespace 我救浪
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Olive;
+            this.linkLabel1.Location = new System.Drawing.Point(266, 112);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(69, 19);
+            this.linkLabel1.TabIndex = 40;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "顯示密碼";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Frm修改會員資料
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(501, 559);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBoxCity);
             this.Controls.Add(this.txtPassword);
@@ -275,5 +294,6 @@ namespace 我救浪
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

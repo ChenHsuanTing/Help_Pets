@@ -370,6 +370,12 @@ namespace 我救浪
                 se.CurrentCell.Value = DateTime.Today;
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //dvg1 編輯後
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {

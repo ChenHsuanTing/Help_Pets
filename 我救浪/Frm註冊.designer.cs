@@ -48,6 +48,7 @@ namespace 我救浪
             this.comboBoxCity = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnCreat
@@ -110,9 +111,9 @@ namespace 我救浪
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(20, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 22);
+            this.label3.Size = new System.Drawing.Size(126, 22);
             this.label3.TabIndex = 4;
-            this.label3.Text = "手機號碼:";
+            this.label3.Text = "手機號碼(帳號):";
             // 
             // label4
             // 
@@ -165,7 +166,7 @@ namespace 我救浪
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(107, 282);
+            this.txtEmail.Location = new System.Drawing.Point(145, 285);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 27);
             this.txtEmail.TabIndex = 9;
@@ -173,7 +174,7 @@ namespace 我救浪
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtAddress.Location = new System.Drawing.Point(107, 435);
+            this.txtAddress.Location = new System.Drawing.Point(145, 438);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(335, 27);
             this.txtAddress.TabIndex = 11;
@@ -182,7 +183,7 @@ namespace 我救浪
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPhone.Location = new System.Drawing.Point(108, 45);
+            this.txtPhone.Location = new System.Drawing.Point(146, 48);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(100, 27);
             this.txtPhone.TabIndex = 13;
@@ -190,7 +191,7 @@ namespace 我救浪
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtName.Location = new System.Drawing.Point(107, 216);
+            this.txtName.Location = new System.Drawing.Point(145, 219);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 27);
             this.txtName.TabIndex = 14;
@@ -198,24 +199,26 @@ namespace 我救浪
             // txtPassword1
             // 
             this.txtPassword1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPassword1.Location = new System.Drawing.Point(107, 156);
+            this.txtPassword1.Location = new System.Drawing.Point(145, 159);
             this.txtPassword1.Name = "txtPassword1";
             this.txtPassword1.Size = new System.Drawing.Size(100, 27);
             this.txtPassword1.TabIndex = 15;
+            this.txtPassword1.UseSystemPasswordChar = true;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPassword.Location = new System.Drawing.Point(107, 106);
+            this.txtPassword.Location = new System.Drawing.Point(145, 109);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 27);
             this.txtPassword.TabIndex = 16;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // comboBoxCity
             // 
             this.comboBoxCity.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBoxCity.FormattingEnabled = true;
-            this.comboBoxCity.Location = new System.Drawing.Point(108, 406);
+            this.comboBoxCity.Location = new System.Drawing.Point(146, 409);
             this.comboBoxCity.Name = "comboBoxCity";
             this.comboBoxCity.Size = new System.Drawing.Size(99, 27);
             this.comboBoxCity.TabIndex = 17;
@@ -223,7 +226,7 @@ namespace 我救浪
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(107, 339);
+            this.dateTimePicker1.Location = new System.Drawing.Point(145, 342);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(125, 27);
             this.dateTimePicker1.TabIndex = 18;
@@ -234,13 +237,28 @@ namespace 我救浪
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(242, 46);
+            this.button1.Location = new System.Drawing.Point(285, 47);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 26);
+            this.button1.Size = new System.Drawing.Size(134, 26);
             this.button1.TabIndex = 37;
             this.button1.Text = "驗證手機號碼";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.linkLabel1.Location = new System.Drawing.Point(281, 117);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(69, 19);
+            this.linkLabel1.TabIndex = 39;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "顯示密碼";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Frm註冊
             // 
@@ -249,6 +267,7 @@ namespace 我救浪
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(552, 571);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBoxCity);
@@ -296,5 +315,6 @@ namespace 我救浪
         private System.Windows.Forms.ComboBox comboBoxCity;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef380ddae4e74e0a9c43f66dec0ca98a" Name="Diagram1">
+      <Diagram DiagramId="34488259f9ef482b8e811742cb713546" Name="Diagram1">
         <EntityTypeShape EntityType="我救浪Model.Age" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Category" Width="1.5" PointX="1.5" PointY="29.875" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.City" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
@@ -27,6 +27,7 @@
         <EntityTypeShape EntityType="我救浪Model.Size" Width="1.5" PointX="0.75" PointY="38.625" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.SubCategory" Width="1.5" PointX="1.5" PointY="26.75" IsExpanded="true" />
         <EntityTypeShape EntityType="我救浪Model.Supplier" Width="1.5" PointX="1.5" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="我救浪Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="我救浪Model.FK_Member_Wish_Age" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Pet_Detail_Age" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_SubCategory_Category" ManuallyRouted="false" />
@@ -59,7 +60,6 @@
         <AssociationConnector Association="我救浪Model.FK_Photo_Product" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Product_SubCategory" ManuallyRouted="false" />
         <AssociationConnector Association="我救浪Model.FK_Product_Supplier" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="我救浪Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

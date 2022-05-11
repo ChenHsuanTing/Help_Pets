@@ -37,6 +37,7 @@ namespace 我救浪
             this.lbPassWord = new System.Windows.Forms.Label();
             this.lbAccount = new System.Windows.Forms.Label();
             this.Lb會員登入 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnclean
@@ -71,19 +72,22 @@ namespace 我救浪
             // 
             // Passwordtxt
             // 
+            this.Passwordtxt.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Passwordtxt.Location = new System.Drawing.Point(144, 119);
             this.Passwordtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Passwordtxt.Name = "Passwordtxt";
-            this.Passwordtxt.Size = new System.Drawing.Size(121, 25);
+            this.Passwordtxt.Size = new System.Drawing.Size(121, 27);
             this.Passwordtxt.TabIndex = 5;
             this.Passwordtxt.Text = "0";
+            this.Passwordtxt.UseSystemPasswordChar = true;
             // 
             // Usernametxt
             // 
+            this.Usernametxt.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Usernametxt.Location = new System.Drawing.Point(144, 77);
             this.Usernametxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Usernametxt.Name = "Usernametxt";
-            this.Usernametxt.Size = new System.Drawing.Size(121, 25);
+            this.Usernametxt.Size = new System.Drawing.Size(121, 27);
             this.Usernametxt.TabIndex = 4;
             this.Usernametxt.Text = "0000000001";
             // 
@@ -123,12 +127,28 @@ namespace 我救浪
             this.Lb會員登入.TabIndex = 1;
             this.Lb會員登入.Text = "員工登入";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.linkLabel1.Location = new System.Drawing.Point(275, 99);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(69, 19);
+            this.linkLabel1.TabIndex = 41;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "顯示密碼";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Frm員工登入
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(319, 295);
+            this.ClientSize = new System.Drawing.Size(360, 295);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnclean);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbPassWord);
@@ -140,6 +160,7 @@ namespace 我救浪
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm員工登入";
             this.Text = "Frm員工登入";
+            this.Load += new System.EventHandler(this.Frm員工登入_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +174,6 @@ namespace 我救浪
         private System.Windows.Forms.Label lbPassWord;
         private System.Windows.Forms.Label lbAccount;
         private System.Windows.Forms.Label Lb會員登入;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

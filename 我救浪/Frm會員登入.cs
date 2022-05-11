@@ -97,5 +97,10 @@ namespace 我救浪
                 MessageBox.Show("尚未註冊為會員", "會員資料修改", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Passwordtxt.UseSystemPasswordChar = !Passwordtxt.UseSystemPasswordChar;
+        }
     }
 }

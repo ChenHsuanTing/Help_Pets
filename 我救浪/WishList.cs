@@ -26,18 +26,7 @@ namespace PetAdopt
 
         private void WishList_Load(object sender, EventArgs e)
         {
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish_Size' 資料表。您可以視需要進行移動或移除。
-            //this.member_Wish_SizeTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish_Size);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish_Color' 資料表。您可以視需要進行移動或移除。
-            //this.member_Wish_ColorTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish_Color);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish' 資料表。您可以視需要進行移動或移除。
-            //this.member_WishTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish' 資料表。您可以視需要進行移動或移除。
-            //this.member_WishTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish_Size' 資料表。您可以視需要進行移動或移除。
-            //this.member_Wish_SizeTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish_Size);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Category' 資料表。您可以視需要進行移動或移除。
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Pet_Detail' 資料表。您可以視需要進行移動或移除。
+            
 
         }
 
