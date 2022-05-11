@@ -13,6 +13,7 @@ namespace PetAdopt
 {
     public partial class FormPetAdopt : Form
     {
+        int memberID = 1;
         public FormPetAdopt()
         {
             InitializeComponent();
@@ -32,8 +33,9 @@ namespace PetAdopt
                 p.BorderStyle = BorderStyle.Fixed3D;
                 p.Width = 200;
                 p.Height = 300;
+                p.Name = pet.ProductName;
                 var q1 = from pht in this.dbconect.Photos
-                         where pht.PictureID == pet.ProductID
+                         where pht.ProductID == pet.ProductID
                          select pht;
                 foreach (var pho in q1)
                 {
@@ -63,12 +65,15 @@ namespace PetAdopt
                 p.Width = 200;
                 p.Height = 300;
                 p.Name = pet.Product.ProductName;
-                var q1 = from pht in this.dbconect.Photos
-                         where pht.PictureID == pet.ProductID
-                         select pht;
-                foreach (var pho in q1)
+                
+                //foreach (var pho in q1)
+                //{
+                    var q1 = (from pht in this.dbconect.Photos
+                              where pht.ProductID == pet.ProductID
+                              select pht).ToList().FirstOrDefault();
+                if (q1 != null)
                 {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(pho.Picture);
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream(q1.Picture);
                     p.Controls.Add(new PictureBox
                     {
                         Name = "pPic",
@@ -77,7 +82,7 @@ namespace PetAdopt
                         Height = 200,
                         SizeMode = PictureBoxSizeMode.StretchImage,
                         Dock = DockStyle.Top
-                        
+
                     });
                 }
                 p.Controls.Add(new Label { Name = "pName", Text = "Name:" + pet.Product.ProductName, AutoSize = true, Top = 210, Left = 75 });
@@ -107,37 +112,62 @@ namespace PetAdopt
             var CategoryName = from n in this.dbconect.Categories
                                where n.IsPet == true
                                select n;
-            this.cbxCategoryName.DataSource = CategoryName.Select(n => n.CategoryName).ToList();
+            this.cbxCategoryName.DataSource = CategoryName.ToList();
+            cbxCategoryName.DisplayMember = "CategoryName";
+            cbxCategoryName.ValueMember = "CategoryID";
+            
+           
             //性別
             var GenderType = (from n in this.dbconect.Genders
                               select n).Distinct();
-            this.cbxGenderID.DataSource = GenderType.Select(n => n.GenderType).ToList();
+            this.cbxGenderID.DataSource = GenderType.ToList();
+            cbxGenderID.DisplayMember = "GenderType";
+            cbxGenderID.ValueMember = "GenderID";
+           
+            
             //體型
             var SizeType = (from n in this.dbconect.Sizes
                             select n).Distinct();
-            this.cbxSizeID.DataSource = SizeType.Select(n => n.SizeType).ToList();
+            this.cbxSizeID.DataSource = SizeType.ToList();
+            cbxSizeID.DisplayMember = "SizeType";
+            cbxSizeID.ValueMember = "SizeID";
+            
+           
             //年紀 
             var Age = (from n in this.dbconect.Ages
                        select n).Distinct();
-            this.cbxAge.DataSource = Age.Select(n => n.AgeType).ToList();
+            this.cbxAge.DataSource = Age.ToList();
+            cbxAge.DisplayMember = "AgeType";
+            cbxAge.ValueMember = "AgeID";
+            
+
             //結紮
             var Ligation = from n in this.dbconect.Ligations
                            select n;
-            this.cbxLigation.DataSource = Ligation.Select(n => n.LigationType).ToList();
+            this.cbxLigation.DataSource = Ligation.ToList();
+            cbxLigation.DisplayMember = "LigationType";
+            cbxLigation.ValueMember = "LigationID";
+            
             //主要毛色
             var ColorName = (from n in this.dbconect.Colors
                              select n).Distinct();
-            this.cbxColorID.DataSource = ColorName.Select(n => n.ColorName).ToList();
+            this.cbxColorID.DataSource = ColorName.ToList();
+            cbxColorID.DisplayMember = "ColorName";
+            cbxColorID.ValueMember = "ColorID";
+            
             //所在地區
             var CityName = (from n in this.dbconect.Cities
                             select n).Distinct();
-            this.cbxCity.DataSource = CityName.Select(n => n.CityName).ToList();
+            this.cbxCity.DataSource = CityName.ToList();
+            cbxCity.DisplayMember = "CityName";
+            cbxCity.ValueMember = "CityID";
+            
             //所需花費
             //適合空間
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            WishList wishList = new WishList();
+            WishList wishList = new WishList(memberID);
             wishList.Show();
         }
         int sizeid;
@@ -151,13 +181,13 @@ namespace PetAdopt
         {
             var q = from p in dbconect.Pet_Detail.AsEnumerable()
                     where
-                    (!String.IsNullOrEmpty(cbxCategoryName.SelectedItem.ToString()) ? p.Product.SubCategory.Category.CategoryName == cbxCategoryName.SelectedItem.ToString() : true)
-                    && ((!(cbxGenderID.SelectedItem.ToString() == "不限")) ? cbxGenderID.SelectedItem.ToString() == p.Gender.GenderType : true)
-                    && (!(cbxSizeID.SelectedItem.ToString() == "不限") ? cbxSizeID.SelectedItem.ToString() == p.Size.SizeType : true)
-                    && (!(cbxAge.SelectedItem.ToString() == "不限") ? cbxAge.SelectedItem.ToString() == p.Age.AgeType : true)
-                    && (!(cbxLigation.SelectedItem.ToString() == "不限") ? cbxLigation.SelectedItem.ToString() == p.Ligation.LigationType : true)
-                    && (!(cbxColorID.SelectedItem.ToString() == "不限") ? cbxColorID.SelectedItem.ToString() == p.Color.ColorName : true)
-                    && (!(cbxCity.SelectedItem.ToString() == "不限") ? cbxCity.SelectedItem.ToString() == p.City.CityName : true)
+                    (!String.IsNullOrEmpty(cbxCategoryName.Text) ? p.Product.SubCategory.Category.CategoryName == cbxCategoryName.Text : true)
+                    && ((!(cbxGenderID.Text == "不限")) ? cbxGenderID.Text == p.Gender.GenderType : true)
+                    && (!(cbxSizeID.Text== "不限") ? cbxSizeID.Text == p.Size.SizeType : true)
+                    && (!(cbxAge.Text == "不限") ? cbxAge.Text == p.Age.AgeType : true)
+                    && (!(cbxLigation.Text== "不限") ? cbxLigation.Text == p.Ligation.LigationType : true)
+                    && (!(cbxColorID.Text== "不限") ? cbxColorID.Text == p.Color.ColorName : true)
+                    && (!(cbxCity.Text== "不限") ? cbxCity.Text == p.City.CityName : true)
                     && (!String.IsNullOrEmpty(txtYearCost.Text) ? int.Parse(txtYearCost.Text) >= p.YearCost : true)
                     && (!String.IsNullOrEmpty(txtSpace.Text) ? int.Parse(txtSpace.Text) >= p.Space : true)
                     select new New_Detail
@@ -182,6 +212,7 @@ namespace PetAdopt
             flowLayoutPanel1.Controls.Clear();
             if(q.Any())
             {
+                
                 ShowPetDetail(q.ToList());
             }
             else
@@ -209,76 +240,144 @@ namespace PetAdopt
             public string CityName { get; set; }
             public string ProductName { get; set; }
         };
-        private void cbxSizeID_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
-            //體型
-            ComboBox cmb = (ComboBox)sender;
-            var SizeType = from n in this.dbconect.Sizes
-                           where n.SizeType == cmb.SelectedItem.ToString()
-                           select n;
-            sizeid = SizeType.Select(n => n.SizeID).First();
+
+            var q = from mw in dbconect.Member_Wish
+                    where mw.MemberID == memberID
+                    select mw;
+
+            try
+            {
+                if (q.Any())
+                {
+                    var mw = q.FirstOrDefault();
+                    mw.CityID = (int)cbxCity.SelectedValue;
+                    mw.AgeID = (int)cbxAge.SelectedValue;
+                    mw.GenderID = (int)cbxGenderID.SelectedValue;
+                    mw.LigationID = (int)cbxLigation.SelectedValue;
+                    mw.SubCategoryID = (int)cbxCategoryName.SelectedValue;
+                    mw.YearCost = decimal.Parse(txtYearCost.Text);
+                    mw.Space = int.Parse(txtSpace.Text);
+                    mw.AccompanyTimeWeek = int.Parse(txtWeekTime.Text);
+                    mw.SizeID = (int)cbxSizeID.SelectedValue;
+                    //dbconect.SaveChanges();
+
+                    var c = (from mwc in dbconect.Member_Wish_Color
+                            where mwc.MemberID == memberID
+                            select mwc).FirstOrDefault();
+                    c.ColorID = (int)cbxColorID.SelectedValue;
+                    dbconect.SaveChanges();
+                    MessageBox.Show("修改成功");
+                }
+                else
+                {
+                    Member_Wish mw = new Member_Wish();
+                    mw.CityID = (int)cbxCity.SelectedValue;
+                    mw.AgeID = (int)cbxAge.SelectedValue;
+                    mw.GenderID = (int)cbxGenderID.SelectedValue;
+                    mw.LigationID = (int)cbxLigation.SelectedValue;
+                    mw.SubCategoryID = (int)cbxCategoryName.SelectedValue;
+                    mw.YearCost = decimal.Parse(txtYearCost.Text);
+                    mw.Space = int.Parse(txtSpace.Text);
+                    mw.AccompanyTimeWeek = int.Parse(txtWeekTime.Text);
+                    mw.SizeID = (int)cbxSizeID.SelectedValue;
+                    dbconect.Member_Wish.Add(mw);
+                    dbconect.SaveChanges();
+
+                    Member_Wish_Color color = new Member_Wish_Color()
+                    {
+                        MemberID = memberID,
+                        ColorID = (int)cbxColorID.SelectedValue,
+                    };
+                    dbconect.Member_Wish_Color.Add(color);
+                    dbconect.SaveChanges();
+                    MessageBox.Show("新增成功");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
-        private void cbxCategoryName_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cbxCity_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //種類
+            //城市
             ComboBox cmb = (ComboBox)sender;
-            string str = cmb.SelectedItem.ToString();
-            var CategoryName = from n in this.dbconect.Categories
-                               where n.CategoryName == str
-                               select n;
-            categoryname = CategoryName.Select(n => n.CategoryID).First();
-        }
-        private void cbxColorID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //毛色
-            ComboBox cmb = (ComboBox)sender;
-            string str = cmb.SelectedItem.ToString();
-            var Color = from n in this.dbconect.Colors
-                        where n.ColorName == str
-                        select n;
-            color = Color.Select(n => n.ColorID).First();
-        }
-        private void cbxCity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //所在地區
-            ComboBox cmb = (ComboBox)sender;
-            string str = cmb.SelectedItem.ToString();
+            int cityID = (int)cmb.SelectedValue;
             var City = from n in this.dbconect.Cities
-                       where n.CityName == str
+                       where n.CityID == cityID
                        select n;
             city = City.Select(n => n.CityID).First();
         }
-        private void cbxGenderID_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cbxColorID_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //性別
+            //毛色
             ComboBox cmb = (ComboBox)sender;
-            string str = cmb.SelectedItem.ToString();
-            var Geneder = from n in this.dbconect.Genders
-                          where n.GenderType == str
-                          select n;
-            geneder = Geneder.Select(n => n.GenderID).First();
+            int colorID = (int)cmb.SelectedValue;
+            var Color = (from n in this.dbconect.Colors
+                        where n.ColorID == colorID
+                        select n.ColorID).First();
+            color = Color;
         }
-        private void cbxAge_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //年紀
-            ComboBox cmb = (ComboBox)sender;
-            string str = cmb.SelectedItem.ToString();
-            var Age = from n in this.dbconect.Ages
-                      where n.AgeType == str
-                      select n;
-            age = Age.Select(n => n.AgeID).First();
-        }
-        private void cbxIsLigation_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cbxLigation_SelectionChangeCommitted(object sender, EventArgs e)
         {
             //結紮
             ComboBox cmb = (ComboBox)sender;
-            string str = cmb.SelectedItem.ToString();
+            int ligationID = (int)cmb.SelectedValue;
             var Ligation = from n in this.dbconect.Ligations
-                           where n.LigationType == str
+                           where n.LigationID == ligationID
                            select n;
             ligation = Ligation.Select(n => n.LigationID).First();
         }
 
+        private void cbxAge_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //年紀
+            ComboBox cmb = (ComboBox)sender;
+            int ageID = (int)cmb.SelectedValue;
+            var Age = from n in this.dbconect.Ages
+                      where n.AgeID == ageID
+                      select n;
+            age = Age.Select(n => n.AgeID).First();
+        }
 
+        private void cbxSizeID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //體型
+            ComboBox cmb = (ComboBox)sender;
+            int sizeID = (int)cmb.SelectedValue;
+            var SizeType = from n in this.dbconect.Sizes
+                           where n.SizeID == sizeID
+                           select n;
+            sizeid = SizeType.Select(n => n.SizeID).First();
+        }
+
+        private void cbxGenderID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //性別
+            ComboBox cmb = (ComboBox)sender;
+            int genderID = (int)cmb.SelectedValue;
+            var Geneder = from n in this.dbconect.Genders
+                          where n.GenderID == genderID
+                          select n;
+            geneder = Geneder.Select(n => n.GenderID).First();
+        }
+
+        private void cbxCategoryName_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //種類
+            ComboBox cmb = (ComboBox)sender;
+            int categoryID = (int)cmb.SelectedValue;
+            var CategoryName = from n in this.dbconect.Categories
+                               where n.CategoryID == categoryID
+                               select n;
+            categoryname = CategoryName.Select(n => n.CategoryID).First();
+        }
     }
 }

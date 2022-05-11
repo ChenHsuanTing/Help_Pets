@@ -8,13 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace 我救浪
 {
     public partial class 後臺_Frm訂單管理 : Form
     {
-        //Product dicontinued , Order_Detail initial = Product Price
-
         public 後臺_Frm訂單管理()
         {
             InitializeComponent();
@@ -34,7 +31,7 @@ namespace 我救浪
                 int memberID = (int)dataGridView1.Rows[se.CurrentCell.RowIndex].Cells["MemberID"].Value;
                 int orderID = (int)dataGridView1.Rows[se.CurrentCell.RowIndex].Cells["OrderID"].Value;
                 var a = (dbContext.Order_Detail.Where(m => m.OrderID == orderID).Select(n => n).ToList()).Count();
-                DialogResult result = MessageBox.Show($"刪除訂單編號 {orderID} 及其底下共 {a} 筆資料?", "刪除", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show($"刪除訂單編號 {orderID} 及底下共 {a} 筆資料?", "刪除", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (result == DialogResult.OK)
                 {
                     while ((dbContext.Order_Detail.Where(m => m.OrderID == orderID).Select(n => n)).FirstOrDefault() != null)
@@ -161,7 +158,7 @@ namespace 我救浪
                             {
                                 //OrderID = 0,  /*可以隨便放?*/
                                 MemberID = memberID_forInsert,
-                                EmployeeID = 1,  /*TODO  抓登入empID*/
+                                EmployeeID = Frm員工登入.empID,  /*TODO  抓登入empID*/
                                 OrderDate = DateTime.Parse(DateTime_str),
                                 SendAddress = sendAdress,
                                 Order_StatusID = 2, /*預設未送達?*/
@@ -241,7 +238,7 @@ namespace 我救浪
             var a = from i in dbContext.SubCategories
                     where i.Category.IsPet == false
                     select new { ItemName = i.SubCategoryName, ID = i.SubCategoryID };
-            combo1selected_SubCateID = (int)a.Select(n => n.ID).First();
+            
             foreach (var str in a)
             {
                 comboBox1.Items.Add(str.ItemName.Trim());
@@ -334,7 +331,9 @@ namespace 我救浪
         //comboBox1 種類
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            combo1selected_SubCateID = dbContext.SubCategories.Where(m => m.SubCategoryName == comboBox1.SelectedItem.ToString()).Select(n => n.SubCategoryID).ToList().First();
             comboBox2.Items.Clear();
+            comboBox2.Text = "";
             var a = from i in dbContext.Products
                     where i.SubCategoryID == combo1selected_SubCateID
                     select new { ProductName = i.ProductName, ProductID = i.ProductID };
@@ -342,6 +341,15 @@ namespace 我救浪
             {
                 comboBox2.Items.Add(i.ProductName);
             }
+            try
+            {
+                comboBox2.SelectedIndex = 0;
+            }
+            catch(Exception ex)
+            { 
+                MessageBox.Show("無商品");
+            }
+            
         }
         //comboBox2 品名
         string combo2selected_ProductName;

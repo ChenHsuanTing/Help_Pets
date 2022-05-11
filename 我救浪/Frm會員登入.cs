@@ -20,27 +20,7 @@ namespace 我救浪
         我救浪Entities dbContext = new 我救浪Entities();
         private void button3_Click(object sender, EventArgs e)
         {
-            UserName = Usernametxt.Text;
-            var q = from m in dbContext.Members
-                    where m.MemberPhone == UserName
-                    select m;
 
-            if (q.ToList().Count() != 0)
-            {
-                Frm修改會員資料 f = new Frm修改會員資料();
-                f.Show();
-            }
-
-            else if (UserName=="")
-            {
-                MessageBox.Show("請輸入帳號，更改會員資料", "會員資料修改", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-            else
-            {
-               
-                MessageBox.Show("尚未註冊為會員", "會員資料修改", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         public static string UserName = "";
@@ -87,10 +67,35 @@ namespace 我救浪
            
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Frm忘記密碼 f = new Frm忘記密碼();
             f.Show();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UserName = Usernametxt.Text;
+            var q = from m in dbContext.Members
+                    where m.MemberPhone == UserName
+                    select m;
+
+            if (q.ToList().Count() != 0)
+            {
+                Frm修改會員資料 f = new Frm修改會員資料();
+                f.Show();
+            }
+
+            else if (UserName == "")
+            {
+                MessageBox.Show("請輸入帳號，更改會員資料", "會員資料修改", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+
+                MessageBox.Show("尚未註冊為會員", "會員資料修改", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

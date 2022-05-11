@@ -7,62 +7,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 我救浪;
 
 namespace PetAdopt
 {
     public partial class WishList : Form
     {
-        public WishList()
+        我救浪Entities dbContext = new 我救浪Entities();
+        public WishList(int memberID)
         {
             InitializeComponent();
+            Load_Pet_Detail(memberID);
         }
-
-        private void pet_DetailBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        void Load_Pet_Detail(int memberID)
         {
-            this.Validate();
-            //this.tableAdapterManager.UpdateAll(this.陳老師的動物之家DataSet);
+            var q = (from mw in dbContext.Member_Wish
+                    where mw.MemberID == memberID
+                    select new
+                    {
+                        MemberID=mw.MemberID,
+                        CityName=mw.City.CityName,
+                        YearCost=mw.YearCost,
+                        Space=mw.Space,
+                        Size=mw.Size.SizeType,
+                        Age=mw.Age.AgeType,
+                        AccompanyWeek=mw.AccompanyTimeWeek,
+                        Li=mw.Ligation.LigationType,
+                        SubCategoryID=mw.SubCategoryID,
+                        Gender=mw.Gender.GenderType
+                    }).FirstOrDefault();
+            memberIDTextBox.Text = q.MemberID.ToString();
+            //subCategoryIDTextBox.Text = q.SubCategory;
+            genderIDTextBox.Text = q.Gender;
+            sizeIDTextBox.Text = q.Size;
+            txtAgeID.Text = q.Age;
+            txtLigationID.Text = q.Li;
+            txtTimeWeek.Text = q.AccompanyWeek.ToString();
+            txtCityID.Text = q.CityName;
+            txtYearCost.Text = q.YearCost.ToString();
+            txtSpace.Text = q.Space.ToString();
 
+            var q_color = (from mwc in dbContext.Member_Wish_Color
+                          where mwc.MemberID == q.MemberID
+                          select new
+                          {
+                            ColorName=mwc.Color.ColorName
+                          }
+                          ).FirstOrDefault();
+            txtColorID.Text = q_color.ColorName;
+
+            var q_Category = (from c in dbContext.Categories
+                             where q.SubCategoryID == c.CategoryID
+                             select new { c.CategoryName}).FirstOrDefault();
+            subCategoryIDTextBox.Text = q_Category.CategoryName;
         }
-
-        private void WishList_Load(object sender, EventArgs e)
-        {
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish_Size' 資料表。您可以視需要進行移動或移除。
-            //this.member_Wish_SizeTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish_Size);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish_Color' 資料表。您可以視需要進行移動或移除。
-            //this.member_Wish_ColorTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish_Color);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish' 資料表。您可以視需要進行移動或移除。
-            //this.member_WishTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish' 資料表。您可以視需要進行移動或移除。
-            //this.member_WishTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Member_Wish_Size' 資料表。您可以視需要進行移動或移除。
-            //this.member_Wish_SizeTableAdapter.Fill(this.陳老師的動物之家DataSet.Member_Wish_Size);
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Category' 資料表。您可以視需要進行移動或移除。
-            //// TODO: 這行程式碼會將資料載入 '陳老師的動物之家DataSet.Pet_Detail' 資料表。您可以視需要進行移動或移除。
-
-        }
-
-        private void member_Wish_SizeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.member_Wish_SizeBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.陳老師的動物之家DataSet);
-
-        }
-
-        private void member_WishBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            //this.tableAdapterManager.UpdateAll(this.陳老師的動物之家DataSet);
-
-        }
-
-        private void member_WishBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            //this.tableAdapterManager.UpdateAll(this.陳老師的動物之家DataSet);
-
-        }
-
-
     }
 }

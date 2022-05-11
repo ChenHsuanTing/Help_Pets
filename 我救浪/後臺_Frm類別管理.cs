@@ -84,7 +84,7 @@ namespace 我救浪
             else
             {
                 var sub = (from s in this.dbcontext.SubCategories.AsEnumerable()
-                           where s.CategoryID == (int)cbPetMainCategory.SelectedValue
+                           where s.SubCategoryID == (int)cbPetSubCategory.SelectedValue 
                            select s).FirstOrDefault();
 
                 if (sub == null) return;
@@ -98,25 +98,34 @@ namespace 我救浪
         }
         private void btnPetDelete_Click(object sender, EventArgs e)
         {
-            if (cbPetMainCategory.Text == "請選擇總類")
+            try
             {
-                MessageBox.Show("請選擇總類");
+                if (cbPetMainCategory.Text == "請選擇總類")
+                {
+                    MessageBox.Show("請選擇總類");
+                }
+                else if (cbPetSubCategory.Text == "請選擇分類")
+                {
+                    MessageBox.Show("請選擇分類");
+                }
+                else
+                {
+                    var sub = (from s in this.dbcontext.SubCategories.AsEnumerable()
+                               where s.SubCategoryID == (int)cbPetSubCategory.SelectedValue
+                               select s).FirstOrDefault();
+                    if (sub == null) return;
+                    this.dbcontext.SubCategories.Remove(sub);
+                    this.dbcontext.SaveChanges();
+                    MessageBox.Show("刪除成功");
+                    btnPetReadAll.PerformClick();
+                }
             }
-            else if (cbPetSubCategory.Text == "請選擇分類")
+            catch (Exception)
             {
-                MessageBox.Show("請選擇分類");
+                MessageBox.Show("該分類尚有相關資訊未刪除，請確認");
+                this.dbcontext = new 我救浪Entities();
             }
-            else
-            {
-                var sub = (from s in this.dbcontext.SubCategories.AsEnumerable()
-                           where s.SubCategoryID == (int)cbPetSubCategory.SelectedValue
-                           select s).FirstOrDefault();
-                if (sub == null) return;
-                this.dbcontext.SubCategories.Remove(sub);
-                this.dbcontext.SaveChanges();
-                MessageBox.Show("刪除成功");
-                btnPetReadAll.PerformClick();
-            }
+
 
         }
         private void cbProMainCategory_SelectionChangeCommitted(object sender, EventArgs e)
@@ -130,6 +139,7 @@ namespace 我救浪
         }
         private void cbProSubCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            
             var q = from s in this.dbcontext.SubCategories.AsEnumerable()
                     where s.CategoryID == (int)cbProSubCategory.SelectedValue
                     select s;
@@ -253,56 +263,71 @@ namespace 我救浪
         }
         private void btnProSubDelete_Click(object sender, EventArgs e)
         {
-            if (cbProMainCategory.Text == "請選擇總類")
+            try
             {
-                MessageBox.Show("請選擇總類");
-            }
-            else if (cbProSubCategory.Text == "請選擇分類")
-            {
-                MessageBox.Show("請選擇分類");
-            }
-            else
-            {
-                var category = (from c in this.dbcontext.Categories.AsEnumerable()
-                                where c.CategoryID == (int)cbProSubCategory.SelectedValue
-                                select c).FirstOrDefault();
+                if (cbProMainCategory.Text == "請選擇總類")
+                {
+                    MessageBox.Show("請選擇總類");
+                }
+                else if (cbProSubCategory.Text == "請選擇分類")
+                {
+                    MessageBox.Show("請選擇分類");
+                }
+                else
+                {
+                    var category = (from c in this.dbcontext.Categories.AsEnumerable()
+                                    where c.CategoryID == (int)cbProSubCategory.SelectedValue
+                                    select c).FirstOrDefault();
 
-                if (category == null) return;
+                    if (category == null) return;
 
-                this.dbcontext.Categories.Remove(category);
-                this.dbcontext.SaveChanges();
-                MessageBox.Show("刪除成功");
-                btnProReadAll.PerformClick();
+                    this.dbcontext.Categories.Remove(category);
+                    this.dbcontext.SaveChanges();
+                    MessageBox.Show("刪除成功");
+                    btnProReadAll.PerformClick();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("無法刪除!請確認細項是否有資料。");
+                this.dbcontext = new 我救浪Entities();
             }
         }
 
         private void btnProDetailDelete_Click(object sender, EventArgs e)
         {
-            if (cbProMainCategory.Text == "請選擇總類")
+            try
             {
-                MessageBox.Show("請選擇總類");
+                if (cbProMainCategory.Text == "請選擇總類")
+                {
+                    MessageBox.Show("請選擇總類");
+                }
+                else if (cbProSubCategory.Text == "請選擇分類")
+                {
+                    MessageBox.Show("請選擇分類");
+                }
+                else if (cbProDetailCategory.Text == "請選擇細項")
+                {
+                    MessageBox.Show("請選擇細項");
+                }
+                else
+                {
+                    var sub = (from s in this.dbcontext.SubCategories.AsEnumerable()
+                               where s.SubCategoryID == (int)cbProDetailCategory.SelectedValue
+                               select s).FirstOrDefault();
+                    if (sub == null) return;
+                    this.dbcontext.SubCategories.Remove(sub);
+                    this.dbcontext.SaveChanges();
+                    MessageBox.Show("刪除成功");
+                    btnProReadAll.PerformClick();
+                }
             }
-            else if (cbProSubCategory.Text == "請選擇分類")
+            catch (Exception)
             {
-                MessageBox.Show("請選擇分類");
-            }
-            else if (cbProDetailCategory.Text == "請選擇細項")
-            {
-                MessageBox.Show("請選擇細項");
-            }
-            else
-            {
-                var sub = (from s in this.dbcontext.SubCategories.AsEnumerable()
-                           where s.SubCategoryID == (int)cbProDetailCategory.SelectedValue
-                           select s).FirstOrDefault();
-                if (sub == null) return;
-                this.dbcontext.SubCategories.Remove(sub);
-                this.dbcontext.SaveChanges();
-                MessageBox.Show("刪除成功");
-                btnProReadAll.PerformClick();
+                MessageBox.Show("無法刪除!請再次確認。");
+                this.dbcontext = new 我救浪Entities();
             }
         }
-
         private void btnProReadAll_Click(object sender, EventArgs e)
         {
             var q = from sc in this.dbcontext.SubCategories.AsEnumerable()
@@ -344,7 +369,5 @@ namespace 我救浪
                     };
             this.dataGridView2.DataSource = q.ToList();
         }
-
-
     }
 }

@@ -83,7 +83,7 @@ namespace 我救浪
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(21, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 293);
+            this.groupBox1.Size = new System.Drawing.Size(493, 293);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "產品類別異動";
@@ -132,7 +132,7 @@ namespace 我救浪
             // 
             this.btnProReadAll.Location = new System.Drawing.Point(22, 39);
             this.btnProReadAll.Name = "btnProReadAll";
-            this.btnProReadAll.Size = new System.Drawing.Size(89, 33);
+            this.btnProReadAll.Size = new System.Drawing.Size(105, 33);
             this.btnProReadAll.TabIndex = 27;
             this.btnProReadAll.Text = "全部讀取";
             this.btnProReadAll.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@ namespace 我救浪
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 224);
+            this.label1.Location = new System.Drawing.Point(6, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 26;
@@ -212,7 +212,7 @@ namespace 我救浪
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Location = new System.Drawing.Point(18, 93);
+            this.lbCategory.Location = new System.Drawing.Point(6, 93);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(86, 22);
             this.lbCategory.TabIndex = 0;
@@ -221,7 +221,7 @@ namespace 我救浪
             // lbSubCategory
             // 
             this.lbSubCategory.AutoSize = true;
-            this.lbSubCategory.Location = new System.Drawing.Point(18, 141);
+            this.lbSubCategory.Location = new System.Drawing.Point(6, 141);
             this.lbSubCategory.Name = "lbSubCategory";
             this.lbSubCategory.Size = new System.Drawing.Size(86, 22);
             this.lbSubCategory.TabIndex = 11;
@@ -234,7 +234,7 @@ namespace 我救浪
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(468, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(493, 236);
             this.dataGridView1.TabIndex = 31;
             // 
             // dataGridView2
@@ -244,7 +244,7 @@ namespace 我救浪
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(468, 236);
+            this.dataGridView2.Size = new System.Drawing.Size(495, 236);
             this.dataGridView2.TabIndex = 33;
             // 
             // groupBox2
@@ -261,14 +261,14 @@ namespace 我救浪
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox2.Location = new System.Drawing.Point(573, 32);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(468, 293);
+            this.groupBox2.Size = new System.Drawing.Size(495, 293);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "領養類別異動";
             // 
             // btnPetDelete
             // 
-            this.btnPetDelete.Location = new System.Drawing.Point(110, 175);
+            this.btnPetDelete.Location = new System.Drawing.Point(126, 175);
             this.btnPetDelete.Name = "btnPetDelete";
             this.btnPetDelete.Size = new System.Drawing.Size(74, 33);
             this.btnPetDelete.TabIndex = 30;
@@ -280,7 +280,7 @@ namespace 我救浪
             // 
             this.btnPetReadAll.Location = new System.Drawing.Point(22, 39);
             this.btnPetReadAll.Name = "btnPetReadAll";
-            this.btnPetReadAll.Size = new System.Drawing.Size(89, 33);
+            this.btnPetReadAll.Size = new System.Drawing.Size(111, 33);
             this.btnPetReadAll.TabIndex = 27;
             this.btnPetReadAll.Text = "全部讀取";
             this.btnPetReadAll.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@ namespace 我救浪
             // 
             // btnPetCreate
             // 
-            this.btnPetCreate.Location = new System.Drawing.Point(252, 175);
+            this.btnPetCreate.Location = new System.Drawing.Point(268, 175);
             this.btnPetCreate.Name = "btnPetCreate";
             this.btnPetCreate.Size = new System.Drawing.Size(74, 33);
             this.btnPetCreate.TabIndex = 28;
@@ -298,7 +298,7 @@ namespace 我救浪
             // 
             // btnPetUpdate
             // 
-            this.btnPetUpdate.Location = new System.Drawing.Point(332, 175);
+            this.btnPetUpdate.Location = new System.Drawing.Point(348, 175);
             this.btnPetUpdate.Name = "btnPetUpdate";
             this.btnPetUpdate.Size = new System.Drawing.Size(74, 33);
             this.btnPetUpdate.TabIndex = 29;
@@ -309,7 +309,7 @@ namespace 我救浪
             // cbPetMainCategory
             // 
             this.cbPetMainCategory.FormattingEnabled = true;
-            this.cbPetMainCategory.Location = new System.Drawing.Point(110, 90);
+            this.cbPetMainCategory.Location = new System.Drawing.Point(126, 90);
             this.cbPetMainCategory.Name = "cbPetMainCategory";
             this.cbPetMainCategory.Size = new System.Drawing.Size(122, 30);
             this.cbPetMainCategory.TabIndex = 19;
@@ -318,14 +318,14 @@ namespace 我救浪
             // cbPetSubCategory
             // 
             this.cbPetSubCategory.FormattingEnabled = true;
-            this.cbPetSubCategory.Location = new System.Drawing.Point(110, 138);
+            this.cbPetSubCategory.Location = new System.Drawing.Point(126, 138);
             this.cbPetSubCategory.Name = "cbPetSubCategory";
             this.cbPetSubCategory.Size = new System.Drawing.Size(122, 30);
             this.cbPetSubCategory.TabIndex = 24;
             // 
             // txtPetSubCategory
             // 
-            this.txtPetSubCategory.Location = new System.Drawing.Point(252, 90);
+            this.txtPetSubCategory.Location = new System.Drawing.Point(268, 90);
             this.txtPetSubCategory.Multiline = true;
             this.txtPetSubCategory.Name = "txtPetSubCategory";
             this.txtPetSubCategory.Size = new System.Drawing.Size(122, 30);
@@ -349,7 +349,7 @@ namespace 我救浪
             this.label4.TabIndex = 11;
             this.label4.Text = "領養分類 :";
             // 
-            // FrmNewCategory
+            // 後臺_Frm類別管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -358,7 +358,8 @@ namespace 我救浪
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmNewCategory";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "後臺_Frm類別管理";
             this.Text = "FrmNewCategory";
             this.Load += new System.EventHandler(this.FrmNewCategory_Load);
             this.groupBox1.ResumeLayout(false);

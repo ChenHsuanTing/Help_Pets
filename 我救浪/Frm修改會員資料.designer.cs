@@ -29,6 +29,7 @@ namespace 我救浪
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm修改會員資料));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCity = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -50,129 +51,161 @@ namespace 我救浪
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dateTimePicker1.Location = new System.Drawing.Point(150, 330);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(125, 27);
             this.dateTimePicker1.TabIndex = 35;
             // 
             // comboBoxCity
             // 
+            this.comboBoxCity.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBoxCity.FormattingEnabled = true;
             this.comboBoxCity.Location = new System.Drawing.Point(150, 394);
             this.comboBoxCity.Name = "comboBoxCity";
-            this.comboBoxCity.Size = new System.Drawing.Size(99, 23);
+            this.comboBoxCity.Size = new System.Drawing.Size(99, 27);
             this.comboBoxCity.TabIndex = 34;
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPassword.Location = new System.Drawing.Point(150, 104);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 25);
+            this.txtPassword.Size = new System.Drawing.Size(100, 27);
             this.txtPassword.TabIndex = 33;
             // 
             // txtPassword1
             // 
+            this.txtPassword1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPassword1.Location = new System.Drawing.Point(150, 154);
             this.txtPassword1.Name = "txtPassword1";
-            this.txtPassword1.Size = new System.Drawing.Size(100, 25);
+            this.txtPassword1.Size = new System.Drawing.Size(100, 27);
             this.txtPassword1.TabIndex = 32;
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtName.Location = new System.Drawing.Point(150, 217);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 25);
+            this.txtName.Size = new System.Drawing.Size(100, 27);
             this.txtName.TabIndex = 31;
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtEmail.Location = new System.Drawing.Point(150, 281);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 25);
+            this.txtEmail.Size = new System.Drawing.Size(100, 27);
             this.txtEmail.TabIndex = 30;
             // 
             // txtAddress
             // 
+            this.txtAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtAddress.Location = new System.Drawing.Point(150, 423);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(335, 25);
+            this.txtAddress.Size = new System.Drawing.Size(335, 27);
             this.txtAddress.TabIndex = 29;
             // 
             // txtPhone
             // 
+            this.txtPhone.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPhone.Location = new System.Drawing.Point(150, 50);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 25);
+            this.txtPhone.Size = new System.Drawing.Size(100, 27);
             this.txtPhone.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.ForeColor = System.Drawing.Color.Olive;
             this.label7.Location = new System.Drawing.Point(54, 107);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 15);
+            this.label7.Size = new System.Drawing.Size(99, 22);
             this.label7.TabIndex = 27;
             this.label7.Text = "輸入新密碼:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.ForeColor = System.Drawing.Color.Olive;
             this.label6.Location = new System.Drawing.Point(54, 157);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 15);
+            this.label6.Size = new System.Drawing.Size(82, 22);
             this.label6.TabIndex = 26;
             this.label6.Text = "確認密碼:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.Color.Olive;
             this.label5.Location = new System.Drawing.Point(54, 397);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.Size = new System.Drawing.Size(82, 22);
             this.label5.TabIndex = 25;
             this.label5.Text = "通訊地址:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.ForeColor = System.Drawing.Color.Olive;
             this.label4.Location = new System.Drawing.Point(54, 337);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 15);
+            this.label4.Size = new System.Drawing.Size(82, 22);
             this.label4.TabIndex = 24;
             this.label4.Text = "出生日期:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.Olive;
             this.label3.Location = new System.Drawing.Point(54, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.Size = new System.Drawing.Size(82, 22);
             this.label3.TabIndex = 23;
             this.label3.Text = "會員手機:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.Olive;
             this.label2.Location = new System.Drawing.Point(54, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.Size = new System.Drawing.Size(48, 22);
             this.label2.TabIndex = 22;
             this.label2.Text = "姓名:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.Olive;
             this.label1.Location = new System.Drawing.Point(54, 284);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
+            this.label1.Size = new System.Drawing.Size(56, 22);
             this.label1.TabIndex = 21;
             this.label1.Text = "Email:";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(321, 492);
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnClear.ForeColor = System.Drawing.Color.Olive;
+            this.btnClear.Location = new System.Drawing.Point(279, 480);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(90, 23);
+            this.btnClear.Size = new System.Drawing.Size(103, 35);
             this.btnClear.TabIndex = 20;
             this.btnClear.Text = "重新輸入";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -180,9 +213,12 @@ namespace 我救浪
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(132, 492);
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsert.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnInsert.ForeColor = System.Drawing.Color.Olive;
+            this.btnInsert.Location = new System.Drawing.Point(81, 480);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(86, 23);
+            this.btnInsert.Size = new System.Drawing.Size(100, 35);
             this.btnInsert.TabIndex = 19;
             this.btnInsert.Text = "修改";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -192,6 +228,7 @@ namespace 我救浪
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(501, 559);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBoxCity);
@@ -210,6 +247,7 @@ namespace 我救浪
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnInsert);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm修改會員資料";
             this.Text = "修改會員資料";
             this.Load += new System.EventHandler(this.Frm修改會員資料_Load);

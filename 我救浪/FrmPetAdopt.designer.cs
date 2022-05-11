@@ -57,6 +57,8 @@ namespace PetAdopt
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtSpace = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.txtWeekTime = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,7 +74,7 @@ namespace PetAdopt
             this.cbxCategoryName.Name = "cbxCategoryName";
             this.cbxCategoryName.Size = new System.Drawing.Size(95, 25);
             this.cbxCategoryName.TabIndex = 0;
-            this.cbxCategoryName.SelectedIndexChanged += new System.EventHandler(this.cbxCategoryName_SelectedIndexChanged);
+            this.cbxCategoryName.SelectionChangeCommitted += new System.EventHandler(this.cbxCategoryName_SelectionChangeCommitted);
             // 
             // label1
             // 
@@ -104,7 +106,7 @@ namespace PetAdopt
             this.cbxGenderID.Name = "cbxGenderID";
             this.cbxGenderID.Size = new System.Drawing.Size(95, 25);
             this.cbxGenderID.TabIndex = 2;
-            this.cbxGenderID.SelectedIndexChanged += new System.EventHandler(this.cbxGenderID_SelectedIndexChanged);
+            this.cbxGenderID.SelectionChangeCommitted += new System.EventHandler(this.cbxGenderID_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -125,7 +127,7 @@ namespace PetAdopt
             this.cbxSizeID.Name = "cbxSizeID";
             this.cbxSizeID.Size = new System.Drawing.Size(95, 25);
             this.cbxSizeID.TabIndex = 4;
-            this.cbxSizeID.SelectedIndexChanged += new System.EventHandler(this.cbxSizeID_SelectedIndexChanged);
+            this.cbxSizeID.SelectionChangeCommitted += new System.EventHandler(this.cbxSizeID_SelectionChangeCommitted);
             // 
             // label4
             // 
@@ -146,7 +148,7 @@ namespace PetAdopt
             this.cbxAge.Name = "cbxAge";
             this.cbxAge.Size = new System.Drawing.Size(95, 25);
             this.cbxAge.TabIndex = 6;
-            this.cbxAge.SelectedIndexChanged += new System.EventHandler(this.cbxAge_SelectedIndexChanged);
+            this.cbxAge.SelectionChangeCommitted += new System.EventHandler(this.cbxAge_SelectionChangeCommitted);
             // 
             // label5
             // 
@@ -167,7 +169,7 @@ namespace PetAdopt
             this.cbxCity.Name = "cbxCity";
             this.cbxCity.Size = new System.Drawing.Size(142, 25);
             this.cbxCity.TabIndex = 8;
-            this.cbxCity.SelectedIndexChanged += new System.EventHandler(this.cbxCity_SelectedIndexChanged);
+            this.cbxCity.SelectionChangeCommitted += new System.EventHandler(this.cbxCity_SelectionChangeCommitted);
             // 
             // label6
             // 
@@ -199,7 +201,7 @@ namespace PetAdopt
             this.cbxColorID.Name = "cbxColorID";
             this.cbxColorID.Size = new System.Drawing.Size(56, 25);
             this.cbxColorID.TabIndex = 12;
-            this.cbxColorID.SelectedIndexChanged += new System.EventHandler(this.cbxColorID_SelectedIndexChanged);
+            this.cbxColorID.SelectionChangeCommitted += new System.EventHandler(this.cbxColorID_SelectionChangeCommitted);
             // 
             // label8
             // 
@@ -220,7 +222,7 @@ namespace PetAdopt
             this.cbxLigation.Name = "cbxLigation";
             this.cbxLigation.Size = new System.Drawing.Size(95, 25);
             this.cbxLigation.TabIndex = 14;
-            this.cbxLigation.SelectedIndexChanged += new System.EventHandler(this.cbxIsLigation_SelectedIndexChanged);
+            this.cbxLigation.SelectionChangeCommitted += new System.EventHandler(this.cbxLigation_SelectionChangeCommitted);
             // 
             // label9
             // 
@@ -262,7 +264,7 @@ namespace PetAdopt
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(7, 340);
+            this.button1.Location = new System.Drawing.Point(9, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 97);
             this.button1.TabIndex = 19;
@@ -282,13 +284,14 @@ namespace PetAdopt
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(7, 441);
+            this.button2.Location = new System.Drawing.Point(9, 487);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 94);
             this.button2.TabIndex = 20;
             this.button2.Text = "儲 存 條 件";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -301,7 +304,7 @@ namespace PetAdopt
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(7, 541);
+            this.button3.Location = new System.Drawing.Point(9, 587);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(146, 94);
             this.button3.TabIndex = 21;
@@ -339,6 +342,8 @@ namespace PetAdopt
             // 
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel1.Controls.Add(this.txtWeekTime);
+            this.splitContainer1.Panel1.Controls.Add(this.label11);
             this.splitContainer1.Panel1.Controls.Add(this.txtSpace);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.txtYearCost);
@@ -368,7 +373,7 @@ namespace PetAdopt
             this.splitContainer1.Panel2.Controls.Add(this.label9);
             this.splitContainer1.Panel2.Controls.Add(this.comboBox9);
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1016, 675);
+            this.splitContainer1.Size = new System.Drawing.Size(1016, 691);
             this.splitContainer1.SplitterDistance = 174;
             this.splitContainer1.TabIndex = 26;
             // 
@@ -380,6 +385,25 @@ namespace PetAdopt
             this.txtSpace.Size = new System.Drawing.Size(56, 29);
             this.txtSpace.TabIndex = 25;
             // 
+            // txtWeekTime
+            // 
+            this.txtWeekTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtWeekTime.Location = new System.Drawing.Point(9, 351);
+            this.txtWeekTime.Name = "txtWeekTime";
+            this.txtWeekTime.Size = new System.Drawing.Size(142, 29);
+            this.txtWeekTime.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(5, 324);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 24);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "每周陪伴時間:";
+            // 
             // FormPetAdopt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -387,7 +411,7 @@ namespace PetAdopt
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1016, 675);
+            this.ClientSize = new System.Drawing.Size(1016, 691);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormPetAdopt";
@@ -431,5 +455,7 @@ namespace PetAdopt
         private System.Windows.Forms.TextBox txtYearCost;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txtSpace;
+        private System.Windows.Forms.TextBox txtWeekTime;
+        private System.Windows.Forms.Label label11;
     }
 }

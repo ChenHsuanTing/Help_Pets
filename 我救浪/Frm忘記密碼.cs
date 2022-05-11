@@ -18,6 +18,7 @@ namespace 我救浪
             txtPhone.Focus();
             txtPassword.Enabled = false;
             txtPassword1.Enabled = false;
+            btnInsert.Enabled = false;
         }
         我救浪Entities dbContext = new 我救浪Entities();
 
@@ -34,6 +35,7 @@ namespace 我救浪
                 MessageBox.Show("驗證成功");
                 txtPassword.Enabled = true;
                 txtPassword1.Enabled = true;
+                btnInsert.Enabled = true;
             }
             else
             {
