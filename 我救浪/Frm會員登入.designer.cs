@@ -31,8 +31,6 @@ namespace 我救浪
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMemLogIn));
             this.Lb會員登入 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Passwordtxt = new System.Windows.Forms.TextBox();
@@ -40,45 +38,29 @@ namespace 我救浪
             this.lbPassWord = new System.Windows.Forms.Label();
             this.lbAccount = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // Lb會員登入
             // 
             this.Lb會員登入.AutoSize = true;
+            this.Lb會員登入.BackColor = System.Drawing.Color.Transparent;
             this.Lb會員登入.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Lb會員登入.ForeColor = System.Drawing.Color.Black;
-            this.Lb會員登入.Location = new System.Drawing.Point(107, 31);
+            this.Lb會員登入.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lb會員登入.Location = new System.Drawing.Point(88, 38);
             this.Lb會員登入.Name = "Lb會員登入";
             this.Lb會員登入.Size = new System.Drawing.Size(127, 36);
             this.Lb會員登入.TabIndex = 1;
             this.Lb會員登入.Text = "會員登入";
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button5.Location = new System.Drawing.Point(104, 313);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(130, 31);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "忘記密碼";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button3.Location = new System.Drawing.Point(104, 276);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 31);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "修改會員資料";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.Location = new System.Drawing.Point(186, 215);
+            this.button2.BackColor = System.Drawing.Color.Honeydew;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button2.Location = new System.Drawing.Point(173, 247);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 38);
             this.button2.TabIndex = 7;
@@ -88,8 +70,11 @@ namespace 我救浪
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(79, 215);
+            this.button1.BackColor = System.Drawing.Color.Honeydew;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button1.Location = new System.Drawing.Point(42, 247);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 38);
             this.button1.TabIndex = 6;
@@ -99,14 +84,14 @@ namespace 我救浪
             // 
             // Passwordtxt
             // 
-            this.Passwordtxt.Location = new System.Drawing.Point(146, 153);
+            this.Passwordtxt.Location = new System.Drawing.Point(113, 176);
             this.Passwordtxt.Name = "Passwordtxt";
             this.Passwordtxt.Size = new System.Drawing.Size(121, 25);
             this.Passwordtxt.TabIndex = 5;
             // 
             // Usernametxt
             // 
-            this.Usernametxt.Location = new System.Drawing.Point(146, 111);
+            this.Usernametxt.Location = new System.Drawing.Point(113, 112);
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(121, 25);
             this.Usernametxt.TabIndex = 4;
@@ -114,30 +99,68 @@ namespace 我救浪
             // lbPassWord
             // 
             this.lbPassWord.AutoSize = true;
-            this.lbPassWord.Location = new System.Drawing.Point(76, 156);
+            this.lbPassWord.BackColor = System.Drawing.Color.Transparent;
+            this.lbPassWord.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbPassWord.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbPassWord.Location = new System.Drawing.Point(38, 179);
             this.lbPassWord.Name = "lbPassWord";
-            this.lbPassWord.Size = new System.Drawing.Size(41, 15);
+            this.lbPassWord.Size = new System.Drawing.Size(48, 22);
             this.lbPassWord.TabIndex = 3;
             this.lbPassWord.Text = "密碼:";
             // 
             // lbAccount
             // 
             this.lbAccount.AutoSize = true;
-            this.lbAccount.Location = new System.Drawing.Point(76, 114);
+            this.lbAccount.BackColor = System.Drawing.Color.Transparent;
+            this.lbAccount.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbAccount.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbAccount.Location = new System.Drawing.Point(38, 115);
             this.lbAccount.Name = "lbAccount";
-            this.lbAccount.Size = new System.Drawing.Size(41, 15);
+            this.lbAccount.Size = new System.Drawing.Size(48, 22);
             this.lbAccount.TabIndex = 2;
             this.lbAccount.Text = "帳號:";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(521, 324);
+            this.button4.BackColor = System.Drawing.Color.Honeydew;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button4.Location = new System.Drawing.Point(214, 375);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(176, 37);
+            this.button4.Size = new System.Drawing.Size(95, 24);
             this.button4.TabIndex = 3;
             this.button4.Text = "員工登入";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.linkLabel1.Location = new System.Drawing.Point(109, 302);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(69, 19);
+            this.linkLabel1.TabIndex = 10;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "忘記密碼";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.linkLabel2.Location = new System.Drawing.Point(99, 330);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(99, 19);
+            this.linkLabel2.TabIndex = 11;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "修改會員資料";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // FrmMemLogIn
             // 
@@ -145,10 +168,10 @@ namespace 我救浪
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(353, 388);
-            this.Controls.Add(this.button5);
+            this.ClientSize = new System.Drawing.Size(321, 411);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Lb會員登入);
             this.Controls.Add(this.button1);
@@ -156,6 +179,7 @@ namespace 我救浪
             this.Controls.Add(this.Passwordtxt);
             this.Controls.Add(this.lbPassWord);
             this.Controls.Add(this.Usernametxt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMemLogIn";
             this.Text = "會員登入";
             this.ResumeLayout(false);
@@ -171,9 +195,9 @@ namespace 我救浪
         private System.Windows.Forms.TextBox Usernametxt;
         private System.Windows.Forms.Label lbPassWord;
         private System.Windows.Forms.Label lbAccount;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 
