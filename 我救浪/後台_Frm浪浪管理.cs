@@ -158,17 +158,10 @@ namespace 我救浪
             var categoryname = from n in PetContext.Categories
                                where n.IsPet == true
                                select n;
-            //this.comboBox8.DataSource = categoryname.Select(n => n.CategoryName).ToList();
             this.comboBox8.DataSource = categoryname.ToList();
             this.comboBox8.DisplayMember = "CategoryName";
             this.comboBox8.ValueMember = "CategoryID";
-            // SubCategory
-            //var subcategory = from n in PetContext.Categories
-            //                  where n.IsPet == true
-            //                  select n;
-            //this.comboBox9.DataSource = subcategory.ToList();
-            //comboBox9.DisplayMember = "CategoryName";
-            //comboBox9.ValueMember = "CategoryID";
+     
 
             //性別
             var GenderType = (from n in this.PetContext.Genders
@@ -274,25 +267,14 @@ namespace 我救浪
                 comAge.Items.Add(i);
             }
             //次類別
-            //var subc = PetContext.SubCategories.Where(n=>n.Category.IsPet.Value==true).Select(n => n.SubCategoryName);
-            //combSubcate.Text = "分類";
-            //foreach (var i in subc.ToList().Distinct())
-            //{
-            //    combSubcate.Items.Add(i);
-            //}
+          
             var SUB = from su in this.PetContext.SubCategories
                       where su.Category.IsPet == true
                       select su;
             combSubcate.DataSource = SUB.ToList();
             combSubcate.DisplayMember = "SubCategoryName";
             combSubcate.ValueMember = "SubCategoryID";
-            //供應商
-            var Sup = PetContext.Suppliers.Select(n => n.Name);
-            comSup.Text = "供應商";
-            foreach (var i in Sup.ToList())
-            {
-                comSup.Items.Add(i);
-            }
+            
         }
         private void combSubcate_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -421,14 +403,20 @@ namespace 我救浪
             postion = dataGridViewPet.Rows[((DataGridView)sender).CurrentCell.RowIndex].Cells["ProductID"].Value;
             LoadPicture((int)postion, pictureBox1);
         }
-
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            postion = dataGridView1.Rows[((DataGridView)sender).CurrentCell.RowIndex].Cells["ProductID"].Value;
+            LoadPicture((int)postion, pictureBox2);
+        }
         void LoadPicture(int poston, PictureBox pictureBox)
         {
             this.pictureBox1.Image = null;
+            this.pictureBox2.Image = null;
             var pic = from n in PetContext.Photos.AsEnumerable()
                       where n.ProductID == (int)postion
                       select n;
             this.pictureBox1.Image = null;
+            this.pictureBox2.Image = null;
             this.bindingSource1.DataSource = pic.ToList();
             pictureBox.DataBindings.Add("Image", bindingSource1, "Picture", true);
             pictureBox.DataBindings.Clear();
@@ -551,6 +539,6 @@ namespace 我救浪
             this.dataGridView4.DataSource = q.ToList();
         }
 
-
+        
     }
 }
