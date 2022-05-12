@@ -146,7 +146,7 @@ namespace PetAdopt
                     && (!(cbxCity.Text == "不限") ? cbxCity.Text == p.City.CityName : true)
                     && (!String.IsNullOrEmpty(txtYearCost.Text) ? int.Parse(txtYearCost.Text) >= p.YearCost : true)
                     && (!String.IsNullOrEmpty(txtSpace.Text) ? int.Parse(txtSpace.Text) >= p.Space : true)
-                    && (!String.IsNullOrEmpty(txtSpace.Text) ? int.Parse(txtWeek.Text) >= p.AccompanyTimeWeek : true)
+                    && (!String.IsNullOrEmpty(txtWeek.Text) ? int.Parse(txtWeek.Text) >= p.AccompanyTimeWeek : true)
                     select p;
 
             if(q.Any())
@@ -173,64 +173,69 @@ namespace PetAdopt
             var q = from m in dbconect.Member_Wish
                     where memberID == m.MemberID
                     select m;
-
-       
-
-            if (q.Any())
+            try
             {
-                var q2 = q.FirstOrDefault();
-                q2.CityID = (int)cbxCity.SelectedValue;
-                q2.YearCost = int.Parse(txtYearCost.Text);
-                q2.Space = int.Parse(txtSpace.Text);
-                q2.AgeID = (int)cbxAge.SelectedValue;
-                q2.AccompanyTimeWeek = int.Parse(txtWeek.Text);
-                q2.LigationID = (int)cbxLigation.SelectedValue;
-                q2.SubCategoryID = (int)cbxSubCategory.SelectedValue;
-                q2.GenderID = (int)cbxGenderID.SelectedValue;
-                q2.SizeID = (int)cbxSizeID.SelectedValue;
-                q2.SubCategoryID = (int)cbxCategoryName.SelectedValue;
-                dbconect.SaveChanges();
-                MessageBox.Show("條件修改成功");
+                if (q.Any())
+                {
+                    var q2 = q.FirstOrDefault();
+                    q2.CityID = (int)cbxCity.SelectedValue;
+                    q2.YearCost = int.Parse(txtYearCost.Text);
+                    q2.Space = int.Parse(txtSpace.Text);
+                    q2.AgeID = (int)cbxAge.SelectedValue;
+                    q2.AccompanyTimeWeek = int.Parse(txtWeek.Text);
+                    q2.LigationID = (int)cbxLigation.SelectedValue;
+                    q2.SubCategoryID = (int)cbxSubCategory.SelectedValue;
+                    q2.GenderID = (int)cbxGenderID.SelectedValue;
+                    q2.SizeID = (int)cbxSizeID.SelectedValue;
+                    q2.CategoryID = (int)cbxCategoryName.SelectedValue;
+                    dbconect.SaveChanges();
+                    MessageBox.Show("條件修改成功");
 
 
-                var q_color = (from mws in dbconect.Member_Wish_Color
-                               where mws.MemberID == memberID
-                               select mws).FirstOrDefault();
+                    var q_color = (from mws in dbconect.Member_Wish_Color
+                                   where mws.MemberID == memberID
+                                   select mws).FirstOrDefault();
 
-                q_color.ColorID = (int)cbxColorID.SelectedValue;
-                dbconect.SaveChanges();
+                    q_color.ColorID = (int)cbxColorID.SelectedValue;
+                    dbconect.SaveChanges();
 
 
-                MessageBox.Show("顏色條件修改成功");
+                    MessageBox.Show("顏色條件修改成功");
+                }
+                else
+                {
+                    Member_Wish mw = new Member_Wish()
+                    {
+                        MemberID=memberID,
+                        CityID = (int)cbxCity.SelectedValue,
+                        YearCost = int.Parse(txtYearCost.Text),
+                        Space = int.Parse(txtSpace.Text),
+                        AgeID = (int)cbxAge.SelectedValue,
+                        AccompanyTimeWeek = int.Parse(txtWeek.Text),
+                        LigationID = (int)cbxLigation.SelectedValue,
+                        SubCategoryID = (int)cbxSubCategory.SelectedValue,
+                        GenderID = (int)cbxGenderID.SelectedValue,
+                        SizeID = (int)cbxSizeID.SelectedValue,
+                        CategoryID = (int)cbxCategoryName.SelectedValue
+                    };
+                    dbconect.Member_Wish.Add(mw);
+                    dbconect.SaveChanges();
+                    MessageBox.Show("條件新增成功");
+                    Member_Wish_Color mwc = new Member_Wish_Color()
+                    {
+                        MemberID = memberID,
+                        ColorID = (int)cbxColorID.SelectedValue
+                    };
+                    dbconect.Member_Wish_Color.Add(mwc);
+                    dbconect.SaveChanges();
+                    MessageBox.Show("顏色條件新增成功");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Member_Wish mw = new Member_Wish()
-                {
-                    MemberID=memberID,
-                    CityID = (int)cbxCity.SelectedValue,
-                    YearCost = int.Parse(txtYearCost.Text),
-                    Space = int.Parse(txtSpace.Text),
-                    AgeID = (int)cbxAge.SelectedValue,
-                    AccompanyTimeWeek = int.Parse(txtWeek.Text),
-                    LigationID = (int)cbxLigation.SelectedValue,
-                    SubCategoryID = (int)cbxSubCategory.SelectedValue,
-                    GenderID = (int)cbxGenderID.SelectedValue,
-                    SizeID = (int)cbxSizeID.SelectedValue,
-                    CategoryID = (int)cbxCategoryName.SelectedValue
-                };
-                dbconect.Member_Wish.Add(mw);
-                dbconect.SaveChanges();
-                MessageBox.Show("條件新增成功");
-                Member_Wish_Color mwc = new Member_Wish_Color()
-                {
-                    MemberID = memberID,
-                    ColorID = (int)cbxColorID.SelectedValue
-                };
-                dbconect.Member_Wish_Color.Add(mwc);
-                dbconect.SaveChanges();
-                MessageBox.Show("顏色條件新增成功");
+                MessageBox.Show(ex.Message);
             }
+
 
         }
 
