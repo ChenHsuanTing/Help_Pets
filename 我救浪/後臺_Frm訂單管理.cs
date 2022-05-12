@@ -445,9 +445,10 @@ namespace 我救浪
 
         private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            int x = (int)(((DataGridView)sender).CurrentCell.Value);
+            
             if (((DataGridView)sender).CurrentCell.ColumnIndex == 1)
             {
+                int x = (int)(((DataGridView)sender).CurrentCell.Value);
                 var a = dbContext.Products.Where(m => m.ProductID == x).Select(n => new { Name = n.ProductName, Supplier = n.Supplier.Name, Description = n.Description, InStock = n.UnitsInStock });
                 DataGridViewCell cell = this.dataGridView2.CurrentCell;
                 cell.ToolTipText = $"產品名稱 : {a.Select(n => n.Name).ToList().First()}\n供應商 : {a.Select(n => n.Supplier).ToList().First()}\n庫存量 : {a.Select(n => n.InStock).ToList().First()}\n商品敘述 : {a.Select(n => n.Description).ToList().First()}";

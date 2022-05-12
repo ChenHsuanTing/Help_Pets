@@ -51,6 +51,10 @@ namespace 我救浪
                 {
                     this.Visible = true;
                 }
+                else if (frm.DialogResult == DialogResult.Cancel)
+                {
+                   this.Close();
+                }
             }
             else if (UserName == "")
             {
@@ -116,13 +120,6 @@ namespace 我救浪
 
         private void FrmMemLogIn_KeyDown(object sender, KeyEventArgs e)
         {
-            //Keys a = (Keys)sender;
-            //MessageBox.Show("Test" );
-            //if (Keys.Enter == e.KeyCode)
-            //{
-            //    MessageBox.Show("Test");
-            //    button1.Focus();
-            //}
         }
     }
 }
