@@ -90,12 +90,12 @@ namespace 我救浪
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 416);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 388);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(833, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(839, 209);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -112,22 +112,24 @@ namespace 我救浪
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(138, 74);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 25);
+            this.comboBox1.Size = new System.Drawing.Size(138, 30);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(138, 116);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(138, 25);
+            this.comboBox2.Size = new System.Drawing.Size(138, 30);
             this.comboBox2.TabIndex = 4;
             // 
             // label2
@@ -185,11 +187,12 @@ namespace 我救浪
             // 
             // comboBox3
             // 
+            this.comboBox3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(138, 289);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(138, 25);
+            this.comboBox3.Size = new System.Drawing.Size(138, 30);
             this.comboBox3.TabIndex = 10;
             // 
             // label5
@@ -262,11 +265,12 @@ namespace 我救浪
             // 
             // comboBox4
             // 
+            this.comboBox4.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(161, 118);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(138, 25);
+            this.comboBox4.Size = new System.Drawing.Size(138, 30);
             this.comboBox4.TabIndex = 16;
             // 
             // label8
@@ -303,11 +307,12 @@ namespace 我救浪
             // 
             // comboBox5
             // 
+            this.comboBox5.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(161, 290);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(114, 25);
+            this.comboBox5.Size = new System.Drawing.Size(114, 30);
             this.comboBox5.TabIndex = 22;
             // 
             // label10
@@ -323,11 +328,12 @@ namespace 我救浪
             // 
             // comboBox6
             // 
+            this.comboBox6.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(161, 75);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(138, 25);
+            this.comboBox6.Size = new System.Drawing.Size(138, 30);
             this.comboBox6.TabIndex = 24;
             this.comboBox6.SelectionChangeCommitted += new System.EventHandler(this.comboBox6_SelectionChangeCommitted);
             this.comboBox6.TextChanged += new System.EventHandler(this.comboBox6_TextChanged);
@@ -538,11 +544,12 @@ namespace 我救浪
             // 
             // comboBox8
             // 
+            this.comboBox8.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(138, 31);
             this.comboBox8.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(138, 25);
+            this.comboBox8.Size = new System.Drawing.Size(138, 30);
             this.comboBox8.TabIndex = 44;
             this.comboBox8.SelectionChangeCommitted += new System.EventHandler(this.comboBox8_SelectionChangeCommitted);
             // 
@@ -559,18 +566,19 @@ namespace 我救浪
             // 
             // comboBox7
             // 
+            this.comboBox7.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(161, 35);
             this.comboBox7.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(138, 25);
+            this.comboBox7.Size = new System.Drawing.Size(138, 30);
             this.comboBox7.TabIndex = 42;
             this.comboBox7.SelectionChangeCommitted += new System.EventHandler(this.comboBox7_SelectionChangeCommitted);
             // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(323, 48);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(134, 231);
             this.textBox9.TabIndex = 45;
@@ -612,9 +620,9 @@ namespace 我救浪
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(26, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(353, 365);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
@@ -644,9 +652,9 @@ namespace 我救浪
             this.groupBox2.Controls.Add(this.comboBox6);
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox2.Location = new System.Drawing.Point(387, 13);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Size = new System.Drawing.Size(473, 363);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
@@ -659,7 +667,7 @@ namespace 我救浪
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1190, 893);
+            this.ClientSize = new System.Drawing.Size(1190, 612);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button7);

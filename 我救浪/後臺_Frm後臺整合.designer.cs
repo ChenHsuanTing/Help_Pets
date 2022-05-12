@@ -260,6 +260,7 @@ namespace 我救浪
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "後臺_Frm後臺整合";
             this.Text = "Frm0";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

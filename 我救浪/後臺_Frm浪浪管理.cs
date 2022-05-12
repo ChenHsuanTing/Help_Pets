@@ -70,6 +70,7 @@ namespace 我救浪
             this.PetContext.SaveChanges();
             btnproductsearch.PerformClick();
             //this.Read_RefreshDataGridView();
+            MessageBox.Show("新增成功");
             LoadAllCombobox();
         }
 

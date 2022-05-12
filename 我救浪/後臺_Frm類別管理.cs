@@ -122,7 +122,7 @@ namespace 我救浪
             }
             catch (Exception)
             {
-                MessageBox.Show("該分類尚有相關資訊未刪除，請確認");
+                MessageBox.Show("已有領養資訊!請再次確認。");
                 this.dbcontext = new 我救浪Entities();
             }
 
@@ -324,7 +324,7 @@ namespace 我救浪
             }
             catch (Exception)
             {
-                MessageBox.Show("無法刪除!請再次確認。");
+                MessageBox.Show("已有上架商品!請再次確認。");
                 this.dbcontext = new 我救浪Entities();
             }
         }
