@@ -422,8 +422,16 @@ namespace 我救浪
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            int x = int.Parse(textBox1.Text),
-                year = dateTimePicker2.Value.Year,
+            int x;
+            bool result = int.TryParse(textBox1.Text, out x);
+            if(result == false)
+            {
+                if(dbContext.Members.Where(n=>n.MemberID == x).Select(m=>m).ToList().Count() == 0)
+                {
+                    MessageBox.Show("會員ID錯誤/無此會員ID");
+                }
+            }
+              int  year = dateTimePicker2.Value.Year,
                 month = dateTimePicker2.Value.Month,
                 day = dateTimePicker2.Value.Day;
             var a = dbContext.Orders.Where(n => n.MemberID == x).Where(n => n.OrderDate.Value.Year == year && n.OrderDate.Value.Month == month && n.OrderDate.Value.Day == day).Select(o => o).ToList();
@@ -468,7 +476,6 @@ namespace 我救浪
         }
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (dataGridView1.Columns[((DataGridView)sender).CurrentCell.ColumnIndex].Name == "Order_StatusID")
             {
                 int x = (int)(((DataGridView)sender).CurrentCell.Value);
@@ -482,7 +489,6 @@ namespace 我救浪
                 {
                     cell.ToolTipText = "未送達";
                 }
-                
             }
         }
     }
