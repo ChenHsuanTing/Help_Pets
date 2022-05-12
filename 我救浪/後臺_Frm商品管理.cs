@@ -44,8 +44,8 @@ namespace 我救浪
             comboBox5.DisplayMember = "Name";
             comboBox5.ValueMember = "SupplierID";
 
-            var q_CategoryPet = from c in dbContext.Categories
-                                where c.IsPet == true
+            var q_CategoryPet = from c in dbContext.Categories.AsEnumerable()
+                                where c.IsPet == true &&c.CategoryName!="不限"
                                 select c;
             comboBox8.DataSource = q_CategoryPet.ToList();
             comboBox8.DisplayMember = "CategoryName";
@@ -89,6 +89,7 @@ namespace 我救浪
         {
             var q = from p in dbContext.Products.AsEnumerable()
                     where p.IsPet == false &&
+                    ((string.IsNullOrEmpty(comboBox8.Text)|| comboBox8.Text=="不限")? true : (int)(comboBox8.SelectedValue) == p.SubCategory.Category.ParentCategory) &&
                     (string.IsNullOrEmpty(comboBox1.Text) ? true : comboBox1.Text == p.SubCategory.Category.CategoryName) &&
                      (string.IsNullOrEmpty(comboBox2.Text) ? true : comboBox2.Text == p.SubCategory.SubCategoryName) &&
                       (string.IsNullOrEmpty(textBox1.Text) ? true : textBox1.Text == p.ProductName) &&
