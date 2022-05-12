@@ -225,7 +225,7 @@ namespace 我救浪
         {
             comboBox1.Items.Clear();
             var a = from i in dbContext.SubCategories
-                    where i.Category.IsPet == true
+                    where i.Category.IsPet == true && i.CategoryID != 1
                     select new { ItemName = i.SubCategoryName, ID = i.SubCategoryID };
             combo1selected_SubCateID = (int)a.Select(n => n.ID).First();
 
