@@ -72,6 +72,7 @@ namespace PetAdopt
             // 
             // cbxCategoryName
             // 
+            this.cbxCategoryName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxCategoryName.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxCategoryName.FormattingEnabled = true;
             this.cbxCategoryName.Location = new System.Drawing.Point(80, 25);
@@ -83,6 +84,7 @@ namespace PetAdopt
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -95,6 +97,7 @@ namespace PetAdopt
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -107,6 +110,7 @@ namespace PetAdopt
             // 
             // cbxGenderID
             // 
+            this.cbxGenderID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxGenderID.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxGenderID.FormattingEnabled = true;
             this.cbxGenderID.Location = new System.Drawing.Point(80, 100);
@@ -117,6 +121,7 @@ namespace PetAdopt
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -129,6 +134,7 @@ namespace PetAdopt
             // 
             // cbxSizeID
             // 
+            this.cbxSizeID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxSizeID.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxSizeID.FormattingEnabled = true;
             this.cbxSizeID.Location = new System.Drawing.Point(80, 134);
@@ -139,6 +145,7 @@ namespace PetAdopt
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -151,6 +158,7 @@ namespace PetAdopt
             // 
             // cbxAge
             // 
+            this.cbxAge.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxAge.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxAge.FormattingEnabled = true;
             this.cbxAge.Location = new System.Drawing.Point(80, 168);
@@ -161,6 +169,7 @@ namespace PetAdopt
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -173,6 +182,7 @@ namespace PetAdopt
             // 
             // cbxCity
             // 
+            this.cbxCity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxCity.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxCity.FormattingEnabled = true;
             this.cbxCity.Location = new System.Drawing.Point(9, 338);
@@ -183,6 +193,7 @@ namespace PetAdopt
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -195,6 +206,7 @@ namespace PetAdopt
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -207,6 +219,7 @@ namespace PetAdopt
             // 
             // cbxColorID
             // 
+            this.cbxColorID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxColorID.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxColorID.FormattingEnabled = true;
             this.cbxColorID.Location = new System.Drawing.Point(132, 235);
@@ -217,6 +230,7 @@ namespace PetAdopt
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -229,6 +243,7 @@ namespace PetAdopt
             // 
             // cbxLigation
             // 
+            this.cbxLigation.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxLigation.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxLigation.FormattingEnabled = true;
             this.cbxLigation.Location = new System.Drawing.Point(80, 201);
@@ -261,16 +276,20 @@ namespace PetAdopt
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 82);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 61);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1107, 835);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(905, 871);
             this.flowLayoutPanel1.TabIndex = 18;
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -292,6 +311,7 @@ namespace PetAdopt
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -313,6 +333,7 @@ namespace PetAdopt
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -334,6 +355,7 @@ namespace PetAdopt
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -346,6 +368,7 @@ namespace PetAdopt
             // 
             // txtYearCost
             // 
+            this.txtYearCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtYearCost.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtYearCost.Location = new System.Drawing.Point(9, 406);
             this.txtYearCost.Margin = new System.Windows.Forms.Padding(4);
@@ -362,6 +385,7 @@ namespace PetAdopt
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel1.Controls.Add(this.txtWeek);
@@ -392,6 +416,7 @@ namespace PetAdopt
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel2.BackgroundImage")));
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.button4);
@@ -399,13 +424,14 @@ namespace PetAdopt
             this.splitContainer1.Panel2.Controls.Add(this.label9);
             this.splitContainer1.Panel2.Controls.Add(this.comboBox9);
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1355, 932);
-            this.splitContainer1.SplitterDistance = 232;
+            this.splitContainer1.Size = new System.Drawing.Size(1128, 932);
+            this.splitContainer1.SplitterDistance = 214;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 26;
             // 
             // txtWeek
             // 
+            this.txtWeek.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtWeek.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtWeek.Location = new System.Drawing.Point(9, 494);
             this.txtWeek.Margin = new System.Windows.Forms.Padding(4);
@@ -415,6 +441,7 @@ namespace PetAdopt
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -427,6 +454,7 @@ namespace PetAdopt
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -439,6 +467,7 @@ namespace PetAdopt
             // 
             // cbxSubCategory
             // 
+            this.cbxSubCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxSubCategory.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxSubCategory.FormattingEnabled = true;
             this.cbxSubCategory.Location = new System.Drawing.Point(80, 61);
@@ -449,6 +478,7 @@ namespace PetAdopt
             // 
             // txtSpace
             // 
+            this.txtSpace.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSpace.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtSpace.Location = new System.Drawing.Point(133, 270);
             this.txtSpace.Margin = new System.Windows.Forms.Padding(4);
@@ -499,12 +529,13 @@ namespace PetAdopt
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1355, 932);
+            this.ClientSize = new System.Drawing.Size(1128, 932);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPetAdopt";
             this.Text = "寵物領養系統";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

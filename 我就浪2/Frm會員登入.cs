@@ -51,6 +51,10 @@ namespace 我救浪
                 {
                     this.Visible = true;
                 }
+                else if (frm.DialogResult == DialogResult.Cancel)
+                {
+                   this.Close();
+                }
             }
             else if (UserName == "")
             {

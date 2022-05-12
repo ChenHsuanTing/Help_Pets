@@ -476,7 +476,7 @@ namespace 我救浪
                     where //n.Product.SubCategoryID==(int)comboBox9.SelectedValue
 
                     (!/*string.IsNullOrEmpty*/(comboBox8.Text == "不限") ? n.Product.SubCategory.Category.CategoryName == comboBox8.Text : true)
-                    && (!string.IsNullOrEmpty(comboBox9.Text) ? n.Product.SubCategory.SubCategoryName == comboBox9.Text : true)
+                    && (!(comboBox9.Text == "不限") ? n.Product.SubCategory.SubCategoryName == comboBox9.Text : true)
 
                     && (!(comboBox2.Text == "不限") ? comboBox2.Text == n.Gender.GenderType : true)
                      && (!(comboBox3.Text == "不限") ? comboBox3.Text == n.Color.ColorName : true)

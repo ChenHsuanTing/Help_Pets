@@ -419,6 +419,26 @@ namespace 我救浪
             var a = dbContext.Order_Detail.Where(n => n.OrderID == id).Select(m => m);
             dataGridView2.DataSource = a.ToList();
         }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            int x;
+            bool result = int.TryParse(textBox1.Text, out x);
+            if(result == false)
+            {
+                if(dbContext.Members.Where(n=>n.MemberID == x).Select(m=>m).ToList().Count() == 0)
+                {
+                    MessageBox.Show("會員ID錯誤/無此會員ID");
+                }
+            }
+              int  year = dateTimePicker2.Value.Year,
+                month = dateTimePicker2.Value.Month,
+                day = dateTimePicker2.Value.Day;
+            var a = dbContext.Orders.Where(n => n.MemberID == x).Where(n => n.OrderDate.Value.Year == year && n.OrderDate.Value.Month == month && n.OrderDate.Value.Day == day).Select(o => o).ToList();
+            dataGridView1.DataSource = a;
+            
+        }
+
         //dgv2 編輯後
         private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -445,9 +465,10 @@ namespace 我救浪
 
         private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            int x = (int)(((DataGridView)sender).CurrentCell.Value);
+            
             if (((DataGridView)sender).CurrentCell.ColumnIndex == 1)
             {
+                int x = (int)(((DataGridView)sender).CurrentCell.Value);
                 var a = dbContext.Products.Where(m => m.ProductID == x).Select(n => new { Name = n.ProductName, Supplier = n.Supplier.Name, Description = n.Description, InStock = n.UnitsInStock });
                 DataGridViewCell cell = this.dataGridView2.CurrentCell;
                 cell.ToolTipText = $"產品名稱 : {a.Select(n => n.Name).ToList().First()}\n供應商 : {a.Select(n => n.Supplier).ToList().First()}\n庫存量 : {a.Select(n => n.InStock).ToList().First()}\n商品敘述 : {a.Select(n => n.Description).ToList().First()}";
@@ -455,7 +476,6 @@ namespace 我救浪
         }
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (dataGridView1.Columns[((DataGridView)sender).CurrentCell.ColumnIndex].Name == "Order_StatusID")
             {
                 int x = (int)(((DataGridView)sender).CurrentCell.Value);
@@ -469,7 +489,6 @@ namespace 我救浪
                 {
                     cell.ToolTipText = "未送達";
                 }
-                
             }
         }
     }
