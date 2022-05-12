@@ -228,6 +228,7 @@ namespace 我救浪
                     where i.Category.IsPet == true
                     select new { ItemName = i.SubCategoryName, ID = i.SubCategoryID };
             combo1selected_SubCateID = (int)a.Select(n => n.ID).First();
+
             foreach (var str in a)
             {
                 comboBox1.Items.Add(str.ItemName);
@@ -238,8 +239,9 @@ namespace 我救浪
         {
             comboBox1.Items.Clear();
             var a = from i in dbContext.SubCategories
-                    where i.Category.IsPet == false
+                    where i.Category.IsPet == false &&i.CategoryID != 1
                     select new { ItemName = i.SubCategoryName, ID = i.SubCategoryID };
+
             foreach (var str in a)
             {
                 comboBox1.Items.Add(str.ItemName);

@@ -137,7 +137,7 @@ namespace 我救浪
         我救浪Entities dbcontext = new 我救浪Entities();
         void AddCategory()
         {
-            var pet = dbcontext.Categories.Where(p => p.CategoryID == p.ParentCategory).Select(p => p);
+            var pet = dbcontext.Categories.Where(p => p.CategoryID == p.ParentCategory&&p.ParentCategory!=1).Select(p => p);
             cboBox_Pet.DataSource = pet.ToList();
             cboBox_Pet.DisplayMember = "CategoryName";
             cboBox_Pet.ValueMember = "CategoryID";
@@ -246,7 +246,7 @@ namespace 我救浪
             flowLayoutPanrl1.Controls.Clear();
             foreach(var f in q)
             {
-                var p = dbcontext.Products.Where(n => n.ProductID == f.ProductID).Select(n => n);
+                var p = dbcontext.Products.Where(n => n.ProductID == f.ProductID).Where(n=>n.IsPet==false).Select(n => n);
                 ShowProducts(p.ToList());
             }
         }
