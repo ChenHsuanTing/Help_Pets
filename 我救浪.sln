@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我救浪", "我救浪\我救浪.csproj", "{034C5C3C-DB28-4A08-83F4-A7320117D588}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我救浪_後臺", "我救浪\我救浪_後臺.csproj", "{034C5C3C-DB28-4A08-83F4-A7320117D588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我就浪2", "我就浪2\我就浪2.csproj", "{52EDBC2E-832A-4669-8BD5-C0F5799904BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我就浪_前臺", "我就浪2\我就浪_前臺.csproj", "{52EDBC2E-832A-4669-8BD5-C0F5799904BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
