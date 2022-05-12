@@ -201,6 +201,7 @@ namespace 我救浪
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMemLogIn";
             this.Text = "會員登入";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMemLogIn_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

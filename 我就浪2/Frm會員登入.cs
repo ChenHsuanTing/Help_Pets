@@ -113,5 +113,16 @@ namespace 我救浪
         {
             Passwordtxt.UseSystemPasswordChar = !Passwordtxt.UseSystemPasswordChar;
         }
+
+        private void FrmMemLogIn_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Keys a = (Keys)sender;
+            //MessageBox.Show("Test" );
+            //if (Keys.Enter == e.KeyCode)
+            //{
+            //    MessageBox.Show("Test");
+            //    button1.Focus();
+            //}
+        }
     }
 }

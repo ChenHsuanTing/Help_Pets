@@ -163,6 +163,7 @@ namespace 我救浪
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.AutoScroll = true;
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.splitContainer2.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer2.Panel1.BackgroundImage")));
             this.splitContainer2.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -237,6 +238,9 @@ namespace 我救浪
             // 
             // linlLb_ShoppingCar
             // 
+            this.linlLb_ShoppingCar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linlLb_ShoppingCar.AutoSize = true;
             this.linlLb_ShoppingCar.BackColor = System.Drawing.Color.Transparent;
             this.linlLb_ShoppingCar.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -250,10 +254,13 @@ namespace 我救浪
             // 
             // lb_TotalPay
             // 
+            this.lb_TotalPay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_TotalPay.BackColor = System.Drawing.Color.Transparent;
             this.lb_TotalPay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lb_TotalPay.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lb_TotalPay.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lb_TotalPay.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lb_TotalPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lb_TotalPay.Location = new System.Drawing.Point(19, 598);
             this.lb_TotalPay.Name = "lb_TotalPay";
             this.lb_TotalPay.Size = new System.Drawing.Size(221, 48);
@@ -264,7 +271,9 @@ namespace 我救浪
             // but_Search
             // 
             this.but_Search.BackColor = System.Drawing.Color.OldLace;
+            this.but_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.but_Search.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Search.Location = new System.Drawing.Point(65, 326);
             this.but_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.but_Search.Name = "but_Search";
