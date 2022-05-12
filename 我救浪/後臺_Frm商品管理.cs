@@ -373,5 +373,10 @@ namespace 我救浪
             後臺_Frm留言管理 f = new 後臺_Frm留言管理();
             f.Show();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

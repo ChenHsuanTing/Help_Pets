@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52EDBC2E-832A-4669-8BD5-C0F5799904BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>我就浪2</RootNamespace>
+    <AssemblyName>我就浪2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Age.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetail.designer.cs">
+      <DependentUpon>FormDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPetAdopt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPetAdopt.designer.cs">
+      <DependentUpon>FormPetAdopt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ProductDetial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ProductDetial.designer.cs">
+      <DependentUpon>Frm_ProductDetial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Shopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Shopping.designer.cs">
+      <DependentUpon>Frm_Shopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShoppingCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShoppingCar.designer.cs">
+      <DependentUpon>Frm_ShoppingCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm修改會員資料.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm修改會員資料.designer.cs">
+      <DependentUpon>Frm修改會員資料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm忘記密碼.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm忘記密碼.designer.cs">
+      <DependentUpon>Frm忘記密碼.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm會員登入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm會員登入.designer.cs">
+      <DependentUpon>Frm會員登入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm註冊.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm註冊.designer.cs">
+      <DependentUpon>Frm註冊.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ligation.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Comment.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Wish.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Wish_Color.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyFavorite.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Detail.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Status.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetModel2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetModel2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetModel2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetModel2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetModel2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pet_Detail.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Photo.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Size.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubCategory.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>PetModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WishList.designer.cs">
+      <DependentUpon>WishList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDetail.resx">
+      <DependentUpon>FormDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPetAdopt.resx">
+      <DependentUpon>FormPetAdopt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ProductDetial.resx">
+      <DependentUpon>Frm_ProductDetial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Shopping.resx">
+      <DependentUpon>Frm_Shopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShoppingCar.resx">
+      <DependentUpon>Frm_ShoppingCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm修改會員資料.resx">
+      <DependentUpon>Frm修改會員資料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm忘記密碼.resx">
+      <DependentUpon>Frm忘記密碼.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm會員登入.resx">
+      <DependentUpon>Frm會員登入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm註冊.resx">
+      <DependentUpon>Frm註冊.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WishList.resx">
+      <DependentUpon>WishList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <EntityDeploy Include="PetModel2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PetModel2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PetModel2.edmx.diagram">
+      <DependentUpon>PetModel2.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PetModel2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetModel2.edmx</DependentUpon>
+      <LastGenOutput>PetModel2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PetModel2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetModel2.edmx</DependentUpon>
+      <LastGenOutput>PetModel2.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

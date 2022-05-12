@@ -17,6 +17,7 @@ namespace 我救浪
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
+            this.Member_Wish = new HashSet<Member_Wish>();
             this.SubCategories = new HashSet<SubCategory>();
         }
     
@@ -25,6 +26,8 @@ namespace 我救浪
         public Nullable<bool> IsPet { get; set; }
         public Nullable<int> ParentCategory { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Member_Wish> Member_Wish { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubCategory> SubCategories { get; set; }
     }

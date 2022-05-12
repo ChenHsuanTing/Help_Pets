@@ -29,6 +29,7 @@ namespace 我救浪
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(後臺_Frm類別管理));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnProDetailUpdate = new System.Windows.Forms.Button();
             this.btnProDetailDelete = new System.Windows.Forms.Button();
@@ -65,6 +66,7 @@ namespace 我救浪
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnProDetailUpdate);
             this.groupBox1.Controls.Add(this.btnProDetailDelete);
             this.groupBox1.Controls.Add(this.btnProSubDelete);
@@ -81,16 +83,18 @@ namespace 我救浪
             this.groupBox1.Controls.Add(this.lbCategory);
             this.groupBox1.Controls.Add(this.lbSubCategory);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 32);
+            this.groupBox1.Location = new System.Drawing.Point(45, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(493, 293);
+            this.groupBox1.Size = new System.Drawing.Size(500, 253);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "產品類別異動";
             // 
             // btnProDetailUpdate
             // 
-            this.btnProDetailUpdate.Location = new System.Drawing.Point(380, 240);
+            this.btnProDetailUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProDetailUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProDetailUpdate.Location = new System.Drawing.Point(403, 156);
             this.btnProDetailUpdate.Name = "btnProDetailUpdate";
             this.btnProDetailUpdate.Size = new System.Drawing.Size(74, 33);
             this.btnProDetailUpdate.TabIndex = 33;
@@ -100,7 +104,9 @@ namespace 我救浪
             // 
             // btnProDetailDelete
             // 
-            this.btnProDetailDelete.Location = new System.Drawing.Point(110, 254);
+            this.btnProDetailDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProDetailDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProDetailDelete.Location = new System.Drawing.Point(119, 200);
             this.btnProDetailDelete.Name = "btnProDetailDelete";
             this.btnProDetailDelete.Size = new System.Drawing.Size(74, 33);
             this.btnProDetailDelete.TabIndex = 31;
@@ -110,7 +116,9 @@ namespace 我救浪
             // 
             // btnProSubDelete
             // 
-            this.btnProSubDelete.Location = new System.Drawing.Point(110, 173);
+            this.btnProSubDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProSubDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProSubDelete.Location = new System.Drawing.Point(119, 119);
             this.btnProSubDelete.Name = "btnProSubDelete";
             this.btnProSubDelete.Size = new System.Drawing.Size(74, 33);
             this.btnProSubDelete.TabIndex = 30;
@@ -120,7 +128,9 @@ namespace 我救浪
             // 
             // btnProDetailCreate
             // 
-            this.btnProDetailCreate.Location = new System.Drawing.Point(380, 200);
+            this.btnProDetailCreate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProDetailCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProDetailCreate.Location = new System.Drawing.Point(403, 116);
             this.btnProDetailCreate.Name = "btnProDetailCreate";
             this.btnProDetailCreate.Size = new System.Drawing.Size(74, 33);
             this.btnProDetailCreate.TabIndex = 32;
@@ -130,7 +140,9 @@ namespace 我救浪
             // 
             // btnProReadAll
             // 
-            this.btnProReadAll.Location = new System.Drawing.Point(22, 39);
+            this.btnProReadAll.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProReadAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProReadAll.Location = new System.Drawing.Point(372, 211);
             this.btnProReadAll.Name = "btnProReadAll";
             this.btnProReadAll.Size = new System.Drawing.Size(105, 33);
             this.btnProReadAll.TabIndex = 27;
@@ -141,7 +153,7 @@ namespace 我救浪
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 222);
+            this.label1.Location = new System.Drawing.Point(15, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 26;
@@ -149,7 +161,7 @@ namespace 我救浪
             // 
             // txtDetailCategory
             // 
-            this.txtDetailCategory.Location = new System.Drawing.Point(252, 214);
+            this.txtDetailCategory.Location = new System.Drawing.Point(261, 160);
             this.txtDetailCategory.Multiline = true;
             this.txtDetailCategory.Name = "txtDetailCategory";
             this.txtDetailCategory.Size = new System.Drawing.Size(122, 30);
@@ -157,7 +169,9 @@ namespace 我救浪
             // 
             // btnProSubCreate
             // 
-            this.btnProSubCreate.Location = new System.Drawing.Point(380, 120);
+            this.btnProSubCreate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProSubCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProSubCreate.Location = new System.Drawing.Point(403, 36);
             this.btnProSubCreate.Name = "btnProSubCreate";
             this.btnProSubCreate.Size = new System.Drawing.Size(74, 33);
             this.btnProSubCreate.TabIndex = 28;
@@ -167,7 +181,9 @@ namespace 我救浪
             // 
             // btnProSubUpdate
             // 
-            this.btnProSubUpdate.Location = new System.Drawing.Point(380, 160);
+            this.btnProSubUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProSubUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProSubUpdate.Location = new System.Drawing.Point(403, 76);
             this.btnProSubUpdate.Name = "btnProSubUpdate";
             this.btnProSubUpdate.Size = new System.Drawing.Size(74, 33);
             this.btnProSubUpdate.TabIndex = 29;
@@ -178,7 +194,7 @@ namespace 我救浪
             // cbProDetailCategory
             // 
             this.cbProDetailCategory.FormattingEnabled = true;
-            this.cbProDetailCategory.Location = new System.Drawing.Point(110, 214);
+            this.cbProDetailCategory.Location = new System.Drawing.Point(119, 160);
             this.cbProDetailCategory.Name = "cbProDetailCategory";
             this.cbProDetailCategory.Size = new System.Drawing.Size(122, 30);
             this.cbProDetailCategory.TabIndex = 25;
@@ -186,7 +202,7 @@ namespace 我救浪
             // cbProMainCategory
             // 
             this.cbProMainCategory.FormattingEnabled = true;
-            this.cbProMainCategory.Location = new System.Drawing.Point(110, 90);
+            this.cbProMainCategory.Location = new System.Drawing.Point(119, 36);
             this.cbProMainCategory.Name = "cbProMainCategory";
             this.cbProMainCategory.Size = new System.Drawing.Size(122, 30);
             this.cbProMainCategory.TabIndex = 19;
@@ -195,7 +211,7 @@ namespace 我救浪
             // cbProSubCategory
             // 
             this.cbProSubCategory.FormattingEnabled = true;
-            this.cbProSubCategory.Location = new System.Drawing.Point(110, 138);
+            this.cbProSubCategory.Location = new System.Drawing.Point(119, 84);
             this.cbProSubCategory.Name = "cbProSubCategory";
             this.cbProSubCategory.Size = new System.Drawing.Size(122, 30);
             this.cbProSubCategory.TabIndex = 24;
@@ -203,7 +219,7 @@ namespace 我救浪
             // 
             // txtSubCategory
             // 
-            this.txtSubCategory.Location = new System.Drawing.Point(252, 138);
+            this.txtSubCategory.Location = new System.Drawing.Point(261, 84);
             this.txtSubCategory.Multiline = true;
             this.txtSubCategory.Name = "txtSubCategory";
             this.txtSubCategory.Size = new System.Drawing.Size(122, 30);
@@ -212,7 +228,7 @@ namespace 我救浪
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Location = new System.Drawing.Point(6, 93);
+            this.lbCategory.Location = new System.Drawing.Point(15, 39);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(86, 22);
             this.lbCategory.TabIndex = 0;
@@ -221,7 +237,7 @@ namespace 我救浪
             // lbSubCategory
             // 
             this.lbSubCategory.AutoSize = true;
-            this.lbSubCategory.Location = new System.Drawing.Point(6, 141);
+            this.lbSubCategory.Location = new System.Drawing.Point(15, 104);
             this.lbSubCategory.Name = "lbSubCategory";
             this.lbSubCategory.Size = new System.Drawing.Size(86, 22);
             this.lbSubCategory.TabIndex = 11;
@@ -229,26 +245,29 @@ namespace 我救浪
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 351);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 353);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(493, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(500, 203);
             this.dataGridView1.TabIndex = 31;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(573, 351);
+            this.dataGridView2.Location = new System.Drawing.Point(580, 353);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(495, 236);
+            this.dataGridView2.Size = new System.Drawing.Size(495, 203);
             this.dataGridView2.TabIndex = 33;
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnPetDelete);
             this.groupBox2.Controls.Add(this.btnPetReadAll);
             this.groupBox2.Controls.Add(this.btnPetCreate);
@@ -259,16 +278,18 @@ namespace 我救浪
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(573, 32);
+            this.groupBox2.Location = new System.Drawing.Point(580, 91);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(495, 293);
+            this.groupBox2.Size = new System.Drawing.Size(495, 234);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "領養類別異動";
             // 
             // btnPetDelete
             // 
-            this.btnPetDelete.Location = new System.Drawing.Point(126, 175);
+            this.btnPetDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPetDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPetDelete.Location = new System.Drawing.Point(124, 164);
             this.btnPetDelete.Name = "btnPetDelete";
             this.btnPetDelete.Size = new System.Drawing.Size(74, 33);
             this.btnPetDelete.TabIndex = 30;
@@ -278,7 +299,9 @@ namespace 我救浪
             // 
             // btnPetReadAll
             // 
-            this.btnPetReadAll.Location = new System.Drawing.Point(22, 39);
+            this.btnPetReadAll.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPetReadAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPetReadAll.Location = new System.Drawing.Point(363, 190);
             this.btnPetReadAll.Name = "btnPetReadAll";
             this.btnPetReadAll.Size = new System.Drawing.Size(111, 33);
             this.btnPetReadAll.TabIndex = 27;
@@ -288,17 +311,23 @@ namespace 我救浪
             // 
             // btnPetCreate
             // 
-            this.btnPetCreate.Location = new System.Drawing.Point(268, 175);
+            this.btnPetCreate.BackColor = System.Drawing.Color.Transparent;
+            this.btnPetCreate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPetCreate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPetCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPetCreate.Location = new System.Drawing.Point(400, 45);
             this.btnPetCreate.Name = "btnPetCreate";
             this.btnPetCreate.Size = new System.Drawing.Size(74, 33);
             this.btnPetCreate.TabIndex = 28;
             this.btnPetCreate.Text = "新增";
-            this.btnPetCreate.UseVisualStyleBackColor = true;
+            this.btnPetCreate.UseVisualStyleBackColor = false;
             this.btnPetCreate.Click += new System.EventHandler(this.btnPetCreate_Click);
             // 
             // btnPetUpdate
             // 
-            this.btnPetUpdate.Location = new System.Drawing.Point(348, 175);
+            this.btnPetUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPetUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPetUpdate.Location = new System.Drawing.Point(400, 90);
             this.btnPetUpdate.Name = "btnPetUpdate";
             this.btnPetUpdate.Size = new System.Drawing.Size(74, 33);
             this.btnPetUpdate.TabIndex = 29;
@@ -309,7 +338,7 @@ namespace 我救浪
             // cbPetMainCategory
             // 
             this.cbPetMainCategory.FormattingEnabled = true;
-            this.cbPetMainCategory.Location = new System.Drawing.Point(126, 90);
+            this.cbPetMainCategory.Location = new System.Drawing.Point(124, 66);
             this.cbPetMainCategory.Name = "cbPetMainCategory";
             this.cbPetMainCategory.Size = new System.Drawing.Size(122, 30);
             this.cbPetMainCategory.TabIndex = 19;
@@ -318,14 +347,14 @@ namespace 我救浪
             // cbPetSubCategory
             // 
             this.cbPetSubCategory.FormattingEnabled = true;
-            this.cbPetSubCategory.Location = new System.Drawing.Point(126, 138);
+            this.cbPetSubCategory.Location = new System.Drawing.Point(124, 114);
             this.cbPetSubCategory.Name = "cbPetSubCategory";
             this.cbPetSubCategory.Size = new System.Drawing.Size(122, 30);
             this.cbPetSubCategory.TabIndex = 24;
             // 
             // txtPetSubCategory
             // 
-            this.txtPetSubCategory.Location = new System.Drawing.Point(268, 90);
+            this.txtPetSubCategory.Location = new System.Drawing.Point(266, 66);
             this.txtPetSubCategory.Multiline = true;
             this.txtPetSubCategory.Name = "txtPetSubCategory";
             this.txtPetSubCategory.Size = new System.Drawing.Size(122, 30);
@@ -334,7 +363,7 @@ namespace 我救浪
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 93);
+            this.label3.Location = new System.Drawing.Point(16, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 22);
             this.label3.TabIndex = 0;
@@ -343,7 +372,7 @@ namespace 我救浪
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 141);
+            this.label4.Location = new System.Drawing.Point(16, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 22);
             this.label4.TabIndex = 11;
@@ -353,6 +382,8 @@ namespace 我救浪
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1143, 651);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox2);

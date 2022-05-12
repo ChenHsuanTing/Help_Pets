@@ -29,6 +29,7 @@ namespace 我救浪
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(後臺_Frm留言管理));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtComment = new System.Windows.Forms.RichTextBox();
             this.txtMember = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@ namespace 我救浪
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnDateSearch = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,16 +63,13 @@ namespace 我救浪
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.txtComment);
             this.groupBox2.Controls.Add(this.txtMember);
             this.groupBox2.Controls.Add(this.label2);
@@ -85,7 +82,7 @@ namespace 我救浪
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lbproID);
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 9.792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(536, 10);
+            this.groupBox2.Location = new System.Drawing.Point(562, 58);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(516, 284);
             this.groupBox2.TabIndex = 8;
@@ -118,6 +115,8 @@ namespace 我救浪
             // 
             // btnDelete
             // 
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Location = new System.Drawing.Point(409, 221);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(74, 33);
@@ -128,6 +127,8 @@ namespace 我救浪
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(409, 168);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 33);
@@ -138,6 +139,8 @@ namespace 我救浪
             // 
             // btnCreate
             // 
+            this.btnCreate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Location = new System.Drawing.Point(409, 115);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(74, 33);
@@ -196,6 +199,7 @@ namespace 我救浪
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btn1star);
             this.groupBox1.Controls.Add(this.btn2star);
             this.groupBox1.Controls.Add(this.btn3star);
@@ -203,7 +207,7 @@ namespace 我救浪
             this.groupBox1.Controls.Add(this.btn5star);
             this.groupBox1.Controls.Add(this.btnAllComment);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 9.792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(36, 10);
+            this.groupBox1.Location = new System.Drawing.Point(62, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(264, 182);
             this.groupBox1.TabIndex = 7;
@@ -212,6 +216,8 @@ namespace 我救浪
             // 
             // btn1star
             // 
+            this.btn1star.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn1star.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1star.Location = new System.Drawing.Point(133, 122);
             this.btn1star.Name = "btn1star";
             this.btn1star.Size = new System.Drawing.Size(110, 43);
@@ -222,6 +228,8 @@ namespace 我救浪
             // 
             // btn2star
             // 
+            this.btn2star.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn2star.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2star.Location = new System.Drawing.Point(22, 122);
             this.btn2star.Name = "btn2star";
             this.btn2star.Size = new System.Drawing.Size(110, 43);
@@ -232,6 +240,8 @@ namespace 我救浪
             // 
             // btn3star
             // 
+            this.btn3star.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn3star.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3star.Location = new System.Drawing.Point(133, 76);
             this.btn3star.Name = "btn3star";
             this.btn3star.Size = new System.Drawing.Size(110, 43);
@@ -242,6 +252,8 @@ namespace 我救浪
             // 
             // btn4star
             // 
+            this.btn4star.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn4star.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4star.Location = new System.Drawing.Point(22, 76);
             this.btn4star.Name = "btn4star";
             this.btn4star.Size = new System.Drawing.Size(110, 43);
@@ -252,6 +264,8 @@ namespace 我救浪
             // 
             // btn5star
             // 
+            this.btn5star.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn5star.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5star.Location = new System.Drawing.Point(133, 30);
             this.btn5star.Name = "btn5star";
             this.btn5star.Size = new System.Drawing.Size(110, 43);
@@ -262,6 +276,8 @@ namespace 我救浪
             // 
             // btnAllComment
             // 
+            this.btnAllComment.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnAllComment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAllComment.Location = new System.Drawing.Point(22, 30);
             this.btnAllComment.Name = "btnAllComment";
             this.btnAllComment.Size = new System.Drawing.Size(110, 43);
@@ -272,15 +288,16 @@ namespace 我救浪
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.btnDateSearch);
             this.groupBox3.Font = new System.Drawing.Font("微軟正黑體", 9.792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox3.Location = new System.Drawing.Point(36, 209);
+            this.groupBox3.Location = new System.Drawing.Point(62, 257);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(401, 77);
+            this.groupBox3.Size = new System.Drawing.Size(452, 77);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " 日期評論查詢";
@@ -322,6 +339,8 @@ namespace 我救浪
             // 
             // btnDateSearch
             // 
+            this.btnDateSearch.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnDateSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDateSearch.Location = new System.Drawing.Point(281, 22);
             this.btnDateSearch.Name = "btnDateSearch";
             this.btnDateSearch.Size = new System.Drawing.Size(85, 39);
@@ -330,34 +349,14 @@ namespace 我救浪
             this.btnDateSearch.UseVisualStyleBackColor = true;
             this.btnDateSearch.Click += new System.EventHandler(this.btnDateSearch_Click);
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox4);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(1173, 682);
-            this.splitContainer1.SplitterDistance = 315;
-            this.splitContainer1.TabIndex = 9;
-            // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.comboBox4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.btnProductSearch);
             this.groupBox4.Font = new System.Drawing.Font("微軟正黑體", 9.792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox4.Location = new System.Drawing.Point(317, 10);
+            this.groupBox4.Location = new System.Drawing.Point(343, 58);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(171, 182);
             this.groupBox4.TabIndex = 8;
@@ -384,6 +383,8 @@ namespace 我救浪
             // 
             // btnProductSearch
             // 
+            this.btnProductSearch.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnProductSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductSearch.Location = new System.Drawing.Point(40, 127);
             this.btnProductSearch.Name = "btnProductSearch";
             this.btnProductSearch.Size = new System.Drawing.Size(96, 32);
@@ -394,13 +395,13 @@ namespace 我救浪
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(62, 388);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 53;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1173, 363);
+            this.dataGridView1.Size = new System.Drawing.Size(736, 249);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -408,8 +409,14 @@ namespace 我救浪
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1173, 682);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "後臺_Frm留言管理";
             this.Text = "Frmmembercomment";
@@ -418,10 +425,6 @@ namespace 我救浪
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -440,7 +443,6 @@ namespace 我救浪
         private System.Windows.Forms.Button btn5star;
         private System.Windows.Forms.Button btnAllComment;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txtProducts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbproID;
@@ -450,7 +452,6 @@ namespace 我救浪
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
@@ -462,5 +463,6 @@ namespace 我救浪
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtComment;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

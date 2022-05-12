@@ -24,14 +24,16 @@ namespace 我救浪
         public Nullable<int> CityID { get; set; }
         public Nullable<decimal> YearCost { get; set; }
         public Nullable<int> Space { get; set; }
-        public Nullable<int> SizeID { get; set; }
         public Nullable<int> AgeID { get; set; }
         public Nullable<int> AccompanyTimeWeek { get; set; }
         public Nullable<int> LigationID { get; set; }
         public int SubCategoryID { get; set; }
         public Nullable<int> GenderID { get; set; }
+        public Nullable<int> SizeID { get; set; }
+        public Nullable<int> CategoryID { get; set; }
     
         public virtual Age Age { get; set; }
+        public virtual Category Category { get; set; }
         public virtual City City { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual Ligation Ligation { get; set; }

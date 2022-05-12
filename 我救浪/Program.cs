@@ -1,4 +1,4 @@
-﻿using PetAdopt;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +23,8 @@ namespace 我救浪
             //Application.Run(new Frm浪浪管理());
             //Application.Run(new 後臺_Frm訂單管理());
             //Application.Run(new FormPetAdopt());
+            //Application.Run(new 後臺_Frm後臺整合());
+            //Application.Run(new 後臺_Frm商品管理());
             Application.Run(new Frm員工登入());
         }
     }
