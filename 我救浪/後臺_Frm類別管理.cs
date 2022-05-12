@@ -361,7 +361,7 @@ namespace 我救浪
         private void btnPetReadAll_Click(object sender, EventArgs e)
         {
             var q = from sc in this.dbcontext.SubCategories.AsEnumerable()
-                    where sc.Category.IsPet == true
+                    where sc.Category.IsPet == true&& sc.Category.CategoryName!= "不限"
                     select new
                     {
                         SubCategoryName = sc.SubCategoryName,
