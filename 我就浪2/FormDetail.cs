@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using 我就浪2;
+using 我救浪;
 using static PetAdopt.FormPetAdopt;
 
 namespace PetAdopt
@@ -16,12 +17,12 @@ namespace PetAdopt
     {
         我救浪Entities dbContext = new 我救浪Entities();
         int ProductID;
-        int MemberID;
+        int MemberID = FrmMemLogIn.memID;
         public FormDetail(int productID,int memberID)
         {
             InitializeComponent();
             ProductID = productID;
-            MemberID = memberID;
+            MemberID = this.MemberID;
             Load_Deatil(productID);
             PictureBox_Databinding(pictureBox1, productID);
 
@@ -77,6 +78,7 @@ namespace PetAdopt
 
         private void BtnAdopt_Click(object sender, EventArgs e)
         {
+
             var q = from od in dbContext.Order_Detail
                     where od.ProductID == this.ProductID && od.Order.MemberID == this.MemberID
                     select od;

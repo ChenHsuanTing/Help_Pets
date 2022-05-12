@@ -43,9 +43,10 @@ namespace 我救浪
             if (q.ToList().Count != 0)
             {
                 MessageBox.Show("登入成功");
-                FormPetAdopt frm = new FormPetAdopt();
+                
                 memID = q.Select(m => m.MemberID).ToList().First();
                 this.Visible = false;
+                FormPetAdopt frm = new FormPetAdopt();
                 frm.ShowDialog();
                 if(frm.DialogResult == DialogResult.No)
                 {
@@ -90,9 +91,11 @@ namespace 我救浪
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
             UserName = Usernametxt.Text;
+            string Password = Passwordtxt.Text;
             var q = from m in dbContext.Members
-                    where m.MemberPhone == UserName
+                    where m.MemberPhone == UserName && m.Password == Password
                     select m;
 
             if (q.ToList().Count() != 0)

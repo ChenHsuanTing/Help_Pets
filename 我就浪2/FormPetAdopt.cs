@@ -22,6 +22,7 @@ namespace PetAdopt
             var q = (from n in this.dbconect.Pet_Detail
                     select n).ToList();
             ShowPetDetail(q);
+            
             //Button Btn = new Button();
             //Btn.Click += Btn_Click;
         }
@@ -173,7 +174,7 @@ namespace PetAdopt
                     where memberID == m.MemberID
                     select m;
 
-
+       
 
             if (q.Any())
             {
