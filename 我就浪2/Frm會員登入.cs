@@ -19,7 +19,7 @@ namespace 我救浪
         {
             InitializeComponent();
             Usernametxt.Focus();
-            Usernametxt.Text = "0952586543";
+            Usernametxt.Text = "0910114365 ";
             Passwordtxt.Text = "123";
         }
         我救浪Entities dbContext = new 我救浪Entities();
@@ -114,15 +114,20 @@ namespace 我救浪
             Passwordtxt.UseSystemPasswordChar = !Passwordtxt.UseSystemPasswordChar;
         }
 
-        private void FrmMemLogIn_KeyDown(object sender, KeyEventArgs e)
+        private void Usernametxt_KeyDown(object sender, KeyEventArgs e)
         {
-            //Keys a = (Keys)sender;
-            //MessageBox.Show("Test" );
-            //if (Keys.Enter == e.KeyCode)
-            //{
-            //    MessageBox.Show("Test");
-            //    button1.Focus();
-            //}
+            if (Keys.Enter == e.KeyCode)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void Passwordtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keys.Enter == e.KeyCode)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }

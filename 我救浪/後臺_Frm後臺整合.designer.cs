@@ -134,6 +134,7 @@ namespace 我救浪
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer4.Panel2.BackgroundImage")));
+            this.splitContainer4.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer4.Size = new System.Drawing.Size(1310, 598);
             this.splitContainer4.SplitterDistance = 173;
             this.splitContainer4.TabIndex = 0;
@@ -251,6 +252,7 @@ namespace 我救浪
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1310, 773);
             this.Controls.Add(this.splitContainer3);
             this.Controls.Add(this.splitContainer1);

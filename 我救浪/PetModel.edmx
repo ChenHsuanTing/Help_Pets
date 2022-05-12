@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="我救浪Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Age">
           <Key>
             <PropertyRef Name="AgeID" />
@@ -80,7 +80,7 @@
           <Property Name="MemberID" Type="int" />
           <Property Name="Grade" Type="int" />
           <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="CommentDate" Type="datetime" />
+          <Property Name="CommentDate" Type="date" />
         </EntityType>
         <EntityType Name="Member_Wish">
           <Key>
@@ -739,8 +739,7 @@
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="我救浪Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -839,7 +838,7 @@
           <Property Name="MemberID" Type="Int32" />
           <Property Name="Grade" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CommentDate" Type="DateTime" Precision="3" />
+          <Property Name="CommentDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Member" Relationship="Self.FK_Member_Comment_Member" FromRole="Member_Comment" ToRole="Member" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Member_Comment_Product" FromRole="Member_Comment" ToRole="Product" />
         </EntityType>

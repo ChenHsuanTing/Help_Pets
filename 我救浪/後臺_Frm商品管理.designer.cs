@@ -673,6 +673,7 @@ namespace 我救浪
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "後臺_Frm商品管理";
             this.Text = "Form_商品管理1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form_商品管理1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

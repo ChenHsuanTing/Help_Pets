@@ -1063,6 +1063,7 @@ namespace 我救浪
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm浪浪管理";
             this.Text = "後臺管理系統";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.浪浪管理中心.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);

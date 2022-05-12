@@ -90,6 +90,7 @@ namespace 我救浪
             this.Passwordtxt.Size = new System.Drawing.Size(121, 25);
             this.Passwordtxt.TabIndex = 5;
             this.Passwordtxt.UseSystemPasswordChar = true;
+            this.Passwordtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Passwordtxt_KeyDown);
             // 
             // Usernametxt
             // 
@@ -97,6 +98,7 @@ namespace 我救浪
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(121, 25);
             this.Usernametxt.TabIndex = 4;
+            this.Usernametxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usernametxt_KeyDown);
             // 
             // lbPassWord
             // 
@@ -201,7 +203,6 @@ namespace 我救浪
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMemLogIn";
             this.Text = "會員登入";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMemLogIn_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -78,7 +78,7 @@ namespace 我救浪
             this.Passwordtxt.Name = "Passwordtxt";
             this.Passwordtxt.Size = new System.Drawing.Size(121, 27);
             this.Passwordtxt.TabIndex = 5;
-            this.Passwordtxt.Text = "0";
+            this.Passwordtxt.Text = "123";
             this.Passwordtxt.UseSystemPasswordChar = true;
             // 
             // Usernametxt
@@ -89,7 +89,7 @@ namespace 我救浪
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(121, 27);
             this.Usernametxt.TabIndex = 4;
-            this.Usernametxt.Text = "0000000001";
+            this.Usernametxt.Text = "0955096679";
             // 
             // lbPassWord
             // 

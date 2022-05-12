@@ -16,7 +16,6 @@ namespace 我救浪
         {
             InitializeComponent();
             Usernametxt.Focus();
-
         }
         我救浪Entities dbContext = new 我救浪Entities();
         public static int empID = 1;

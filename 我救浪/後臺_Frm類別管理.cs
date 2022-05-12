@@ -23,7 +23,7 @@ namespace 我救浪
         private void LoadCategoryNameToCombobox()
         {
             var q = from c in this.dbcontext.Categories
-                    where c.IsPet == true&&c.CategoryName!="不限"
+                    where c.IsPet == true && c.CategoryName != "不限"
                     select c;
             this.cbProMainCategory.DataSource = q.ToList();
             cbProMainCategory.DisplayMember = "CategoryName";
